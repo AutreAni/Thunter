@@ -1,0 +1,90 @@
+$orange : rgb(246,109,26);
+$red: rgb(194,29,40);
+$purple : rgb(134,47,79);
+$blue: rgb(49,145,151);
+$gray:  #666666;
+
+
+* {
+    box-sizing: border-box;
+}
+
+%flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+// base.$orange, base.$red, base.$purple, base.$blue
+
+
+.sign__form{ 
+    width:100vw;
+    height:100vh;
+    @extend %flex-box;
+    .main__wrapper {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width:40vw;
+        height:70vh;
+        padding:2em 0;
+    }
+    .inner__wrapper {
+        width:80%;
+        margin:0 auto;
+        height:100%;
+     }
+     .buttons__wrapper {
+         width:100%;
+         @extend %flex-box;
+        justify-content: flex-start;
+     }
+     .btn__wrapper {
+        display:inline-block;
+        width:fit-content;
+        padding:0.12em;
+        border-radius: 22px;    
+        .button {
+            @extend %flex-box;
+            border-radius:22px;
+            border:none;
+            margin:0;
+            padding:0.5em 1.2em;
+            width:6em;
+            background-color: white;
+            outline: none;
+            font-size: 1.2em;
+            color: $gray;
+            font-weight: 500;
+        }
+        :hover{
+            color:black;
+        }
+       
+    }
+
+}
+
+
+
+.active {
+    background:linear-gradient(135deg, $orange, $orange, $red, $red, $purple,$purple, $blue);
+}
+
+.inputField {
+    width:100%;
+    position: relative;
+    margin-top:1em;
+    input {
+        width:100%;
+        padding:1em 1em  1em 2.7em;
+    }
+    .icon {
+        position: absolute;
+        left:0.7em;
+        top:50%;
+        transform: translateY(-50%);
+        color:$gray;
+    }
+}
+
+

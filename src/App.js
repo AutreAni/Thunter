@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import SignForm from "./SignForm/index";
+import UserProfile from "./UserProfile/index";
+
 
 function App() {
+  const [loggedin, setLoggedin] = useState(false);
+  const [userData, setUserData] = useState();
+
+
+  const setData = ({ username, name, email, password, picture }) => {
+    setUserData({
+      username: username?username :name.split(" ")[0],
+      email,
+      password,
+      picture: picture?.data.url
+    })
+    // setUsername(username);
+    // setEmail(email);
+    // setPassword(password);
+    // setAvatar(picture? picture.data.url:null);
+  }
+
+  const handleSubmit = (data) => {
+    setLoggedin(true);
+    setData(data);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loggedin ? 
+      <UserProfile userData = {userData}/>
+      : null}
+      { !loggedin ?
+        (<SignForm
+          performSubmit={handleSubmit}
+        />) : null}
     </div>
   );
 }
