@@ -1,9 +1,10 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+          /* box-sizing: border-box; */
 }
 
-.sign__form, .sign__form .buttons__wrapper, .sign__form .btn__wrapper .button {
+.sign__form, .sign__form .buttons__wrapper, .sign__form .btn__wrapper .button, .sign__btn, .facebook__login .or__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +29,6 @@
   -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 40vw;
-  height: 70vh;
   padding: 2em 0;
 }
 
@@ -50,48 +50,140 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.12em;
-  border-radius: 22px;
+  margin-right: 0.1em;
+  position: relative;
+  padding: 0.8em 1.2em;
+  border: 3px solid transparent;
+  background: white;
+  background-clip: padding-box;
+  border-radius: 2.5em;
 }
 
 .sign__form .btn__wrapper .button {
-  border-radius: 22px;
   border: none;
   margin: 0;
-  padding: 0.5em 1.2em;
-  width: 6em;
   background-color: white;
   outline: none;
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: #666666;
-  font-weight: 500;
 }
 
 .sign__form .btn__wrapper :hover {
   color: black;
 }
 
-.active {
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
   background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .inputField {
   width: 100%;
   position: relative;
-  margin-top: 1em;
+  margin-top: 2.5em;
+  border: 1px solid #666666;
+  border-radius: 5px;
+  padding: 1em 1em  1em 3.2em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.inputField:hover {
+  -webkit-box-shadow: 1px 1px 1px #c21d28, 1px 1px 2px #f66d1a, -1px -1px 1px #f66d1a, -1px -1px 2px #c21d28;
+          box-shadow: 1px 1px 1px #c21d28, 1px 1px 2px #f66d1a, -1px -1px 1px #f66d1a, -1px -1px 2px #c21d28;
 }
 
 .inputField input {
   width: 100%;
-  padding: 1em 1em  1em 2.7em;
+  font-size: 1em;
+  line-height: 1em;
+  border: none;
+  margin: 0;
+  outline: none;
 }
 
 .inputField .icon {
   position: absolute;
-  left: 0.7em;
+  left: 1em;
   top: 50%;
+  font-size: 1.2em;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   color: #666666;
+}
+
+.sign__btn {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 2em;
+}
+
+.sign__btn button {
+  background: linear-gradient(45deg, #f66d1a, #c21d28, #862f4f);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 2.5em;
+  font-size: 1.2em;
+  padding: 0.8em 1.5em;
+  margin-right: 1.5em;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sign__btn :hover {
+  background: linear-gradient(135deg, #862f4f, #c21d28, #f66d1a);
+}
+
+.facebook__login {
+  margin-top: 1.5em;
+}
+
+.facebook__login .or__wrapper {
+  width: 100%;
+}
+
+.facebook__login span {
+  width: 45%;
+  border-top: 1px solid #666666;
+}
+
+.facebook__login .or {
+  width: 10%;
+  border: none;
+}
+
+.facebook__login button {
+  margin-top: 1em;
+  border-radius: 2.5em !important;
+  text-transform: capitalize;
+  outline: none;
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
 }
 /*# sourceMappingURL=style.css.map */

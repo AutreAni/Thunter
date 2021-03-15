@@ -7,7 +7,7 @@ import Components from './Components/index'
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
-  const [userData, setUserData] = useState();
+  const [currentUser, setUserData] = useState();
 
 
   const setData = ({ username, name, email, password, picture }) => {
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       {loggedin ? 
-      <UserProfile userData = {userData}/>
+      <UserProfile userData = {currentUser}/>
       : null}
       { !loggedin ?
         (<SignForm

@@ -232,10 +232,7 @@ function SignForm({ performSubmit }) {
                     inputType="password"
                     placeholder="Password"
                     handleFocusout={handleFocusout}
-                    errorMsg={!validPassword && registering ? (`*Password must be at least 8 characters
-                                                          must contain a lowercase letter
-                                                                      an uppercase letter
-                                                                       a digit`
+                    errorMsg={!validPassword && registering ? ("*Password must be at least 8 characters, must contain a lowercase letter, an uppercase letter and a digit"
                     ) : null}
                 />
                 {registering ?
@@ -251,11 +248,15 @@ function SignForm({ performSubmit }) {
 
                 <div className="sign__btn">
                     <button>{registering ? "Register" : "Log In"}</button>
-                    {wrongDataMsg ? <p>{wrongDataMsg}</p> : null}
+                    {wrongDataMsg && loggingin ? <p className = "errorMsg">{wrongDataMsg}</p> : null}
                 </div>
                 {loggingin ? (
                     <div className="facebook__login">
+                    <div className = "or__wrapper">
+                        <span></span>
                         <span className="or">or</span>
+                        <span></span>
+                        </div>
                         <FacebookLogin
                             appId="455003679284935"
                             autoLoad={false}
@@ -274,61 +275,3 @@ function SignForm({ performSubmit }) {
 export default SignForm;
 
 
-
-    // const checkUserDataForLogin = (obj) => {
-    //     fetch(`http://localhost:3000/users?username=${obj.username}`)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (!data.length) {
-    //                 // setLoginSuccess(false);
-    //                 return;
-    //             } else {
-    //                 let filtered = data.filter(user =>
-    //                     user.username === obj.username
-    //                     && user.password === obj.password)
-    //                 if (filtered) {
-    //                     performLogin(filtered);
-    //                     console.log("filtered", filtered)
-    //                 } else {
-    //                     setWrongDataMsg("Wrong username or password");
-    //                     // setLoginSuccess(false);
-    //                 }
-    //             }
-    //         })
-    //         .catch(error => console.log(error.message))
-    // }
-
-    // const checkUserDataForSignup = (obj, url) => {
-    //     fetch(url)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (!data.length) {
-    //                 performSubmit(obj, url);
-    //                 return;
-    //             } else {
-    //                 let filteredByUsername = data.filter(user =>
-    //                     user.username === obj.username);
-    //                 let filteredByEmail = data.filter(user =>
-    //                     user.email === obj.email)
-    //                 let filteredByPassord = data.filter(user =>
-    //                     user.password === obj.password);
-    //                 if (filteredByUsername.length ||
-    //                     filteredByEmail.length ||
-    //                     filteredByPassord.length) {
-    //                     setSignUpSucess(false);
-    //                     if (filteredByUsername.length) {
-    //                         console.log(filteredByUsername);
-    //                         setWrongDataMsg("Username already exists");
-    //                     } else if (filteredByEmail.length) {
-    //                         setWrongDataMsg("An account with this email already exists")
-    //                     } else if (filteredByPassord.length) {
-    //                         setWrongDataMsg("Password is already occupied")
-    //                     }
-    //                 } else {
-    //                     setSignUpSucess(true);
-    //                     performSubmit(obj);
-    //                 }
-    //             }
-
-    //         })
-    // }

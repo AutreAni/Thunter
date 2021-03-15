@@ -15,7 +15,6 @@ $gray:  #666666;
     justify-content: center;
     align-items: center;
 }
-// base.$orange, base.$red, base.$purple, base.$blue
 
 
 .sign__form{ 
@@ -25,7 +24,6 @@ $gray:  #666666;
     .main__wrapper {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         width:40vw;
-        height:70vh;
         padding:2em 0;
     }
     .inner__wrapper {
@@ -41,50 +39,129 @@ $gray:  #666666;
      .btn__wrapper {
         display:inline-block;
         width:fit-content;
-        padding:0.12em;
-        border-radius: 22px;    
+        margin-right:0.1em;
+        position: relative;
+        padding:0.8em 1.2em;
+        border:3px solid transparent;
+        background: white;
+        background-clip: padding-box;
+        border-radius: 2.5em;
         .button {
             @extend %flex-box;
-            border-radius:22px;
             border:none;
             margin:0;
-            padding:0.5em 1.2em;
-            width:6em;
             background-color: white;
             outline: none;
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: $gray;
-            font-weight: 500;
         }
         :hover{
             color:black;
         }
-       
     }
-
+}
+.active{
+   &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -3px; 
+    border-radius: inherit;
+    background: linear-gradient(135deg, $orange, $orange, $red, $red, $purple,$purple, $blue);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
 }
 
 
-
-.active {
-    background:linear-gradient(135deg, $orange, $orange, $red, $red, $purple,$purple, $blue);
-}
+// .active {
+//     background:linear-gradient(135deg, $orange, $orange, $red, $red, $purple,$purple, $blue);
+// }
 
 .inputField {
     width:100%;
     position: relative;
-    margin-top:1em;
+    margin-top:2.5em;
+    border:1px solid $gray;
+    border-radius: 5px;
+    padding:1em 1em  1em 3.2em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    &:hover {
+        box-shadow: 1px 1px 1px $red, 1px 1px 2px $orange,
+                   -1px -1px 1px $orange, -1px -1px 2px $red;
+    }
     input {
         width:100%;
-        padding:1em 1em  1em 2.7em;
+        font-size: 1em;
+        line-height: 1em;
+        border:none;
+        margin:0;
+        outline: none;
     }
     .icon {
         position: absolute;
-        left:0.7em;
+        left: 1em;
         top:50%;
+        font-size: 1.2em;
         transform: translateY(-50%);
         color:$gray;
     }
 }
 
+.sign__btn {
+    @extend %flex-box;
+    justify-content: flex-start;
+    margin-top:2em;
+    button {
+        background:linear-gradient(45deg, $orange, $red, $purple);
+        color:white;
+        border:none;
+        outline: none;
+        border-radius: 2.5em;
+        font-size: 1.2em;
+        padding:0.8em 1.5em;
+        margin-right:1.5em;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    :hover {
+        background:linear-gradient(135deg, $purple,$red, $orange);
+    }
+}
 
+.facebook__login {
+    margin-top:1.5em;
+    .or__wrapper {
+        width:100%;
+        @extend %flex-box;
+    }
+    span {
+        width:45%;
+        border-top:1px solid $gray;
+    }
+    .or{
+        width:10%;
+        border:none;
+    }
+    button {
+        margin-top:1em;
+        border-radius:2.5em !important;
+        text-transform: capitalize;
+        outline: none;
+    }
+}
+
+.errorMsg {
+    color:$red;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.error__msg {
+    position: absolute;
+    font-size: 0.7em;
+    font-weight: bold;
+    top:105%;
+    left:0;
+    color:$red;
+    text-align: left;
+}
