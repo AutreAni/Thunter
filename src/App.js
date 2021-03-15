@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import UserProfile from "./UserProfile/index";
+import Components from './Components/index'
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         (<SignForm
           performSubmit={handleSubmit}
         />) : null}
+
+<Components />
     </div>
   );
 }
