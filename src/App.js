@@ -3,6 +3,8 @@ import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
 import Main from './Main/index';
+import Components from './Components/index'
+
 
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
 
   const setData = ({ username, name, email, password, picture }) => {
     setCurrentUser({
-      username: username?username :name.split(" ")[0],
+      username: username ? username : name.split(" ")[0],
       email,
       password,
       picture: picture?.data.url
@@ -31,17 +33,23 @@ function App() {
 
   return (
     <div className="App">
-    { !loggedin ?
-      (<SignForm
-        performSubmit={handleSubmit}
-      />) :null}
-      : <Header 
-      userData = {currentUser}
-      performSignOut = {performSignOut}
+      { !loggedin ?
+        (<SignForm
+          performSubmit={handleSubmit}
+        />) : <Header
+        userData={currentUser}
+        performSignOut={performSignOut}
       />}
-      {loggedin ? 
-      <Main userData = {currentUser}/>
-      : null}
+      {loggedin ?
+        <Main userData={currentUser} />
+        : null}
+
+      { !loggedin ?
+        (<SignForm
+          performSubmit={handleSubmit}
+        />) : null}
+
+      <Components />
 
     </div>
   );
