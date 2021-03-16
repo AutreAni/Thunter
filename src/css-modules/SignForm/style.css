@@ -1,6 +1,7 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+          /* box-sizing: border-box; */
 }
 
 .sign__form, .sign__form .buttons__wrapper, .sign__form .btn__wrapper .button, .sign__btn, .facebook__login .or__wrapper {
@@ -109,6 +110,7 @@
   border: none;
   margin: 0;
   outline: none;
+  background-color: white;
 }
 
 .inputField .icon {

@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
+<<<<<<< HEAD
 import Header from './Header/index';
 import Main from './Main/index';
+=======
+import UserProfile from "./UserProfile/index";
+import Components from './Components/index'
+<<<<<<< HEAD
+>>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
+=======
+>>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
 
 
 function App() {
@@ -41,7 +49,18 @@ function App() {
       {loggedin ? 
       <Main userData = {currentUser}/>
       : null}
-     
+<<<<<<< HEAD
+=======
+      { !loggedin ?
+        (<SignForm
+          performSubmit={handleSubmit}
+        />) : null}
+
+<Components />
+<<<<<<< HEAD
+>>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
+=======
+>>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
     </div>
   );
 }
