@@ -121,7 +121,7 @@ function SignForm({ performSubmit }) {
         if (loggingin && !fbLogin) {
             filteredByUsername.length && filteredByPassord.length ?
                 performSubmit(filteredByUsername[0]) :
-                setWrongDataMsg("Wrong username or password"); setProcessing(false);
+                setWrongDataMsg("Wrong username or password");
 
 
         } else if (registering) {
@@ -163,11 +163,9 @@ function SignForm({ performSubmit }) {
     const handleFbClick = () => {
         if (processing) return;
         fbLogin = true;
-        console.log("fb",fbLogin, "lg",loggingin, "reg", registering);
     }
 
     const responseFacebook = (response) => {
-        console.log(fbLogin);
         if(!fbLogin) return;      
         if (response.status === "unknown") {
             fbLogin = false;

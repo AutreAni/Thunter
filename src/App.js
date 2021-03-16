@@ -3,7 +3,6 @@ import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
 import Main from './Main/index';
-import Components from './Components/index'
 
 
 
@@ -43,14 +42,6 @@ function App() {
       {loggedin ?
         <Main userData={currentUser} />
         : null}
-
-      { !loggedin ?
-        (<SignForm
-          performSubmit={handleSubmit}
-        />) : null}
-
-      <Components />
-
     </div>
   );
 }

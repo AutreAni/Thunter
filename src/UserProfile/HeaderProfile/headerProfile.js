@@ -8,7 +8,6 @@ const HeaderProfile = (props) => {
         props.setFullProfileView(true);
     }
     const userData = props.userData;
-    console.log(userData)
     return (
         <Fragment>
             { userData ? <div className = "headerProfile" onClick = {goToProfile}>

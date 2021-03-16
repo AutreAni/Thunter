@@ -6,11 +6,14 @@ import InputImg from './InputImg';
 import Example from './Example'
 
 class NavBar extends Component {
+  constructor(props){
+    super(props);
+  }
 
   render() { 
     return ( 
       <div className="navDiv">
-        <InputImg />
+        <InputImg userData = {this.props.userData}/>
         <nav>
           <ul className ="ulClass">
             <li><Example /> 

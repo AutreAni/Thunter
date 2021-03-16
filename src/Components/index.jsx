@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 
 import NavBar from './NavBar';
 
-const Components = () => {
+const Components = (props) => {
   return ( 
     <React.Fragment>
-      <NavBar />
+      <NavBar userData = {props.userData}/>
     </React.Fragment>
    );
 }
