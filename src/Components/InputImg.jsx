@@ -1,9 +1,12 @@
 import React from 'react';
+import Avatar from '../UserProfile/Avatar/index';
 
-const InputImg = () => {
+const InputImg = (props) => {
   return ( 
     <div className="inputDiv">
-       <img src="http://placeimg.com/40/40/people" alt=" photo" className="profile-image"></img>
+      {props.userData ? 
+       <Avatar userData = {props.userData}/>       
+       :null}
        <input className="navInput" type="text" placeholder="Start a post..." />
     </div>
    );

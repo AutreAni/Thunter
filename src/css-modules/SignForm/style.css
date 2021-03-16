@@ -110,6 +110,7 @@
   border: none;
   margin: 0;
   outline: none;
+  background-color: white;
 }
 
 .inputField .icon {
@@ -142,7 +143,7 @@
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.sign__btn :hover {
+.sign__btn button:hover {
   background: linear-gradient(135deg, #862f4f, #c21d28, #f66d1a);
 }
 

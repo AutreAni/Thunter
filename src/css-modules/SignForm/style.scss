@@ -74,9 +74,6 @@ $gray:  #666666;
 }
 
 
-// .active {
-//     background:linear-gradient(135deg, $orange, $orange, $red, $red, $purple,$purple, $blue);
-// }
 
 .inputField {
     width:100%;
@@ -97,6 +94,7 @@ $gray:  #666666;
         border:none;
         margin:0;
         outline: none;
+        background-color: white;
     }
     .icon {
         position: absolute;
@@ -122,10 +120,11 @@ $gray:  #666666;
         padding:0.8em 1.5em;
         margin-right:1.5em;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    }
-    :hover {
+    
+    &:hover {
         background:linear-gradient(135deg, $purple,$red, $orange);
     }
+ }
 }
 
 .facebook__login {

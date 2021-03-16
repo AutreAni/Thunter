@@ -1,28 +1,26 @@
-import React, { useState } from 'react';
-import placeholderImg from './profile-placeholder.png';
+import React, { useState, Fragment } from 'react';
 import MainProfile from './MainProfile/index';
-import HeaderProfile from './headerProfile';
+import SectionProfile from './SectionProfile/index';
 
 
 const UserProfile = (props) => {
     const [fullProfile, setFullProfile] = useState();
 
-    const handleFullProfileView = () => {
-        setFullProfile(true);
-    }
+    // const handleFullProfileView = () => {
+    //     setFullProfile(true);
+    // }
     const userData = props.userData;
     console.log(userData)
     return (
-        <div>
-            <HeaderProfile
-                userData={props.userData}
-                setFullProfileView={handleFullProfileView}
-            />
-            {fullProfile ?
+        <Fragment>
+             {fullProfile ?
                 <MainProfile
                     userData={userData}
                 /> : null}
-        </div>
+            <SectionProfile
+                userData = {userData}
+            />
+        </Fragment>
     )
 }
 

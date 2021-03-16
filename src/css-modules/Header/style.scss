@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1em 0;
+    .signOut {
+        color:#666;
+        font-weight: 500;
+        font-size: 1em;
+        height:1.2em;
+        &:hover{
+            color:black;
+        }
+    }
+
+}
