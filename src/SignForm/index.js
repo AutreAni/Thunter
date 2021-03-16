@@ -9,20 +9,24 @@ import "../css-modules/SignForm/style.css";
 function SignForm({ performSubmit }) {
     const [loggingin, setLoggingin] = useState(true);
     const [registering, setRegistering] = useState(false);
-    const [fbLogin, setFbLoogin] = useState(false);
+    // const [fbLogin, setFbLogin] = useState(false);
     const [validUsername, setValidUsername] = useState(true);
     const [validEmail, setValidEmail] = useState(true);
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
     const [processing, setProcessing] = useState(false);
-
+    let fbLogin = false;
 
     const createLoginForm = () => {
         if (!registering && loggingin) return;
         if (registering) setRegistering(false);
         if (!loggingin) setLoggingin(true);
         setWrongDataMsg(null);
+        setValidUsername(true);
+        setValidEmail(true);
+        setValidConfPass(true);
+        setValidPassword(true);
     }
 
     const createSignupForm = () => {
@@ -30,6 +34,10 @@ function SignForm({ performSubmit }) {
         if (!registering) setRegistering(true);
         if (loggingin) setLoggingin(false);
         setWrongDataMsg(null);
+        setValidUsername(true);
+        setValidEmail(true);
+        setValidConfPass(true);
+        setValidPassword(true);
     }
 
     const validateUsername = (text) => {
@@ -92,6 +100,7 @@ function SignForm({ performSubmit }) {
 
 
     const saveUserData = (data, url) => {
+        debugger;
         fetch(url, {
             method: "POST",
             headers: {
@@ -105,13 +114,14 @@ function SignForm({ performSubmit }) {
     }
 
     const filterData = (data, obj) => {
+        debugger;
         let filteredByUsername = data.filter(user =>
             user.username === obj.username);
         let filteredByEmail = data.filter(user =>
             user.email === obj.email)
         let filteredByPassord = data.filter(user =>
             user.password === obj.password);
-        if (loggingin) {
+        if (loggingin && !fbLogin) {
             filteredByUsername.length && filteredByPassord.length ?
                 performSubmit(filteredByUsername[0]) :
                 setWrongDataMsg("Wrong username or password"); setProcessing(false);
@@ -133,11 +143,12 @@ function SignForm({ performSubmit }) {
     }
 
     const checkUserDataExists = (obj, url) => {
+        debugger;
         fetch(url)
             .then(response => response.json())
             .then(data => {
                 if (!data) {
-                    if (loggingin) {
+                    if (loggingin && !fbLogin) {
                         setProcessing(false);
                         setWrongDataMsg("Wrong username or password");
                         return;
@@ -154,22 +165,27 @@ function SignForm({ performSubmit }) {
 
 
     const handleFbClick = () => {
+        debugger;
         if (processing) return;
-        setProcessing(true);
-        setFbLoogin(true);
+        fbLogin = true;
+        console.log("fb",fbLogin, "lg",loggingin, "reg", registering);
     }
 
     const responseFacebook = (response) => {
+        debugger;
+        console.log(fbLogin);
+        if(!fbLogin) return;      
         if (response.status === "unknown") {
-            setFbLoogin(false);
+            fbLogin = false;
             return;
         }
-        setWrongDataMsg(null);
+        // setWrongDataMsg(null);
         checkUserDataExists(response, "http://localhost:3000/fbUsers");
     }
 
 
     const formSubmit = (e) => {
+        debugger;
         if (processing) return;
         setProcessing(true);
         const form = e.target.closest("form");
@@ -179,7 +195,8 @@ function SignForm({ performSubmit }) {
         data["email"] = registering ? form.Email.value : null;
         data["password"] = form.Password.value;
         data["confPass"] = registering ? form.ConfPass.value : null;
-        if (loggingin) {
+       
+        if (loggingin && !fbLogin) {
             if (!data.username.length || !data.password.length) {
                 setProcessing(false);
                 setWrongDataMsg("*All fields are required");
@@ -202,6 +219,8 @@ function SignForm({ performSubmit }) {
         }
         checkUserDataExists(data, "http://localhost:3000/users");
     }
+
+    
 
     return (
         <div className="sign__form">

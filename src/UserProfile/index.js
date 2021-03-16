@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import placeholderImg from './profile-placeholder.png';
+import React, { useState, Fragment } from 'react';
 import MainProfile from './MainProfile/index';
-import HeaderProfile from './headerProfile';
+import HeaderProfile from './HeaderProfile/headerProfile';
 
 
 const UserProfile = (props) => {
@@ -13,7 +12,7 @@ const UserProfile = (props) => {
     const userData = props.userData;
     console.log(userData)
     return (
-        <div>
+        <Fragment>
             <HeaderProfile
                 userData={props.userData}
                 setFullProfileView={handleFullProfileView}
@@ -22,7 +21,7 @@ const UserProfile = (props) => {
                 <MainProfile
                     userData={userData}
                 /> : null}
-        </div>
+        </Fragment>
     )
 }
 

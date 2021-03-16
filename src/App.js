@@ -16,10 +16,6 @@ function App() {
       password,
       picture: picture?.data.url
     })
-    // setUsername(username);
-    // setEmail(email);
-    // setPassword(password);
-    // setAvatar(picture? picture.data.url:null);
   }
 
   const handleSubmit = (data) => {
