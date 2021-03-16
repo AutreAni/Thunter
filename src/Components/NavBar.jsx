@@ -13,16 +13,16 @@ class NavBar extends Component {
         <InputImg />
         <nav>
           <ul className ="ulClass">
-            <li><Example /> 
+            <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input className=" btn btn-secondary" type="file"></input>}/> 
             <FontAwesomeIcon className="marginIcon" icon={faPhotoVideo} />
           
             </li>
             <li>
-            <Example /> 
+            <Example name="Video" title="Select/Edit your video" message="Select video to share"input ={<input className=" btn btn-secondary" type="file"></input>} /> 
               <FontAwesomeIcon className="marginIcon" icon={faStickyNote} />
             </li>
             <li>
-            <Example /> 
+            <Example name="Event" title="Create event" message = "Write here" input ={   <textarea  className=" btn btn-secondary" ></textarea>} /> 
               <FontAwesomeIcon className="marginIcon" icon={faCalendar} />
             </li>
           </ul>

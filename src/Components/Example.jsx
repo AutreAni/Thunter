@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal } from 'react-bootstrap';
 
-function Example() {
+function Example(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,15 +13,16 @@ function Example() {
   return (
     <div className='exampleDiv'>
       <Button variant="secondary" onClick={handleShow}>
-       Notes/photos
+       {props.name}
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Create event</Modal.Title>
+          <Modal.Title>{props.title}</Modal.Title>
           
         </Modal.Header>
-        <Modal.Body>Write here. Add images or a video for visual impact!</Modal.Body>
-        <input className=" btn btn-secondary" type="file"></input>
+        <Modal.Body>{props.message}</Modal.Body>
+        {props.input}
+      
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
