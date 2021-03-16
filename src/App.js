@@ -8,6 +8,9 @@ import Main from './Main/index';
 import UserProfile from "./UserProfile/index";
 import Components from './Components/index'
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
+=======
 >>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
 =======
 >>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
@@ -58,6 +61,9 @@ function App() {
 
 <Components />
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
+=======
 >>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
 =======
 >>>>>>> 2fcdef8ca0f842f86b49edf4f97e879cf751b2a5
