@@ -9,7 +9,6 @@ import "../css-modules/SignForm/style.css";
 function SignForm({ performSubmit }) {
     const [loggingin, setLoggingin] = useState(true);
     const [registering, setRegistering] = useState(false);
-    // const [fbLogin, setFbLogin] = useState(false);
     const [validUsername, setValidUsername] = useState(true);
     const [validEmail, setValidEmail] = useState(true);
     const [validPassword, setValidPassword] = useState(true);
@@ -100,7 +99,6 @@ function SignForm({ performSubmit }) {
 
 
     const saveUserData = (data, url) => {
-        debugger;
         fetch(url, {
             method: "POST",
             headers: {
@@ -114,7 +112,6 @@ function SignForm({ performSubmit }) {
     }
 
     const filterData = (data, obj) => {
-        debugger;
         let filteredByUsername = data.filter(user =>
             user.username === obj.username);
         let filteredByEmail = data.filter(user =>
@@ -143,7 +140,6 @@ function SignForm({ performSubmit }) {
     }
 
     const checkUserDataExists = (obj, url) => {
-        debugger;
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -165,27 +161,23 @@ function SignForm({ performSubmit }) {
 
 
     const handleFbClick = () => {
-        debugger;
         if (processing) return;
         fbLogin = true;
         console.log("fb",fbLogin, "lg",loggingin, "reg", registering);
     }
 
     const responseFacebook = (response) => {
-        debugger;
         console.log(fbLogin);
         if(!fbLogin) return;      
         if (response.status === "unknown") {
             fbLogin = false;
             return;
         }
-        // setWrongDataMsg(null);
         checkUserDataExists(response, "http://localhost:3000/fbUsers");
     }
 
 
     const formSubmit = (e) => {
-        debugger;
         if (processing) return;
         setProcessing(true);
         const form = e.target.closest("form");

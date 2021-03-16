@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
-import UserProfile from "./UserProfile/index";
+import Header from './Header/index';
+import Main from './Main/index';
 
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
-  const [currentUser, setUserData] = useState();
+  const [currentUser, setCurrentUser] = useState();
 
 
   const setData = ({ username, name, email, password, picture }) => {
-    setUserData({
+    setCurrentUser({
       username: username?username :name.split(" ")[0],
       email,
       password,
@@ -23,15 +24,24 @@ function App() {
     setData(data);
   }
 
+  const performSignOut = () => {
+    setLoggedin(false);
+    setCurrentUser(null);
+  }
+
   return (
     <div className="App">
+    { !loggedin ?
+      (<SignForm
+        performSubmit={handleSubmit}
+      />) : <Header 
+      userData = {currentUser}
+      performSignOut = {performSignOut}
+      />}
       {loggedin ? 
-      <UserProfile userData = {currentUser}/>
+      <Main userData = {currentUser}/>
       : null}
-      { !loggedin ?
-        (<SignForm
-          performSubmit={handleSubmit}
-        />) : null}
+     
     </div>
   );
 }
