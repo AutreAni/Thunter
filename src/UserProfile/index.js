@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from 'react';
 import MainProfile from './MainProfile/index';
-import HeaderProfile from './HeaderProfile/headerProfile';
 import SectionProfile from './SectionProfile/index';
 
 
@@ -14,11 +13,7 @@ const UserProfile = (props) => {
     console.log(userData)
     return (
         <Fragment>
-            {/* <HeaderProfile
-                userData={props.userData}
-                setFullProfileView={handleFullProfileView}
-            /> */}
-            {fullProfile ?
+             {fullProfile ?
                 <MainProfile
                     userData={userData}
                 /> : null}

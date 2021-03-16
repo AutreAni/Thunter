@@ -34,14 +34,15 @@ function App() {
     { !loggedin ?
       (<SignForm
         performSubmit={handleSubmit}
-      />) : <Header 
+      />) :null}
+      : <Header 
       userData = {currentUser}
       performSignOut = {performSignOut}
       />}
       {loggedin ? 
       <Main userData = {currentUser}/>
       : null}
-     
+
     </div>
   );
 }
