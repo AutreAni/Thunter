@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
-import HomePage from './HomePage/index';
+import Home from './Home/index';
 import MainProfile from './UserProfile/MainProfile/index';
 
 
@@ -43,7 +43,7 @@ function App() {
   const goToHomePage = () => {
     setCurrentPage({ homePage: true })
   }
-  
+
   return (
     <div className="App">
       { !currentPage.signing ?
@@ -60,7 +60,7 @@ function App() {
         />) : null
       }
       { currentPage.homePage ?
-        (<HomePage 
+        (<Home 
           userData={currentUser}
           goToMainProfile={goToMainProfile}
           goToJobSearch={goToJobSearch}
