@@ -25,6 +25,14 @@ $gray:  #666666;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         width:40vw;
         padding:2em 0;
+        @media only screen and (max-width: 920px){
+            width:55vw;
+
+        }
+        @media only screen and (max-width: 650px){
+            width:80vw;
+
+        }
     }
     .inner__wrapper {
         width:80%;
@@ -46,19 +54,25 @@ $gray:  #666666;
         background: white;
         background-clip: padding-box;
         border-radius: 2.5em;
-        .button {
+          .button {
             @extend %flex-box;
             border:none;
             margin:0;
             background-color: white;
             outline: none;
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: $gray;
         }
         :hover{
             color:black;
         }
     }
+    @media only screen and (max-width: 650px){
+        font-size: 90%;
+     }
+    @media only screen and (max-width: 350px){
+           font-size: 70%;
+        }
 }
 .active{
    &:before {
@@ -116,7 +130,7 @@ $gray:  #666666;
         border:none;
         outline: none;
         border-radius: 2.5em;
-        font-size: 1.2em;
+        font-size: 1.1em;
         padding:0.8em 1.5em;
         margin-right:1.5em;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -133,20 +147,41 @@ $gray:  #666666;
         width:100%;
         @extend %flex-box;
     }
-    span {
+    .or {
         width:45%;
         border-top:1px solid $gray;
     }
-    .or{
+    .text{
         width:10%;
         border:none;
     }
-    button {
+    .fbButton {
+        width:fit-content;
+        margin:0 auto;
+        position: relative;
         margin-top:1em;
+        .faFacebook {
+            position: absolute;
+            left:1em;
+            top:50%;
+            transform: translateY(-50%);
+            color:white;
+            font-size: 1.2em;
+        }
+    button {
         border-radius:2.5em !important;
+        font-size: 1em !important;
+        padding: 1em 1.4em!important;
+        padding-left:2.8em !important;
+        font-weight: 300 !important;
         text-transform: capitalize;
         outline: none;
+        &:hover {
+           background-color: #405ba5 !important;
+         }
     }
+    
+}
 }
 
 .errorMsg {

@@ -6,26 +6,22 @@ import InputImg from './InputImg';
 import Example from './Example'
 
 class NavBar extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render() { 
     return ( 
       <div className="navDiv">
         <InputImg userData = {this.props.userData}/>
         <nav>
           <ul className ="ulClass">
-            <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input className=" btn btn-secondary" type="file"></input>}/> 
+            <li><Example /> 
             <FontAwesomeIcon className="marginIcon" icon={faPhotoVideo} />
           
             </li>
             <li>
-            <Example name="Video" title="Select/Edit your video" message="Select video to share"input ={<input className=" btn btn-secondary" type="file"></input>} /> 
+            <Example /> 
               <FontAwesomeIcon className="marginIcon" icon={faStickyNote} />
             </li>
             <li>
-            <Example name="Event" title="Create event" message = "Write here" input ={   <textarea  className=" btn btn-secondary" ></textarea>} /> 
+            <Example /> 
               <FontAwesomeIcon className="marginIcon" icon={faCalendar} />
             </li>
           </ul>

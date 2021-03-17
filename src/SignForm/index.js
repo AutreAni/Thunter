@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import InputField from './InputField';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../css-modules/SignForm/style.css";
 
 
@@ -283,10 +285,13 @@ function SignForm({ performSubmit }) {
                         {loggingin ? (
                             <div className="facebook__login">
                                 <div className="or__wrapper">
-                                    <span></span>
-                                    <span className="or">or</span>
-                                    <span></span>
+                                    <span className="or"></span>
+                                    <span className="or text">or</span>
+                                    <span className="or"></span>
                                 </div>
+                                <div className = "fbButton">
+                                <FontAwesomeIcon icon={faFacebook} 
+                                className ="faFacebook" />
                                 <FacebookLogin
                                     appId="455003679284935"
                                     autoLoad={false}
@@ -294,6 +299,7 @@ function SignForm({ performSubmit }) {
                                     onClick={handleFbClick}
                                     callback={responseFacebook}
                                 />
+                                </div>
                             </div>) : null}
                     </form>
                 </div>
