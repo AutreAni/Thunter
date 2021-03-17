@@ -16,8 +16,9 @@ function SignForm({ performSubmit }) {
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
-    const [processing, setProcessing] = useState(false);
+    // const [processing, setProcessing] = useState(false);
     let fbLogin = false;
+    let processing = false;
 
     const createLoginForm = () => {
         if (!registering && loggingin) return;
@@ -131,7 +132,7 @@ function SignForm({ performSubmit }) {
                 if (filteredByUsername.length) setWrongDataMsg("Username already exists");
                 else if (filteredByEmail.length) setWrongDataMsg("An account with this email already exists");
                 else { setWrongDataMsg("Password is already occupied") }
-                setProcessing(false);
+                processing = false;
             } else {
                 setWrongDataMsg(null);
                 saveUserData(obj, " http://localhost:3000/users")
@@ -147,7 +148,7 @@ function SignForm({ performSubmit }) {
             .then(data => {
                 if (!data) {
                     if (loggingin && !fbLogin) {
-                        setProcessing(false);
+                        processing = false;
                         setWrongDataMsg("Wrong username or password");
                         return;
                     } else {
@@ -179,7 +180,7 @@ function SignForm({ performSubmit }) {
 
     const formSubmit = (e) => {
         if (processing) return;
-        setProcessing(true);
+        processing = true;
         const form = e.target.closest("form");
         e.preventDefault();
         let data = {};
@@ -190,22 +191,22 @@ function SignForm({ performSubmit }) {
        
         if (loggingin && !fbLogin) {
             if (!data.username.length || !data.password.length) {
-                setProcessing(false);
+                processing = false;
                 setWrongDataMsg("*All fields are required");
                 return;
             }
         } else if (registering) {
             if (!data.username.length || !data.password.length
                 || !data.email.length || !data.confPass.length) {
-                setProcessing(false);
-                setWrongDataMsg("*All fields are required");
+                    processing = false;
+                    setWrongDataMsg("*All fields are required");
                 return;
             } else if (!validUsername
                 || !validEmail
                 || !validPassword
                 || !validConfPass) {
-                setProcessing(false);
-                return;
+                    processing = false;
+                    return;
             }
 
         }

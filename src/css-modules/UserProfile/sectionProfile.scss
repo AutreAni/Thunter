@@ -1,7 +1,9 @@
 $orange : rgba(246,109,26,0.3);
 $red: rgba(194,29,40,0.5);
-$purple : rgba(134,47,79,0.3);
-$blue: rgba(49,145,151,0.7);
+$purple05 : rgba(134,47,79,0.5);
+$purple07 :rgba(134,47,79,0.7);
+$blue07: rgba(49,145,151,0.7);
+$blue04: rgba(49,145,151,0.4);
 
 %flex-box {
     display: flex;
@@ -23,7 +25,10 @@ $blue: rgba(49,145,151,0.7);
         height:14em;
     }
     &:after {
-        background: linear-gradient(45deg, $orange,  $red, $purple, $blue);
+        background: linear-gradient(45deg, $purple07,$purple05, $blue04, $blue07);
+
+        // linear-gradient(45deg, $blue05, $blue03, $blue);
+        //  linear-gradient(45deg, $orange,  $red, $purple, $blue);
         position: absolute;
         border-radius:1em 1em 0 0;
         top:0;

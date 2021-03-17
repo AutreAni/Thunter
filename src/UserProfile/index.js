@@ -1,27 +1,27 @@
-import React, { useState, Fragment } from 'react';
-import MainProfile from './MainProfile/index';
-import SectionProfile from './SectionProfile/index';
+// import React, { useState, Fragment } from 'react';
+// import MainProfile from './MainProfile/index';
+// import SectionProfile from './SectionProfile/index';
 
 
-const UserProfile = (props) => {
-    const [fullProfile, setFullProfile] = useState();
+// const UserProfile = (props) => {
+//     const [fullProfile, setFullProfile] = useState();
 
-    // const handleFullProfileView = () => {
-    //     setFullProfile(true);
-    // }
-    const userData = props.userData;
-    console.log(userData)
-    return (
-        <Fragment>
-             {fullProfile ?
-                <MainProfile
-                    userData={userData}
-                /> : null}
-            <SectionProfile
-                userData = {userData}
-            />
-        </Fragment>
-    )
-}
+//     // const handleFullProfileView = () => {
+//     //     setFullProfile(true);
+//     // }
+//     const userData = props.userData;
+//     console.log(userData)
+//     return (
+//         <Fragment>
+//              {fullProfile ?
+//                 <MainProfile
+//                     userData={userData}
+//                 /> : null}
+//             <SectionProfile
+//                 userData = {userData}
+//             />
+//         </Fragment>
+//     )
+// }
 
-export default UserProfile;
+// export default UserProfile;

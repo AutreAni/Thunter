@@ -6,7 +6,8 @@ import '../../css-modules/UserProfile/sectionProfile.css';
 const SectionProfile = (props) => {
     return (
         <Fragment>
-            { props.userData ? <div className = "sectionProfile">
+            { props.userData ? <div className = "sectionProfile"
+                    onClick = {props.goToMainProfile}>
                     <Avatar className = "section__avatar"
                     userData = {props.userData}/>
                     <Username userData = {props.userData}/>

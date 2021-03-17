@@ -11,14 +11,16 @@
   padding: 1em 0;
 }
 
-.header .signOut {
+.header .signOut,
+.header .home {
   color: #666;
   font-weight: 500;
   font-size: 1em;
   height: 1.2em;
 }
 
-.header .signOut:hover {
+.header .signOut:hover,
+.header .home:hover {
   color: black;
 }
 /*# sourceMappingURL=style.css.map */

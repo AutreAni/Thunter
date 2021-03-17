@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Background from './Background/index';
+import Avatar from '../Avatar/index';
 
 const MainProfile = (props) => {
     const userData = props.userData;
@@ -6,7 +8,8 @@ const MainProfile = (props) => {
         <div>
             {userData ?
                 <div>
-
+                <Background userData = {userData}/>
+                <Avatar userData = {userData}/>
                 </div>
                 : null}
 

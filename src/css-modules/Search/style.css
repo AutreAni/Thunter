@@ -3,7 +3,6 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
-  width: 20vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -20,13 +19,13 @@
 }
 
 .search__wrapper input {
-  background-color: rgba(134, 47, 79, 0.1);
+  background-color: rgba(49, 145, 151, 0.1);
   outline: none;
   border: none;
   border-radius: 0.5em;
   width: 100%;
   padding: 0 3.2em;
   font-size: 1em;
-  height: 3em;
+  height: 2.5em;
 }
 /*# sourceMappingURL=style.css.map */

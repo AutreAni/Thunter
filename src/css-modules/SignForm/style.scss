@@ -16,7 +16,6 @@ $gray:  #666666;
     align-items: center;
 }
 
-
 .sign__form{ 
     width:100vw;
     height:100vh;
@@ -30,7 +29,7 @@ $gray:  #666666;
 
         }
         @media only screen and (max-width: 650px){
-            width:80vw;
+            width:90vw;
 
         }
     }
@@ -71,7 +70,7 @@ $gray:  #666666;
         font-size: 90%;
      }
     @media only screen and (max-width: 350px){
-           font-size: 70%;
+        font-size: 70%;
         }
 }
 .active{

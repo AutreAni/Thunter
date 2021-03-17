@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
-import Main from './Main/index';
+import HomePage from './HomePage/index';
+import MainProfile from './UserProfile/MainProfile/index';
 
 
 
 function App() {
-  const [loggedin, setLoggedin] = useState(false);
   const [currentUser, setCurrentUser] = useState();
+  const [currentPage, setCurrentPage] = useState({ signing: true })
 
 
   const setData = ({ username, name, email, password, picture }) => {
@@ -21,27 +22,53 @@ function App() {
   }
 
   const handleSubmit = (data) => {
-    setLoggedin(true);
     setData(data);
+    setCurrentPage({ homePage: true });
   }
 
   const performSignOut = () => {
-    setLoggedin(false);
     setCurrentUser(null);
+    setCurrentPage({ signing: true })
   }
 
+  const goToMainProfile = () => {
+    console.log("mainProfile");
+    setCurrentPage({ mainProfilePage: true });
+  }
+
+  const goToJobSearch = () => {
+    setCurrentPage({ jobSearchPage: true })
+  }
+
+  const goToHomePage = () => {
+    setCurrentPage({ homePage: true })
+  }
+  
   return (
     <div className="App">
-      { !loggedin ?
+      { !currentPage.signing ?
+        (<Header
+          userData={currentUser}
+          performSignOut={performSignOut}
+          goToMainProfile={goToMainProfile}
+          goToHomePage = {goToHomePage}
+        />) : null
+      }
+      { currentPage.signing ?
         (<SignForm
           performSubmit={handleSubmit}
-        />) : <Header
-        userData={currentUser}
-        performSignOut={performSignOut}
-      />}
-      {loggedin ?
-        <Main userData={currentUser} />
-        : null}
+        />) : null
+      }
+      { currentPage.homePage ?
+        (<HomePage 
+          userData={currentUser}
+          goToMainProfile={goToMainProfile}
+          goToJobSearch={goToJobSearch}
+        />) : null}
+      { currentPage.mainProfilePage ?
+        (<MainProfile
+           userData = {currentUser}
+        /> ) : null}
     </div>
   );
 }

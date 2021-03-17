@@ -1,15 +1,16 @@
 import React from 'react';
 import SectionProfile from '../UserProfile/SectionProfile/index';
 import Components from '../Components/index';
-import '../css-modules/Main/main.css';
+import '../css-modules/HomePage/homepage.css';
 
 
-const Main = (props) => {
+const HomePage = (props) => {
     return (
         <div className = "main">
             <div className = "container main__wrapper">
             <SectionProfile
                 userData = {props.userData}
+                goToMainProfile = {props.goToMainProfile}
             />
             <Components userData = {props.userData}
             />
@@ -19,4 +20,4 @@ const Main = (props) => {
     )
 }
 
-export default Main
+export default HomePage;
