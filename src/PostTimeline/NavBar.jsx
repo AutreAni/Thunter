@@ -9,17 +9,11 @@ class NavBar extends Component {
   constructor(props){
     super(props);
   }
-  profileImage = {
-    width: "45px",
-    height: "45px",
-    borderRadius: "50%",
-    
-    marginRight:" 5px"
-  }
+  
   render() { 
     return ( 
       <div className="navDiv">
-        <InputImg userData = {this.props.userData} style={this.profileImage}/>
+        <InputImg userData = {this.props.userData} />
         <nav className="navContainer">
           <ul className ="ulClass">
             <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input className=" btn btn-secondary ml-3" type="file"></input>}/> 

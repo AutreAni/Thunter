@@ -1,7 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-          /* box-sizing: border-box; */
 }
 
 .sign__form, .sign__form .buttons__wrapper, .sign__form .btn__wrapper .button, .sign__btn, .facebook__login .or__wrapper {
@@ -30,6 +29,18 @@
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 40vw;
   padding: 2em 0;
+}
+
+@media only screen and (max-width: 920px) {
+  .sign__form .main__wrapper {
+    width: 55vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .sign__form .main__wrapper {
+    width: 90vw;
+  }
 }
 
 .sign__form .inner__wrapper {
@@ -64,12 +75,24 @@
   margin: 0;
   background-color: white;
   outline: none;
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #666666;
 }
 
 .sign__form .btn__wrapper :hover {
   color: black;
+}
+
+@media only screen and (max-width: 650px) {
+  .sign__form {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .sign__form {
+    font-size: 70%;
+  }
 }
 
 .active:before {
@@ -136,7 +159,7 @@
   border: none;
   outline: none;
   border-radius: 2.5em;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 0.8em 1.5em;
   margin-right: 1.5em;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -155,21 +178,47 @@
   width: 100%;
 }
 
-.facebook__login span {
+.facebook__login .or {
   width: 45%;
   border-top: 1px solid #666666;
 }
 
-.facebook__login .or {
+.facebook__login .text {
   width: 10%;
   border: none;
 }
 
-.facebook__login button {
+.facebook__login .fbButton {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
   margin-top: 1em;
+}
+
+.facebook__login .fbButton .faFacebook {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: white;
+  font-size: 1.2em;
+}
+
+.facebook__login .fbButton button {
   border-radius: 2.5em !important;
+  font-size: 1em !important;
+  padding: 1em 1.4em !important;
+  padding-left: 2.8em !important;
+  font-weight: 300 !important;
   text-transform: capitalize;
   outline: none;
+}
+
+.facebook__login .fbButton button:hover {
+  background-color: #405ba5 !important;
 }
 
 .errorMsg {

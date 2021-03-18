@@ -4,13 +4,13 @@ import Username from '../Username/index';
 import '../../css-modules/UserProfile/header.css';
 
 const HeaderProfile = (props) => {
-    const goToProfile = () => {
-        props.setFullProfileView(true);
-    }
+   
     const userData = props.userData;
     return (
         <Fragment>
-            { userData ? <div className = "headerProfile" onClick = {goToProfile}>
+            { userData ? <div className = "headerProfile"
+             onClick = {props.goToMainProfile}
+             >
                     <Avatar className = "header__avatar"
                     userData = {userData}/>
                     <Username userData = {userData}/>

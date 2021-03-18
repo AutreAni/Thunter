@@ -35,7 +35,7 @@
 }
 
 .sectionProfile:after {
-  background: linear-gradient(45deg, rgba(246, 109, 26, 0.3), rgba(194, 29, 40, 0.5), rgba(134, 47, 79, 0.3), rgba(49, 145, 151, 0.7));
+  background: linear-gradient(45deg, rgba(134, 47, 79, 0.7), rgba(134, 47, 79, 0.5), rgba(49, 145, 151, 0.4), rgba(49, 145, 151, 0.7));
   position: absolute;
   border-radius: 1em 1em 0 0;
   top: 0;

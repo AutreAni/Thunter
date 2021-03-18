@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import InputField from './InputField';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../css-modules/SignForm/style.css";
 
 
@@ -14,8 +16,9 @@ function SignForm({ performSubmit }) {
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
-    const [processing, setProcessing] = useState(false);
+    // const [processing, setProcessing] = useState(false);
     let fbLogin = false;
+    let processing = false;
 
     const createLoginForm = () => {
         if (!registering && loggingin) return;
@@ -129,7 +132,7 @@ function SignForm({ performSubmit }) {
                 if (filteredByUsername.length) setWrongDataMsg("Username already exists");
                 else if (filteredByEmail.length) setWrongDataMsg("An account with this email already exists");
                 else { setWrongDataMsg("Password is already occupied") }
-                setProcessing(false);
+                processing = false;
             } else {
                 setWrongDataMsg(null);
                 saveUserData(obj, " http://localhost:3000/users")
@@ -145,7 +148,7 @@ function SignForm({ performSubmit }) {
             .then(data => {
                 if (!data) {
                     if (loggingin && !fbLogin) {
-                        setProcessing(false);
+                        processing = false;
                         setWrongDataMsg("Wrong username or password");
                         return;
                     } else {
@@ -177,7 +180,7 @@ function SignForm({ performSubmit }) {
 
     const formSubmit = (e) => {
         if (processing) return;
-        setProcessing(true);
+        processing = true;
         const form = e.target.closest("form");
         e.preventDefault();
         let data = {};
@@ -188,22 +191,22 @@ function SignForm({ performSubmit }) {
        
         if (loggingin && !fbLogin) {
             if (!data.username.length || !data.password.length) {
-                setProcessing(false);
+                processing = false;
                 setWrongDataMsg("*All fields are required");
                 return;
             }
         } else if (registering) {
             if (!data.username.length || !data.password.length
                 || !data.email.length || !data.confPass.length) {
-                setProcessing(false);
-                setWrongDataMsg("*All fields are required");
+                    processing = false;
+                    setWrongDataMsg("*All fields are required");
                 return;
             } else if (!validUsername
                 || !validEmail
                 || !validPassword
                 || !validConfPass) {
-                setProcessing(false);
-                return;
+                    processing = false;
+                    return;
             }
 
         }
@@ -283,10 +286,13 @@ function SignForm({ performSubmit }) {
                         {loggingin ? (
                             <div className="facebook__login">
                                 <div className="or__wrapper">
-                                    <span></span>
-                                    <span className="or">or</span>
-                                    <span></span>
+                                    <span className="or"></span>
+                                    <span className="or text">or</span>
+                                    <span className="or"></span>
                                 </div>
+                                <div className = "fbButton">
+                                <FontAwesomeIcon icon={faFacebook} 
+                                className ="faFacebook" />
                                 <FacebookLogin
                                     appId="455003679284935"
                                     autoLoad={false}
@@ -294,6 +300,7 @@ function SignForm({ performSubmit }) {
                                     onClick={handleFbClick}
                                     callback={responseFacebook}
                                 />
+                                </div>
                             </div>) : null}
                     </form>
                 </div>

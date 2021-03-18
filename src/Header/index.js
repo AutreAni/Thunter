@@ -11,8 +11,17 @@ const Header = (props) => {
         <div className = "container">
         <div className = "header">
             <SearchField/>
-            <HeaderProfile userData = {props.userData}/>
-            <span className = "signOut" onClick = {handleSignOut}>Sign Out</span>
+            <span className = "home"
+            onClick = {props.goToHomePage}
+            >Home
+            </span>
+            <HeaderProfile 
+            userData = {props.userData}
+            goToMainProfile = {props.goToMainProfile}
+            />
+            <span className = "signOut" 
+            onClick = {handleSignOut}
+            >Sign Out</span>
         </div>
         </div>
     )

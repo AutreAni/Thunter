@@ -1,12 +1,18 @@
 .App {
   text-align: center;
   width:100vw;
-  height:100vh;
 }
 
 .container {
   width:80vw;
   margin:0 auto;
+}
+@media only screen and (max-width: 650px){
+  .container {
+    width:95vw;
+    font-size: 70%;
+  }
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
