@@ -32,7 +32,6 @@ function App() {
   }
 
   const goToMainProfile = () => {
-    console.log("mainProfile");
     setCurrentPage({ mainProfilePage: true });
   }
 
