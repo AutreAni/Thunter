@@ -1,6 +1,8 @@
 import React from 'react';
 import SectionProfile from '../UserProfile/SectionProfile/index';
-import Components from '../Components/index';
+import Components from '../PostTimeline/index';
+// import '../css-modules/Main/main.css';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from '../store/store';
 import HomePage from '../JobPage/HomePage';
