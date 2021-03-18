@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhotoVideo, faStickyNote,faCalendar,faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import InputImg from './InputImg';
 import Example from './Example'
+import LikeButtons from './LikesButtons';
 
 class NavBar extends Component {
   constructor(props){
@@ -14,6 +15,7 @@ class NavBar extends Component {
     return ( 
       <div className="navDiv">
         <InputImg userData = {this.props.userData} />
+        <LikeButtons />
         <nav className="navContainer">
           <ul className ="ulClass">
             <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input className=" btn btn-secondary ml-3" type="file"></input>}/> 
