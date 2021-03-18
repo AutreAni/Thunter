@@ -12,7 +12,7 @@ function Example(props) {
 
   return (
     <div className='exampleDiv'>
-      <Button variant="secondary" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow} className="btn-color-c">
        {props.name}
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -20,8 +20,8 @@ function Example(props) {
           <Modal.Title>{props.title}</Modal.Title>
           
         </Modal.Header>
-        <Modal.Body>{props.message}</Modal.Body>
-        {props.input}
+        <Modal.Body >{props.message}</Modal.Body>
+        {props.input }
       
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
