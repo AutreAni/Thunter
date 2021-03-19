@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Axios from 'axios';
 import Button from '../../../Button/index';
-// import { Image } from 'cloudinary-react';
 
 const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addCamera }) => {
     const [imageSelected, setImageSelected] = useState();
@@ -13,6 +12,7 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
 
     const handleClick = (publicId) => {
         removeUploadField();
+        addCamera();
         const url = `https://res.cloudinary.com/dslaqvh3p/image/upload/v1616132630/${publicId}.${fileExtention}`;
         fetch(`http://localhost:3000/users?username=${userData.username}`)
             .then(response => response.json())
@@ -52,7 +52,6 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
             return;
         }
         setWrongExtention(false);
-        console.log(wrongExtention);
         setFileExtention(extention);
     }
 
