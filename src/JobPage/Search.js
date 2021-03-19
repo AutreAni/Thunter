@@ -31,27 +31,27 @@ const Search = () => {
         <Row>
           <Col>
             <Form.Group controlId="description">
-              <input
+              <input className = "input-c"
                 name="description"
                 value={state.description || ''}
-                placeholder="Enter search term"
+                 placeholder="Enter search term"
                 onChange={handleInputChange}
               />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group controlId="location">
-              <input
+              <input className = "input-c"
                 type="text"
                 name="location"
                 value={state.location || ''}
-                placeholder="Enter location"
+                 placeholder="Enter location"
                 onChange={handleInputChange}
               />
             </Form.Group>
           </Col>
           <Col>
-            <Button  type="submit" className="btn-search">
+            <Button  type="submit" className="btn-search-c">
               Search
             </Button>
           </Col>
