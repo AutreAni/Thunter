@@ -8,6 +8,7 @@ import Header from './Header';
 import Search from './Search';
 import Results from './Results';
 import JobDetails from './JobDetails';
+import '../css/styles.css';
 
 
 const HomePage = (props) => {

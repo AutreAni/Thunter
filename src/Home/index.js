@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from '../store/store';
 import HomePage from '../JobPage/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import '../css/styles.css';
 
 
 const Home = props => {
@@ -20,9 +21,11 @@ const Home = props => {
             />
             <Components userData = {props.userData}
             />
+            <div className = "jobSection">
             <Provider store={store}>
               <HomePage />
             </Provider>
+            </div>
             </div>
                   
         </div>
