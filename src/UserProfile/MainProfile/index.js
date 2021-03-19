@@ -3,19 +3,21 @@ import Background from './Background/index';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
 import '../../css-modules/MainProfile/style.css';
-import UploadImg from './UploadImg/index';
 
-const MainProfile = (props) => {
-    const userData = props.userData;
+const MainProfile = ({userData, updatePicture}) => {
+
     return (
         <div>
             {userData ?
                 <div className = "container">
                 <Background userData = {userData}
+                updatePicture = {updatePicture}
                 />
                 <div className = "profile__wrapper">
                 <Avatar className = "mainProfile"
-                userData = {userData}/>
+                userData = {userData}
+                updatePicture = {updatePicture}
+                />
                 <Username userData = {userData}/>
                 </div>
                 </div>

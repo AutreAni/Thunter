@@ -44,11 +44,12 @@ function App() {
     setCurrentPage({ homePage: true })
   }
 
-  const updatePicture = (url) => {
+  const updatePicture = (field, url) => {
     setCurrentUser({
       ...currentUser,
-      backgroundImg: url
-    })
+      [field]: url
+    });
+    // console.log("fromApp.js",currentUser)
   }
 
   return (

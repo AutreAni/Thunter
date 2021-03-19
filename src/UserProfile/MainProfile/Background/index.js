@@ -2,25 +2,35 @@ import React, { useState } from 'react';
 import AddPicture from '../AddPicture/index'
 import UploadImg from '../UploadImg/index';
 
-const Background = (props) => {
+const Background = ({userData, updatePicture}) => {
     const [uploadField, setUploadField] = useState();
+    const [camera, setCamera] = useState(true);
+
     const createUplaodField = () => {
-        console.log("Clicked")
-        setUploadField(true)
+        setUploadField(true);
+        setCamera(false);
     }
 
     const removeUploadField = () =>{
         setUploadField(false);
     }
 
+    const addCamera = () => {
+        setCamera(true);
+    }
+
+ 
     return (
         <div className="background">
-            {props.userData?.backgroundImg ? <img className="bg__img" alt="bg" src={props.userData.backgroundImg} /> : null}
-            <AddPicture handleClick={createUplaodField} />
+            {userData.backgroundImg ? <img className="bg__img" alt="bg" src={userData.backgroundImg} /> : null}
+           {camera ? <AddPicture handleClick={createUplaodField} /> : null} 
             {uploadField ?
                 <UploadImg
-                    userData={props.userData}
+                    updatePicture = {updatePicture}
+                    fieldName = "backgroundImg"
+                    userData={userData}
                     removeUploadField = {removeUploadField}
+                    addCamera = {addCamera}
                 /> : null}
         </div>
     )
