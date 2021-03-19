@@ -12,12 +12,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState({ signing: true })
 
 
-  const setData = ({ username, name, email, password, picture }) => {
+  const setData = ({ username, name, email, password, picture, backgroundImg }) => {
     setCurrentUser({
       username: username ? username : name.split(" ")[0],
       email,
       password,
-      picture: picture?.data.url
+      picture: picture?.data.url,
+      backgroundImg: backgroundImg?backgroundImg : null
     })
   }
 
@@ -41,6 +42,13 @@ function App() {
 
   const goToHomePage = () => {
     setCurrentPage({ homePage: true })
+  }
+
+  const updatePicture = (url) => {
+    setCurrentUser({
+      ...currentUser,
+      backgroundImg: url
+    })
   }
 
   return (
@@ -67,6 +75,7 @@ function App() {
       { currentPage.mainProfilePage ?
         (<MainProfile
            userData = {currentUser}
+           updatePicture = {updatePicture}
         /> ) : null}
     </div>
   );

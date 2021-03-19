@@ -16,7 +16,7 @@ function SignForm({ performSubmit }) {
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
-    // const [processing, setProcessing] = useState(false);
+
     let fbLogin = false;
     let processing = false;
 

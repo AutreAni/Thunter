@@ -3,6 +3,7 @@ import Background from './Background/index';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
 import '../../css-modules/MainProfile/style.css';
+import UploadImg from './UploadImg/index';
 
 const MainProfile = (props) => {
     const userData = props.userData;
@@ -10,7 +11,8 @@ const MainProfile = (props) => {
         <div>
             {userData ?
                 <div className = "container">
-                <Background userData = {userData}/>
+                <Background userData = {userData}
+                />
                 <div className = "profile__wrapper">
                 <Avatar className = "mainProfile"
                 userData = {userData}/>
@@ -18,7 +20,6 @@ const MainProfile = (props) => {
                 </div>
                 </div>
                 : null}
-
         </div>
     )
 }
