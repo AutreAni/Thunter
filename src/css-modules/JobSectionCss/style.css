@@ -1,0 +1,250 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.jobSection {
+ width: 25%;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-size: 0.8em;
+ letter-spacing: 1px;
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+  .title {
+    font-weight: 200;
+    font-size: 3em;
+    color: rgb(97, 96, 96);
+    margin-left: 40px;
+  }
+
+
+.search-section {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.filters {
+  display: flex;
+  width: 70%;
+}
+  .filter-btn {
+    margin: 2rem;
+    margin-left: 0;
+    padding: 1rem;
+    display: block;
+    border: 1px solid #888;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  .active {
+    background: #0069d9;
+    color: #fff;
+  }
+  
+    label {
+      margin-left: 1em;
+    }
+
+
+
+.search-results {
+  width: 90%;
+  margin: 0 auto;
+}
+  .job-item {
+    display: flex;
+    padding: 1rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    margin: 2rem;
+    cursor: pointer;
+  }
+    .job-info.job-title {
+       
+        margin-bottom: 2rem;
+      
+    }
+
+    .company-logo img {
+        max-width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+      }
+
+    .job-info {
+      flex: 1;
+    }
+
+    .post-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+  
+
+.job-details {
+  width: 90%;
+  margin: 50px auto;
+}
+  /* .back-link {
+    a:link,
+    a:visited {
+      display: block;
+      margin-bottom: 1rem;
+    } */
+    a:hover,
+    a:active {
+      color: #fff;
+      text-decoration: none;
+    }
+  
+
+  .main-section {
+    display: flex;
+  }
+    .left-section {
+      flex: 2;
+      margin: 0;
+      margin-right: 2rem;
+    }
+
+    .right-section {
+      flex: 1;
+      margin: 5rem 0 0 0;
+
+    }
+      .company-details .company-logo {
+          max-width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+        }
+        .company-name {
+          margin-top: 1rem;
+        }
+        .company-url {
+          word-break: break-all;
+        }
+      
+
+      .how-to-apply a{
+          display: inline-block;
+          word-break: break-all;
+        }
+      
+
+.loading {
+  font-size: 2em;
+  text-align: center;
+  font-size: 2em;
+  color: rgb(51, 21, 21);
+}
+
+#loader {
+  width: 100%;
+  left: 0;
+  bottom: 30px;
+  z-index: 99999;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+  .message {
+    position: relative;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-10%);
+    color: rgb(63, 35, 35);
+  }
+
+
+.loader-open {
+  overflow: hidden;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.errorMsg {
+  max-width: 70%;
+  margin: 0 auto;
+  color: #f21e08;
+  padding: 1rem;
+  letter-spacing: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+.full-time-checkbox {
+    top: 20px;
+}
+
+  .search-section .btn-search {
+    width: 100%;
+  }
+
+  .job-item {
+    flex-direction: column;
+  }
+
+  .search-results .job-item .post-info {
+    display: inline;
+    margin: 2rem 0 0 2rem;
+  }
+
+  .main-section {
+    flex-direction: column;
+  }
+
+  .job-info .job-title {
+    margin-top: 1em;
+  }
+
+.input-c{
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    width: 13rem;
+    line-height: 2.5;
+    border: 1px solid rgb(175, 173, 173);
+    border-radius: 0.5em;
+}
+.input-c:focus {
+    border-color: #c45714;
+  }
+  .input-c:hover {
+    border-color: #c45714;
+  }
+  .btn-search-c {
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    width: 13rem;
+    line-height: 1.5;
+    border: none;
+    border-radius: 0.5em;
+    background: linear-gradient(#f66d1a, #c21d28, #862f4f);
+    color: white;
+    /* border: none;
+    outline: none;
+    border-radius: 2.5em;
+    font-size: 1.2em;
+    padding: 0.8em 1.6em;
+    left: 30px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); */
+  }
+  
