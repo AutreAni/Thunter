@@ -1,7 +1,6 @@
 import React from 'react';
 import Background from './Background/index';
-import Avatar from '../Avatar/index';
-import Username from '../Username/index';
+import ProfileDetails from './ProfileDetails/index'
 import '../../css-modules/MainProfile/style.css';
 
 const MainProfile = ({userData, updatePicture}) => {
@@ -13,13 +12,8 @@ const MainProfile = ({userData, updatePicture}) => {
                 <Background userData = {userData}
                 updatePicture = {updatePicture}
                 />
-                <div className = "profile__wrapper">
-                <Avatar className = "mainProfile"
-                userData = {userData}
-                updatePicture = {updatePicture}
-                />
-                <Username userData = {userData}/>
-                </div>
+                <ProfileDetails  userData = {userData}
+                updatePicture = {updatePicture}/>
                 </div>
                 : null}
         </div>
