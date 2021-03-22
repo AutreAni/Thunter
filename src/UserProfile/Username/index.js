@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import '../../css-modules/UserProfile/Username/style.css'
 
-const Username = (props) => {
+const Username = ({userData, goToMainProfile}) => {
     return (
         <span 
         className = "username"
+        onClick = {goToMainProfile}
         >
-        {props.userData.username}
+        {userData.username}
         </span>
     )
 }

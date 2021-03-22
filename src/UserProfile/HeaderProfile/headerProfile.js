@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
-import '../../css-modules/UserProfile/header.css';
+import '../../css-modules/UserProfile/HeaderProfile/header.css';
 
 const HeaderProfile = (props) => {
    

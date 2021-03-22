@@ -1,0 +1,9 @@
+.username {
+    color:#666;
+    font-size: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        color:black;
+    }
+}

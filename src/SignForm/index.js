@@ -125,8 +125,6 @@ function SignForm({ performSubmit }) {
             filteredByUsername.length && filteredByPassord.length ?
                 performSubmit(filteredByUsername[0]) :
                 setWrongDataMsg("Wrong username or password");
-
-
         } else if (registering) {
             if (filteredByUsername.length || filteredByEmail.length || filteredByPassord.length) {
                 if (filteredByUsername.length) setWrongDataMsg("Username already exists");
@@ -179,6 +177,7 @@ function SignForm({ performSubmit }) {
 
 
     const formSubmit = (e) => {
+        debugger;
         if (processing) return;
         processing = true;
         const form = e.target.closest("form");

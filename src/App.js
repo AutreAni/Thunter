@@ -17,12 +17,14 @@ function App() {
       username: username ? username : name.split(" ")[0],
       email,
       password,
-      picture: picture?.data.url,
-      backgroundImg: backgroundImg?backgroundImg : null
+      picture: picture?.data?.url || picture,
+      backgroundImg: backgroundImg? backgroundImg : null,
     })
   }
 
   const handleSubmit = (data) => {
+    debugger;
+    console.log(data)
     setData(data);
     setCurrentPage({ homePage: true });
   }
@@ -49,7 +51,6 @@ function App() {
       ...currentUser,
       [field]: url
     });
-    // console.log("fromApp.js",currentUser)
   }
 
   return (

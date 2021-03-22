@@ -1,6 +1,6 @@
 import React from 'react';
 import placeholderImg from './profile-placeholder.png';
-import '../../css-modules/UserProfile/avatar.css';
+import '../../css-modules/UserProfile/Avatar/avatar.css';
 
 const Avatar = (props) => {
     return (

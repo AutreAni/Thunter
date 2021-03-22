@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Axios from 'axios';
 import Button from '../../../Button/index';
+import '../../../css-modules/UserProfile/UploadImg/style.css';
 
 const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addCamera }) => {
     const [imageSelected, setImageSelected] = useState();
@@ -10,22 +11,24 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
     const fileInput = useRef(null);
 
     const handleClick = (publicId) => {
+        console.log(userData)
         const url = `https://res.cloudinary.com/dslaqvh3p/image/upload/${publicId}.${fileExtention}`;
-        fetch(`http://localhost:3000/users?username=${userData.username}`)
+        let requestUserById, requesUserByEmail;
+        if(!userData.password) {
+            requesUserByEmail = `http://localhost:3000/fbUsers?email=`;
+            requestUserById = `http://localhost:3000/fbUsers/`
+        }else{
+            requesUserByEmail = `http://localhost:3000/users?email=`;
+            requestUserById = `http://localhost:3000/users/`;
+        }
+        fetch(`${requesUserByEmail}${userData.email}`)
             .then(response => response.json())
-            //      {
-            //         removeUploadField();
-            //         addCamera();   
-            //         console.log("step1");
-            //         response.json();
-            //         console.log(response)         
-            // })
             .then(data => 
-                fetch(`http://localhost:3000/users/${data[0].id}`
+                fetch(`${requestUserById}${data[0].id}`
                     , {
                         method: "PATCH",
                         headers: { "Content-type": "application/json" },
-                        body: JSON.stringify({ backgroundImg: url })
+                        body: JSON.stringify({[fieldName]: url})
                     })
                     .then(response => response.json())
                     .then(data => {

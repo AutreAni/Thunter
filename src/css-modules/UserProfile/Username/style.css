@@ -1,0 +1,11 @@
+.username {
+  color: #666;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.username:hover {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */
