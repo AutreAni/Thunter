@@ -19,11 +19,11 @@ const Home = props => {
             />
             <Components userData = {props.userData}
             />
-            {/* <div className = "jobSection">
+           </div>
+            <div className = "jobSection">
             <Provider store={store}>
               <HomePage />
             </Provider>
-            </div> */}
             </div>
                   
         </div>
