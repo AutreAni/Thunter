@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from '../store/store';
 import HomePage from '../JobPage/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NetworkIndex from '../Network/index';
 
 
 
@@ -25,6 +26,7 @@ const Home = props => {
             </Provider>
             </div>
            </div>
+           <NetworkIndex />
         </div>
     )
 };

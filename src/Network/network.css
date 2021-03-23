@@ -1,0 +1,25 @@
+
+
+.networkDiv{
+  max-width: 30%;
+  height: fit-content;
+  border: 1px solid rgb(252, 248, 248);
+ 
+}
+.networkClass{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+ 
+}
+.box{
+  width: 40%;
+  height: 8%;
+  padding: 3%;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  transition: .3s;
+}
+.box:hover{
+  transform: scale(0.94);
+}
