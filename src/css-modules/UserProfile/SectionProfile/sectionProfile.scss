@@ -15,6 +15,7 @@ $blue04: rgba(49,145,151,0.4);
 .sectionProfile {
     @extend %flex-box;
     flex-direction: column;
+    align-items: flex-start;
     width:fit-content;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -23,6 +24,14 @@ $blue04: rgba(49,145,151,0.4);
     .avatar {
         width:14em;
         height:14em;
+    }
+    .username {
+        padding-top: 1em;
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+    .audience__info {
+        padding-top: 1em;
     }
     // &:after {
     //     background: linear-gradient(45deg, $purple07,$purple05, $blue04, $blue07);

@@ -1,0 +1,16 @@
+.audience__info {
+    width:100%;
+    color:#666;
+    font-size: bold;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    .audience__icon {
+        margin-right:0.5em;
+    }
+    &:hover {
+        color:black;
+    }
+    
+}

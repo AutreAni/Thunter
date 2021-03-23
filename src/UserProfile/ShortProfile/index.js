@@ -1,17 +1,17 @@
 import React, { Fragment } from 'react';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
-import '../../css-modules/UserProfile/HeaderProfile/header.css';
+import '../../css-modules/UserProfile/ShortProfile/style.css';
 
-const HeaderProfile = (props) => {
+const ShortProfile = (props) => {
    
     const userData = props.userData;
     return (
         <Fragment>
-            { userData ? <div className = "headerProfile"
+            { userData ? <div className = "shortProfile"
              onClick = {props.goToMainProfile}
              >
-                    <Avatar className = "header__avatar"
+                    <Avatar className = "short__avatar"
                     userData = {userData}/>
                     <Username userData = {userData}/>
             </div> : null}
@@ -19,4 +19,4 @@ const HeaderProfile = (props) => {
     )
 }
 
-export default HeaderProfile;
+export default ShortProfile;

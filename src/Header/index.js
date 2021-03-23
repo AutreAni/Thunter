@@ -1,27 +1,43 @@
 import React from 'react';
 import SearchField from './SearchField/index';
-import HeaderProfile from '../UserProfile/HeaderProfile/headerProfile';
-import '../css-modules/Header/style.css'
+import ShortProfile from '../UserProfile/ShortProfile/index';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import '../css-modules/Header/style.css';
 
 const Header = (props) => {
     const handleSignOut = () => {
         props.performSignOut();
     }
     return (
-        <div className = "container">
-        <div className = "header">
+        <div
+         className = "container">
+        <div 
+        className = "header">
             <SearchField/>
-            <span className = "home"
+            <span 
+            className = "home"
             onClick = {props.goToHomePage}
-            >Home
+            >
+            <FontAwesomeIcon 
+            icon = {faHome}
+            className = "header__icon"
+            />
+            Home
             </span>
-            <HeaderProfile 
+            <ShortProfile 
             userData = {props.userData}
             goToMainProfile = {props.goToMainProfile}
             />
-            <span className = "signOut" 
+            <span 
+            className = "signOut" 
             onClick = {handleSignOut}
-            >Sign Out</span>
+            >
+            <FontAwesomeIcon 
+            icon = {faSignOutAlt}
+            className = "header__icon"/>
+            Sign Out
+            </span>
         </div>
         </div>
     )

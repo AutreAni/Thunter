@@ -8,22 +8,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const Home = props => {
+const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
     return (
         <div className = "main">
             <div className = "container main__wrapper"
             style = {{display:"flex"}}>
             <SectionProfile
-                userData = {props.userData}
-                goToMainProfile = {props.goToMainProfile}
+                userData = {userData}
+                goToMainProfile = {goToMainProfile}
+                goToAudiencePage = {goToAudiencePage}
             />
-            <Components userData = {props.userData}
+            <Components userData = {userData}
             />
-            {/* <div className = "jobSection">
+            <div className = "jobSection">
             <Provider store={store}>
               <HomePage />
             </Provider>
-            </div> */}
+            </div>
             </div>
                   
         </div>

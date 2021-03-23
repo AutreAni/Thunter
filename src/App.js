@@ -4,6 +4,7 @@ import SignForm from "./SignForm/index";
 import Header from './Header/index';
 import Home from './Home/index';
 import MainProfile from './UserProfile/MainProfile/index';
+import AudienceMain from './UserProfile/Audience/AudienceMain';
 
 
 
@@ -12,13 +13,15 @@ function App() {
   const [currentPage, setCurrentPage] = useState({ signing: true })
 
 
-  const setData = ({ username, name, email, password, picture, backgroundImg }) => {
+  const setData = ({ username, name, email, password, picture, backgroundImg, audience}) => {
     setCurrentUser({
       username: username ? username : name.split(" ")[0],
+      name:name,
       email,
       password,
-      picture: picture?.data?.url || picture,
+      picture: picture?.data?.url || picture || null,
       backgroundImg: backgroundImg? backgroundImg : null,
+      audience: audience? audience : null
     })
   }
 
@@ -44,6 +47,11 @@ function App() {
 
   const goToHomePage = () => {
     setCurrentPage({ homePage: true })
+  }
+
+  const goToAudiencePage = () => {
+    console.log("audience")
+    setCurrentPage({audiencePage: true})
   }
 
   const updatePicture = (field, url) => {
@@ -73,11 +81,16 @@ function App() {
           userData={currentUser}
           goToMainProfile={goToMainProfile}
           goToJobSearch={goToJobSearch}
+          goToAudiencePage = {goToAudiencePage}
         />) : null}
       { currentPage.mainProfilePage ?
         (<MainProfile
            userData = {currentUser}
            updatePicture = {updatePicture}
+        /> ) : null}
+      {currentPage.audiencePage? 
+        (<AudienceMain
+            userData = {currentUser}
         /> ) : null}
     </div>
   );

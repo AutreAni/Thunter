@@ -3,15 +3,20 @@
     justify-content: space-between;
     align-items: center;
     padding:1em 0;
+    .headerProfile,
     .signOut,
     .home {
         color:#666;
         font-weight: 500;
-        font-size: 1em;
+        font-size: 1.1em;
         height:1.2em;
+        cursor: pointer;
         &:hover{
             color:black;
         }
+    }
+    .header__icon {
+        margin-right: 0.3em;
     }
 
 }
