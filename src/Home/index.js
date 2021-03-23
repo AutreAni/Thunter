@@ -19,13 +19,12 @@ const Home = props => {
             />
             <Components userData = {props.userData}
             />
-           </div>
             <div className = "jobSection">
             <Provider store={store}>
               <HomePage />
             </Provider>
             </div>
-                  
+           </div>
         </div>
     )
 };
