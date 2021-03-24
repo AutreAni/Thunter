@@ -10,7 +10,7 @@ const AudienceInfo = ({audience, goToAudiencePage }) => {
          className = "audience__info"
          >
           <FontAwesomeIcon icon = {faUserFriends} className = "icon audience__icon"/>
-          <span className = "audience__qt">Audience {audience.length}</span>
+          <span className = "audience__qt">Audience {audience?.length}</span>
         </div>
     )
 }

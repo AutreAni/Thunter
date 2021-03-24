@@ -1,7 +1,5 @@
 .audience__list {
-    .shortProfile {
-    }
-    ul {
+   ul {
         list-style-type: none;
     }
     li {
@@ -13,6 +11,9 @@
         border-radius: 0.5em;
         &:hover {
             background-color:rgba(49,145,151, 0.03);
+        }
+        &:first-child{
+            margin-top: 0;
         }
     }
     
