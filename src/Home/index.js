@@ -25,10 +25,6 @@ const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
             <Provider store={store}>
               <HomePage />
             </Provider>
-<<<<<<< HEAD
-            </div>
-=======
->>>>>>> 9da52cb0fa2b1c63ca384fc3106fc78df4c9417e
             </div>
            </div>
            <NetworkIndex />
