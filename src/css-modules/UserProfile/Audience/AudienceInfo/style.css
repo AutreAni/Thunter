@@ -1,0 +1,22 @@
+.audience__info {
+  width: 100%;
+  color: #666;
+  font-size: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.audience__info .audience__icon {
+  margin-right: 0.5em;
+}
+
+.audience__info:hover {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

@@ -11,16 +11,23 @@
   padding: 1em 0;
 }
 
+.header .headerProfile,
 .header .signOut,
 .header .home {
   color: #666;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 1.1em;
   height: 1.2em;
+  cursor: pointer;
 }
 
+.header .headerProfile:hover,
 .header .signOut:hover,
 .header .home:hover {
   color: black;
+}
+
+.header .header__icon {
+  margin-right: 0.3em;
 }
 /*# sourceMappingURL=style.css.map */

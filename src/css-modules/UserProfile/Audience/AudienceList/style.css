@@ -1,0 +1,17 @@
+.audience__list ul {
+  list-style-type: none;
+}
+
+.audience__list li {
+  display: block;
+  width: 90%;
+  margin-top: 1em;
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.audience__list li:hover {
+  background-color: rgba(49, 145, 151, 0.03);
+}
+/*# sourceMappingURL=style.css.map */

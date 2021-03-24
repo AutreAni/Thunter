@@ -1,7 +1,8 @@
 
 
 .networkDiv{
-  width: 75%;
+  width:100%;
+  height: fit-content;
   border: 1px solid rgb(252, 248, 248);
   overflow-x: scroll;
 }

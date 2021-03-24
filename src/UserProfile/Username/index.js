@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css-modules/UserProfile/Username/style.css'
+import '../../css-modules/UserProfile/Username/style.css';
 
 const Username = ({userData, goToMainProfile}) => {
     return (

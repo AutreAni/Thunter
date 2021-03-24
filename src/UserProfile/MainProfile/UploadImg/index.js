@@ -32,7 +32,6 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data);
                         addCamera(); 
                         removeUploadField();
                         updatePicture(fieldName, url)
