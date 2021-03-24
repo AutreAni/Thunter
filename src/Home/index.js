@@ -11,23 +11,26 @@ import NetworkIndex from '../Network/index';
 
 const Home = props => {
     return (
-        <div className = "main">
-            <div className = "container main__wrapper"
-            style = {{display:"flex"}}>
-            <SectionProfile
-                userData = {props.userData}
-                goToMainProfile = {props.goToMainProfile}
-            />
-            <Components userData = {props.userData}
-            />
-            <div className = "jobSection">
-            <Provider store={store}>
-              <HomePage />
-            </Provider>
-            </div>
-           </div>
-           <NetworkIndex />
-        </div>
+        <React.Fragment>
+             <div className = "main">
+              <div className = "container main__wrapper"
+              style = {{display:"flex"}}>
+              <SectionProfile
+                  userData = {props.userData}
+                  goToMainProfile = {props.goToMainProfile}
+              />
+              <Components userData = {props.userData}
+              />
+              <div className = "jobSection">
+              <Provider store={store}>
+                <HomePage />
+              </Provider>
+              </div>
+             </div>
+          </div>
+          <NetworkIndex />
+        </React.Fragment>
+       
     )
 };
 
