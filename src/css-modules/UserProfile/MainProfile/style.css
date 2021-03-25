@@ -1,6 +1,6 @@
 .background {
   width: 100%;
-  height: 35vh;
+  height: 45vh;
   background: linear-gradient(45deg, rgba(246, 109, 26, 0.5), rgba(194, 29, 40, 0.5), rgba(134, 47, 79, 0.5), rgba(49, 145, 151, 0.7));
   position: relative;
   border-top-left-radius: 1em;
@@ -8,7 +8,24 @@
   font-size: 100%;
 }
 
-.profile__wrapper {
+.main__profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main__profile .username {
+  padding-top: 1em;
+  font-size: 1.5em;
+}
+
+.main__profile .profile__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,7 +41,7 @@
   padding: 1em;
 }
 
-.profile__wrapper .avatar__editable {
+.main__profile .profile__wrapper .avatar__editable {
   position: relative;
   z-index: 999;
   width: -webkit-fit-content;
@@ -34,12 +51,16 @@
   margin-top: -50%;
 }
 
-.profile__wrapper .avatar__editable .mainProfile {
-  width: 13em;
-  height: 13em;
+.main__profile .profile__wrapper .avatar__editable .mainProfile {
+  width: 15em;
+  height: 15em;
 }
 
-.profile__wrapper .avatar__editable .uploadImg__wrapper {
+.main__profile .profile__wrapper .avatar__editable .uploadImg__wrapper {
   font-size: 70%;
+}
+
+.main__profile .audience__info {
+  font-size: 1.2em;
 }
 /*# sourceMappingURL=style.css.map */

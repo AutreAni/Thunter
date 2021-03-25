@@ -13,16 +13,23 @@ function App() {
   const [currentPage, setCurrentPage] = useState({ signing: true });
 
 
-  const setData = ({ username, name, email, password, picture, backgroundImg, audience}) => {
+  const setData = ({ username, name, email, password, picture, backgroundImg, audience, about }) => {
     setCurrentUser({
       username: username ? username : name.split(" ")[0],
-      name:name,
+      name: name,
       email,
       password,
       picture: picture?.data?.url || picture || null,
-      backgroundImg: backgroundImg? backgroundImg : null,
-      audience: audience? audience : null,
+      backgroundImg: backgroundImg ? backgroundImg : null,
+      audience: audience ? audience : null,
       currentUser: true,
+      about: {
+        family: about.family,
+        livesIn: about.livesIn,
+        employment: about.employment,
+        education : about.education,
+      }
+
     })
   }
 
@@ -52,7 +59,7 @@ function App() {
 
   const goToAudiencePage = () => {
     console.log("audience")
-    setCurrentPage({audiencePage: true})
+    setCurrentPage({ audiencePage: true })
   }
 
   const updatePicture = (field, url) => {
@@ -69,7 +76,7 @@ function App() {
           userData={currentUser}
           performSignOut={performSignOut}
           goToMainProfile={goToMainProfile}
-          goToHomePage = {goToHomePage}
+          goToHomePage={goToHomePage}
         />) : null
       }
       { currentPage.signing ?
@@ -78,22 +85,22 @@ function App() {
         />) : null
       }
       { currentPage.homePage ?
-        (<Home 
+        (<Home
           userData={currentUser}
           goToMainProfile={goToMainProfile}
           goToJobSearch={goToJobSearch}
-          goToAudiencePage = {goToAudiencePage}
+          goToAudiencePage={goToAudiencePage}
         />) : null}
       { currentPage.mainProfilePage ?
         (<MainProfile
-           userData = {currentUser}
-           updatePicture = {updatePicture}
-           goToAudiencePage = {goToAudiencePage}
-        /> ) : null}
-      {currentPage.audiencePage? 
+          userData={currentUser}
+          updatePicture={updatePicture}
+          goToAudiencePage={goToAudiencePage}
+        />) : null}
+      {currentPage.audiencePage ?
         (<AudienceMain
-            userData = {currentUser}
-        /> ) : null}
+          userData={currentUser}
+        />) : null}
     </div>
   );
 }

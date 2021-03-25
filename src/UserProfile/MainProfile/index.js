@@ -1,10 +1,9 @@
 import React, {Fragment} from 'react';
 import Background from './Background/index';
-// import Avatar from '../Avatar/index';
-// import Username from '../Username/index';
 import ProfileDetails from './ProfileDetails/index';
 import '../../css-modules/UserProfile/MainProfile/style.css';
 import AudienceInfo from '../Audience/AudienceInfo/index';
+import About from '../About/index';
 
 const MainProfile = ({userData, goToAudiencePage, updatePicture}) => {
 
@@ -20,11 +19,14 @@ const MainProfile = ({userData, goToAudiencePage, updatePicture}) => {
                 userData = {userData}
                 updatePicture = {updatePicture}
                 />
-                </div>
-                <AudienceInfo
+                  <AudienceInfo
                  audience = {userData.audience}
                  goToAudiencePage = {goToAudiencePage}
                  />
+                 <About 
+                 about = {userData.about}
+                 />
+                </div>
                 </div>
                 : null}
         </Fragment>

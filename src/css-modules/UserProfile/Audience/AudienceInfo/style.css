@@ -1,5 +1,7 @@
 .audience__info {
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #666;
   font-size: bold;
   display: -webkit-box;
