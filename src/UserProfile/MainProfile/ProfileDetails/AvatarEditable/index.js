@@ -26,7 +26,7 @@ const AvatarEditable = ({ userData, updatePicture}) => {
                 userData={userData}
                 updatePicture={updatePicture}
             />
-            {camera ? <AddPicture handleClick={createUplaodField} /> : null}
+            {camera && userData.currentUser ? <AddPicture handleClick={createUplaodField} /> : null}
             {uploadField ?
                 <UploadImg
                     updatePicture = {updatePicture}

@@ -23,7 +23,7 @@ const Background = ({userData, updatePicture}) => {
     return (
         <div className="background">
             {userData.backgroundImg ? <img className="bg__img" alt="bg" src={userData.backgroundImg} /> : null}
-           {camera ? <AddPicture handleClick={createUplaodField} /> : null} 
+           {camera && userData.currentUser? <AddPicture handleClick={createUplaodField} /> : null} 
             {uploadField ?
                 <UploadImg
                     updatePicture = {updatePicture}

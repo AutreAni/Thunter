@@ -10,7 +10,7 @@ import AudienceMain from './UserProfile/Audience/AudienceMain';
 
 function App() {
   const [currentUser, setCurrentUser] = useState();
-  const [currentPage, setCurrentPage] = useState({ signing: true })
+  const [currentPage, setCurrentPage] = useState({ signing: true });
 
 
   const setData = ({ username, name, email, password, picture, backgroundImg, audience}) => {
@@ -21,7 +21,8 @@ function App() {
       password,
       picture: picture?.data?.url || picture || null,
       backgroundImg: backgroundImg? backgroundImg : null,
-      audience: audience? audience : null
+      audience: audience? audience : null,
+      currentUser: true,
     })
   }
 
@@ -87,6 +88,7 @@ function App() {
         (<MainProfile
            userData = {currentUser}
            updatePicture = {updatePicture}
+           goToAudiencePage = {goToAudiencePage}
         /> ) : null}
       {currentPage.audiencePage? 
         (<AudienceMain

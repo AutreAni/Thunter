@@ -3,10 +3,12 @@ import AudienceInfo from '../AudienceInfo/index';
 import AudienceList from '../AudienceList/index';
 import '../../../css-modules/UserProfile/Audience/AudienceMain/style.css';
 import NetworkIndex from '../../../Network/index';
+import MainProfile from '../../MainProfile/index';
 
 
-const AudienceMain = ({ userData }) => {
+const AudienceMain = ({ userData, goToAudiencePage }) => {
     const [users, setUsers] = useState([]);
+    const [userToPreview, setUserToPreview] = useState()
 
     const audience = userData.audience;
     let requestUrl = userData.password ?
@@ -23,6 +25,11 @@ const AudienceMain = ({ userData }) => {
         }
     })
 
+    const showUserProfile = (e, obj) => {
+        setUserToPreview(obj);
+        userData = obj;
+    }
+
 
 
     return (
@@ -34,9 +41,16 @@ const AudienceMain = ({ userData }) => {
                     />
                     <AudienceList
                         users={users}
+                        showUserProfile = {showUserProfile}
                     />
                 </div>
-                <NetworkIndex />
+                {!userToPreview?
+                 <NetworkIndex />
+                  :
+                   <MainProfile 
+                   userData = {userToPreview}
+                   goToAudiencePage = {goToAudiencePage}
+                  />}
             </div>
         </div>
     )
