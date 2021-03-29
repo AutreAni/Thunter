@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^12.8.1",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
-    "eslint-plugin-react-hooks": "^0.0.0-25bfa287f",
+    "eslint-plugin-react-hooks": "0.0.0-25bfa287f",
     "moment": "^2.29.1",
     "node-forge": "^0.10.0",
     "node-modules": "^0.0.1",

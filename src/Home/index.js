@@ -5,12 +5,13 @@ import { Provider } from 'react-redux';
 import store from '../store/store';
 import HomePage from '../JobPage/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Courses from '../newCourses';
 
 
 
 const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
     return (
-        <div className = "main">
+        <div className = "main" style={{ position: 'relative'}}>
             <div className = "container main__wrapper"
             style = {{display:"flex"}}>
             <SectionProfile
@@ -25,6 +26,9 @@ const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
               <HomePage />
             </Provider>
             </div>
+           </div>
+           <div style={{position: 'absolute', top:'100%', right:'10%'}}>
+               <Courses />
            </div>
         </div>
     )
