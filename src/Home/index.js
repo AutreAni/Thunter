@@ -6,6 +6,7 @@ import store from '../store/store';
 import HomePage from '../JobPage/HomePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Courses from '../newCourses';
+import TimelineItem from '../main';
 
 
 
@@ -21,6 +22,10 @@ const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
             />
             <Components userData = {userData}
             />
+            <div style={{position: 'absolute', top:'90%', left:'31%'}}>
+                <TimelineItem />
+            </div>
+           
             <div className = "jobSection">
             <Provider store={store}>
               <HomePage />
