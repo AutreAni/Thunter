@@ -18,6 +18,7 @@ const ProfileInfo = ({ userData, showUserProfile, showAudience }) => {
             { userData ?
                 (<div className="profile__info">
                 <AudienceMain
+                        userData = {userData}
                         audience={userData.audience}
                         audiencePage={previewPage?.audiencePage}
                         pageToPreview={pageToPreview}

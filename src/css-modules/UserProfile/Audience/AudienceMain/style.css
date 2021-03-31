@@ -2,4 +2,26 @@
   padding: 0;
   font-size: 100%;
 }
+
+.profile__info .audience__list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.profile__info .audience__list li {
+  width: 45%;
+}
+
+.profile__info .shortProfile {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AudienceInfo from '../AudienceInfo/index';
 import AudienceList from '../AudienceList/index';
 import "../../../css-modules/UserProfile/Audience/AudienceMain/style.css";
 
-const AudienceMain = ({ audience, audiencePage, pageToPreview, password, showUserProfile }) => {
+const AudienceMain = ({ userData, password, audiencePage, pageToPreview, showUserProfile }) => {
     const handleClick = (e) => {
         pageToPreview("audiencePage");
     }
+    // const [userToPreview, setUserToPreview] = useState();
+    const [users, setUsers] = useState([]);
+
+    const audience = userData.audience;
+    let requestUrl = userData.password ?
+        `http://localhost:3000/users/` :
+        `http://localhost:3000/fbUsers/`;
+
+
+    useEffect(() => {
+        if (!users.length) {
+            (audience.forEach(user => {
+                fetch(`${requestUrl}${user}`)
+                    .then(response => response.json())
+                    .then(data => setUsers(users => [...users, data]))
+            }))
+        }
+    })
+    console.log("users", users);
+
+    // const showUserProfile = (e, obj) => {
+    //     setUserToPreview(obj);
+    //     setAudience(obj.audience)
+    // }
 
 
     return (
@@ -16,13 +40,12 @@ const AudienceMain = ({ audience, audiencePage, pageToPreview, password, showUse
                     audience={audience}
                     showAudience={handleClick} />
             </span>
-                {audiencePage ?
+            {audiencePage ?
+                <div className="wrapper">
                     <AudienceList
-                        audience={audience}
-                        password={password}
-                        showUserProfile={showUserProfile}
-                    /> : null}
-
+                        users={users}
+                        showUserProfile={showUserProfile} />
+                </div> : null}
         </div>
     )
 }

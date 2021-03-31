@@ -13,17 +13,7 @@
   border-radius: 0.5em;
 }
 
-.audience__list li:first-child {
-  margin-top: 0;
-}
-
-.audience__list li .shortProfile {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.audience__list li:hover {
+.audience__list li .shortProfile:hover {
   background-color: rgba(49, 145, 151, 0.03);
 }
 /*# sourceMappingURL=style.css.map */

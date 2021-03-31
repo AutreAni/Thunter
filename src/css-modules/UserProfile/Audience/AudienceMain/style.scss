@@ -5,4 +5,17 @@
             font-size: 100%;
         }
     }
+    .audience__list ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        height:100%;
+    }
+    .audience__list li {
+        width:45%;
+    }
+    .shortProfile{
+        width:100%;
+    }
 }
