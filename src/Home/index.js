@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
     return (
+        
         <div className = "main">
             <div className = "container main__wrapper"
             style = {{display:"flex"}}>

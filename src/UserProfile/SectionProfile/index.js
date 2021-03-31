@@ -15,7 +15,7 @@ const SectionProfile = ({userData, goToMainProfile, goToAudiencePage}) => {
                     />
                     <AudienceInfo 
                     audience = {userData.audience}
-                    goToAudiencePage = {goToAudiencePage}
+                    showAudience = {goToAudiencePage}
                     />
             </div> : null}
         </Fragment>

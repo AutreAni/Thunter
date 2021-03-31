@@ -1,57 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AudienceInfo from '../AudienceInfo/index';
 import AudienceList from '../AudienceList/index';
-import '../../../css-modules/UserProfile/Audience/AudienceMain/style.css';
-import NetworkIndex from '../../../Network/index';
-import MainProfile from '../../MainProfile/index';
+import "../../../css-modules/UserProfile/Audience/AudienceMain/style.css";
 
-
-const AudienceMain = ({ userData, goToAudiencePage }) => {
-    const [users, setUsers] = useState([]);
-    const [userToPreview, setUserToPreview] = useState()
-
-    const audience = userData.audience;
-    let requestUrl = userData.password ?
-        `http://localhost:3000/users/` :
-        `http://localhost:3000/fbUsers/`;
-
-    useEffect(() => {
-        if (!users.length) {
-            (audience.forEach(user => {
-                fetch(`${requestUrl}${user}`)
-                    .then(response => response.json())
-                    .then(data => setUsers(users => [...users, data]))
-            }))
-        }
-    })
-
-    const showUserProfile = (e, obj) => {
-        setUserToPreview(obj);
-        userData = obj;
+const AudienceMain = ({ audience, audiencePage, pageToPreview, password, showUserProfile }) => {
+    const handleClick = (e) => {
+        pageToPreview("audiencePage");
     }
 
 
-
     return (
-        <div className="container">
-            <div className="audience__main">
-                <div className="existing__audience">
-                    <AudienceInfo
-                        audience={audience}
-                    />
+        <div className="details">
+            <span className="details__title">
+                <AudienceInfo
+                    audience={audience}
+                    showAudience={handleClick} />
+            </span>
+                {audiencePage ?
                     <AudienceList
-                        users={users}
-                        showUserProfile = {showUserProfile}
-                    />
-                </div>
-                {!userToPreview?
-                 <NetworkIndex />
-                  :
-                   <MainProfile 
-                   userData = {userToPreview}
-                   goToAudiencePage = {goToAudiencePage}
-                  />}
-            </div>
+                        audience={audience}
+                        password={password}
+                        showUserProfile={showUserProfile}
+                    /> : null}
+
         </div>
     )
 }

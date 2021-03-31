@@ -1,6 +1,6 @@
 .background {
   width: 100%;
-  height: 45vh;
+  height: 40vh;
   background: linear-gradient(45deg, rgba(246, 109, 26, 0.5), rgba(194, 29, 40, 0.5), rgba(134, 47, 79, 0.5), rgba(49, 145, 151, 0.7));
   position: relative;
   border-top-left-radius: 1em;
@@ -18,11 +18,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.main__profile .username {
-  padding-top: 1em;
-  font-size: 1.5em;
 }
 
 .main__profile .profile__wrapper {
@@ -60,7 +55,8 @@
   font-size: 70%;
 }
 
-.main__profile .audience__info {
-  font-size: 1.2em;
+.main__profile .profile__wrapper .username {
+  padding-top: 1em;
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=style.css.map */

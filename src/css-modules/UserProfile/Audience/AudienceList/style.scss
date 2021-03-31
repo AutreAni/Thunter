@@ -1,20 +1,25 @@
 .audience__list {
-   ul {
-        list-style-type: none;
-    }
-    li {
-        display: block;
-        width:90%;
-        margin-top:1em;
-        border:0.5px solid rgba(0, 0, 0, 0.05);
-        padding:0.5em;
-        border-radius: 0.5em;
-        &:hover {
-            background-color:rgba(49,145,151, 0.03);
-        }
-        &:first-child{
+    ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+     }
+     li {
+         display: block;
+         width:90%;
+         margin:1em 0.5em;
+         margin-top:1em;
+         border:0.5px solid rgba(0, 0, 0, 0.05);
+         border-radius: 0.5em;
+         &:first-child{
             margin-top: 0;
         }
-    }
-    
-}
+         .shortProfile {
+             width: fit-content;
+         }
+         &:hover {
+             background-color:rgba(49,145,151, 0.03);
+         }
+        
+     }    
+ }

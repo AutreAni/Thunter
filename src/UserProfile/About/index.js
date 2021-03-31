@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LivesIn from './LivesIn/index';
 import Family from './Family/index';
 import Employment from './Employment/index';
 import Education from './Education/index';
 
-const About = ({ about }) => {
-    const [display, setDisplayAbout] = useState(false);
-
-    const handleClick = () => {
-        setDisplayAbout(true);
+const About = ({ about, aboutPage, pageToPreview}) => {
+    const handleClick = (e) => {
+        pageToPreview("aboutPage");
     }
+  
     return (
-        <div>
-            <span className="about" onClick={handleClick}>About</span>
-            { display ?
-                (<div className="about__wrapper">
+        <div className = "details">
+            <span 
+            className = "details__title" 
+            onClick ={handleClick}>About</span>
+            { aboutPage ?
+                (<div className="wrapper about__wrapper">
                     {about.livesIn ?
                         (<LivesIn
                             livesIn={about.livesIn}

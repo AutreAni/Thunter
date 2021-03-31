@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import '../../../css-modules/UserProfile/Audience/AudienceInfo/style.css';
 
-const AudienceInfo = ({audience, goToAudiencePage }) => {
- 
+const AudienceInfo = ({audience, showAudience }) => {
+
     return (
-        <div onClick = {goToAudiencePage}
+        <div onClick =  {showAudience} 
          className = "audience__info"
          >
           <FontAwesomeIcon icon = {faUserFriends} className = "icon audience__icon"/>

@@ -3,6 +3,8 @@ import ShortProfile from '../../ShortProfile/index';
 import '../../../css-modules/UserProfile/Audience/AudienceList/style.css'
 
 const AudienceList = ({users, showUserProfile}) => {
+  
+ 
 
      let usersList = users.length ?( users.map( user => {
         return <li 

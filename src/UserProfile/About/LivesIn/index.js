@@ -4,7 +4,7 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const LivesIn = ({livesIn}) => {
     return (
-        <div className = "lives__in">
+        <div className = "details__fields lives__in">
             <FontAwesomeIcon 
             icon = {faMapMarkerAlt}
             className = "location__icon icon"

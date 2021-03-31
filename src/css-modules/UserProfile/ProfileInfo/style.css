@@ -1,0 +1,103 @@
+.profile__info {
+  width: 70vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.profile__info .details__title,
+.profile__info .audience__info {
+  font-size: 110%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.profile__info .details__title .icon,
+.profile__info .audience__info .icon {
+  font-size: 110%;
+  margin-right: 0.3em;
+}
+
+.profile__info .details {
+  color: #666;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: .5em;
+  padding: 1em;
+}
+
+.profile__info .details:hover {
+  background-color: rgba(159, 219, 224, 0.1);
+  color: #333;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.profile__info .wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 1em;
+  padding: 1em;
+  background-color: rgba(159, 219, 224, 0.1);
+}
+
+.profile__info .wrapper .details__fields {
+  width: 100%;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.3em 0;
+  padding: 0.5em;
+  -webkit-box-shadow: inset 0.5px 0.5px 3px rgba(0, 0, 0, 0.05), inset -0.5px -0.5px 3px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0.5px 0.5px 3px rgba(0, 0, 0, 0.05), inset -0.5px -0.5px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5em;
+}
+
+.profile__info .wrapper .details__fields .icon {
+  margin-right: 0.5em;
+}
+
+.profile__info .wrapper .audience__list {
+  margin-left: 0.8em;
+}
+
+.profile__info .wrapper .audience__list ul, .profile__info .wrapper .audience__list li {
+  margin: 0;
+  padding: 0;
+}
+
+.profile__info .wrapper .username {
+  font-size: 100%;
+  padding: 0;
+  padding-left: 1em;
+}
+/*# sourceMappingURL=style.css.map */

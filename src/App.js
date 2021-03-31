@@ -4,7 +4,7 @@ import SignForm from "./SignForm/index";
 import Header from './Header/index';
 import Home from './Home/index';
 import MainProfile from './UserProfile/MainProfile/index';
-import AudienceMain from './UserProfile/Audience/AudienceMain';
+import AudiencePage from './UserProfile/Audience/AudiencePage';
 
 
 
@@ -13,7 +13,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState({ signing: true });
 
 
-  const setData = ({ username, name, email, password, picture, backgroundImg, audience, about }) => {
+  const setData = ({ username, name, email, password, picture, backgroundImg, audience, about, skills }) => {
     setCurrentUser({
       username: username ? username : name.split(" ")[0],
       name: name,
@@ -24,18 +24,20 @@ function App() {
       audience: audience ? audience : null,
       currentUser: true,
       about: {
-        family: about.family,
-        livesIn: about.livesIn,
-        employment: about.employment,
-        education : about.education,
+        family: about?.family || null,
+        livesIn: about?.livesIn || null,
+        employment: about?.employment || null,
+        education : about?.education || null,
+      },
+      skills: {
+        languages: skills?.languages || null,
+        softwareSkills: skills?.softwareSkills || null,
+        otherSkills: skills?.otherSkills || null,
       }
-
     })
   }
 
   const handleSubmit = (data) => {
-    debugger;
-    console.log(data)
     setData(data);
     setCurrentPage({ homePage: true });
   }
@@ -58,7 +60,6 @@ function App() {
   }
 
   const goToAudiencePage = () => {
-    console.log("audience")
     setCurrentPage({ audiencePage: true })
   }
 
@@ -98,7 +99,7 @@ function App() {
           goToAudiencePage={goToAudiencePage}
         />) : null}
       {currentPage.audiencePage ?
-        (<AudienceMain
+        (<AudiencePage
           userData={currentUser}
         />) : null}
     </div>
