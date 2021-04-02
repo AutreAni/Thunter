@@ -25,12 +25,6 @@ const AudienceMain = ({ userData, password, audiencePage, pageToPreview, showUse
             }))
         }
     })
-    console.log("users", users);
-
-    // const showUserProfile = (e, obj) => {
-    //     setUserToPreview(obj);
-    //     setAudience(obj.audience)
-    // }
 
 
     return (
@@ -40,7 +34,7 @@ const AudienceMain = ({ userData, password, audiencePage, pageToPreview, showUse
                     audience={audience}
                     showAudience={handleClick} />
             </span>
-            {audiencePage ?
+            {audiencePage && audience.length?
                 <div className="wrapper">
                     <AudienceList
                         users={users}

@@ -13,38 +13,30 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
     const handleClick = (publicId) => {
         console.log(userData)
         const url = `https://res.cloudinary.com/dslaqvh3p/image/upload/${publicId}.${fileExtention}`;
-        let requestUserById, requesUserByEmail;
-        if(!userData.password) {
-            requesUserByEmail = `http://localhost:3000/fbUsers?email=`;
-            requestUserById = `http://localhost:3000/fbUsers/`
-        }else{
-            requesUserByEmail = `http://localhost:3000/users?email=`;
-            requestUserById = `http://localhost:3000/users/`;
-        }
-        fetch(`${requesUserByEmail}${userData.email}`)
-            .then(response => response.json())
-            .then(data => 
-                fetch(`${requestUserById}${data[0].id}`
-                    , {
-                        method: "PATCH",
-                        headers: { "Content-type": "application/json" },
-                        body: JSON.stringify({[fieldName]: url})
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        addCamera(); 
-                        removeUploadField();
-                        updatePicture(fieldName, url)
+        const requestUserUrl = !userData.password ? `http://localhost:3000/fbUsers/` :
+            `http://localhost:3000/users/`;
 
-                    })
-                    .catch(error => console.log(error)))
-            
-            .catch(error => console.log(error));
-     }
+
+        fetch(`${requestUserUrl}${userData.id}`
+            , {
+                method: "PATCH",
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify({ [fieldName]: url })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addCamera();
+                removeUploadField();
+                updatePicture(fieldName, url)
+
+            })
+            .catch(error => console.log(error))
+
+    }
 
 
     const uploadImg = () => {
-        console.log("step2")         
+        console.log("step2")
         if (wrongExtention) return;
         const formData = new FormData();
         formData.append("file", imageSelected);
@@ -96,7 +88,7 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
                         buttonName={uploadButtonName}
                         handleButtonClick={triggerInputChange} />
                     <Button
-                        buttonName= "Save"
+                        buttonName="Save"
                         handleButtonClick={uploadImg} />
                     {wrongExtention ?
                         (<span

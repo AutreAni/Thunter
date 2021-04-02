@@ -13,10 +13,11 @@ function App() {
   const [currentPage, setCurrentPage] = useState({ signing: true });
 
 
-  const setData = ({ username, name, email, password, picture, backgroundImg, audience, about, skills }) => {
+  const setData = ({ username, name, id, email, password, picture, backgroundImg, audience, about, skills }) => {
     setCurrentUser({
       username: username ? username : name.split(" ")[0],
       name: name,
+      id: id,
       email,
       password,
       picture: picture?.data?.url || picture || null,
@@ -28,6 +29,7 @@ function App() {
         livesIn: about?.livesIn || null,
         employment: about?.employment || null,
         education : about?.education || null,
+        birthDate: about?.birthDate || null
       },
       skills: {
         languages: skills?.languages || null,
@@ -70,6 +72,13 @@ function App() {
     });
   }
 
+  const updateUserData = (obj) => {
+    setCurrentUser({
+      ...currentUser,
+      ...obj
+    })
+  }
+
   return (
     <div className="App">
       { !currentPage.signing ?
@@ -96,6 +105,7 @@ function App() {
         (<MainProfile
           userData={currentUser}
           updatePicture={updatePicture}
+          updateUserData = {updateUserData}
           goToAudiencePage={goToAudiencePage}
         />) : null}
       {currentPage.audiencePage ?

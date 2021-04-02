@@ -21,6 +21,10 @@
   width: 45%;
 }
 
+.profile__info .about__wrapper li {
+  width: 100%;
+}
+
 .profile__info .shortProfile {
   width: 100%;
 }

@@ -1,0 +1,56 @@
+.settings__wrapper {
+  position: relative;
+}
+
+.settings__wrapper form {
+  width: 80%;
+}
+
+.settings__wrapper .input__field {
+  position: relative;
+}
+
+.settings__wrapper .input__field label {
+  margin: 0;
+  margin-right: 0.5em;
+}
+
+.settings__wrapper .input__field input {
+  border: none;
+  outline: none;
+  padding: 0.7em;
+  text-align: center;
+  border-radius: 1em;
+  background-color: transparent;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.settings__wrapper .input__field .icon {
+  font-size: 0.8em;
+}
+
+.settings__wrapper .input__field span {
+  position: absolute;
+  top: 70%;
+  font-size: 0.6em;
+  left: 25%;
+}
+
+.settings__wrapper button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-weight: 500;
+  background-color: transparent;
+  color: #666;
+  border: none;
+  outline: none;
+  z-index: 99;
+}
+
+.settings__wrapper:hover {
+  color: black;
+}
+/*# sourceMappingURL=stye.css.map */

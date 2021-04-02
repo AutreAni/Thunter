@@ -1,15 +1,12 @@
-import React, { Fragment , useState} from 'react';
+import React, { Fragment } from 'react';
 import Background from './Background/index';
 import ProfileDetails from './ProfileDetails/index';
 import '../../css-modules/UserProfile/MainProfile/style.css';
 import ProfileInfo from './ProfileInfo/index';
 
-const MainProfile = ({ userData, showAudience, updatePicture }) => {
-    // const [userToPreview, setUserToPreview] = useState(userData);
+const MainProfile = ({ userData, showAudience, updatePicture, updateUserData }) => {
 
-    const showUserProfile = (e, obj) => {
-        // setUserToPreview(obj);
-    }
+
     return (
         <Fragment>
             {userData ?
@@ -25,7 +22,7 @@ const MainProfile = ({ userData, showAudience, updatePicture }) => {
                         <ProfileInfo
                             userData={userData}
                             showAudience = {showAudience}
-                            showUserProfile = {showUserProfile}
+                            updateUserData = {updateUserData}
                         />
                     </div>
                 </div>

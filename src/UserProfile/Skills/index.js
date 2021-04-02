@@ -14,7 +14,7 @@ const Skills = ({ skills, skillsPage, pageToPreview }) => {
             <span
                 className="details__title"
                 onClick={handleClick}>Skills</span>
-            { skillsPage ?
+            { skillsPage && skills?
                 (<div className="wrapper skills__wrapper">
                     {skills.languages.length ?
                         (<Languages

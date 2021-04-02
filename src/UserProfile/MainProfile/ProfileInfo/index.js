@@ -5,7 +5,7 @@ import AudienceMain from '../../Audience/AudienceMain/index';
 import '../../../css-modules/UserProfile/ProfileInfo/style.css';
 import ProfileSettings from '../../ProfileSettings/index';
 
-const ProfileInfo = ({ userData, showUserProfile, showAudience }) => {
+const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
     const [previewPage, setPreviewPage] = useState({});
     const pageToPreview = (pageName) => {
         setPreviewPage(previewPage => ({ 
@@ -37,7 +37,10 @@ const ProfileInfo = ({ userData, showUserProfile, showAudience }) => {
                     /> 
                     {userData.currentUser?
                     (<ProfileSettings
+                        pageToPreview={pageToPreview}
+                        settingsPage={previewPage?.settingsPage}
                         userData = {userData}
+                        updateUserData = {updateUserData}
                     />):null }
                 </div>) : null}
         </Fragment>

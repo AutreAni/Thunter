@@ -1,0 +1,48 @@
+.settings__wrapper {
+    position: relative;   
+    form {
+        width:80%;
+    }
+
+.input__field {
+    position: relative;
+ 
+    label {
+        margin:0;
+        margin-right:0.5em;
+    }
+    input {
+        border:none;
+        outline: none;
+        padding: 0.7em;
+        text-align: center;
+        border-radius: 1em;
+        background-color: transparent;
+        width:fit-content;
+    }
+    .icon {
+        font-size: 0.8em;
+        // margin-left:-2em;
+    }
+    span {
+        position: absolute;
+        top: 70%;
+        font-size: 0.6em;
+        left: 25%;
+    }
+  }
+  button {
+      position: absolute;
+      top:1em;
+      right:1em;
+      font-weight: 500;
+      background-color: transparent;
+      color: #666;
+      border:none;
+      outline: none;
+      z-index: 99;
+  }
+  &:hover {
+      color:black;
+  }
+}
