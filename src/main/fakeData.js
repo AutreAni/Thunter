@@ -35,7 +35,7 @@ const data = [
     date: 'March 25, 2021',
    text:`Learn English online – with the world's English experts.`,
     logo:'https://www.ielts.ma/wp-content/uploads/2021/01/british-council-1200x675-cropped.png',
-    img:"https://lh3.googleusercontent.com/proxy/_evMvZZxTJMj9ivuxSUrTSdhvk_iOJ0AGqV9D3ojZT_f70t1Oqeh4rnwMhOCai0qiKZVTsLoxN7_o_yoTh5jPcbo88PeCyVwQxc2to_xmMaKNFBCONfhcKwUiEuaEyy_Qv0gpNCQpmkaJPzfMrvA1A",
+    img:"https://image.freepik.com/free-vector/teacher-site-studying-english-online_80328-69.jpg",
     link:"https://learnenglish.britishcouncil.org/online-courses"
 }
 ];

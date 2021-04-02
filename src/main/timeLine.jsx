@@ -3,6 +3,7 @@ import {getData} from './fakeData'
 import LikeButtons from '../PostTimeline/LikesButtons'
 import InputImg from '../PostTimeline/InputImg';
 
+
 class TimeLine extends Component {
   state = { 
     data:getData()
@@ -12,7 +13,7 @@ class TimeLine extends Component {
     return ( 
       <div style={{width:"600px",margin:"auto"}}>
         {this.state.data.map(d =>(
-          <div key={d._id} className='divContainer'>
+          <div key={d.id} className='divContainer'>
              <p style={{fontSize:"12px"}}>{d.date}</p>
             <div style={{marginTop:"-3%"}}> 
             <img src={d.logo} className="logo" / >
@@ -24,6 +25,7 @@ class TimeLine extends Component {
              <LikeButtons />
          </div>
          <div className='inputDiv-c'>
+          
              <InputImg placeholder="Add a comment..." />
         </div>
 
