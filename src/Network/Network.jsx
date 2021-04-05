@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './network.css';
-// import Button from '../Button/index'
+import '../css-modules/Network/network.css';
 import { Card,Button, ButtonGroup} from 'react-bootstrap';
 
 
@@ -26,7 +25,7 @@ class Network extends Component {
     }
   
     return ( 
-      <Card   style={{ width: '12rem' }} className="box text-center">
+      <Card className="box text-center">
         
         <Card.Img variant="top" src={this.state.person.picture.medium} className="rounded-circle"/>
         

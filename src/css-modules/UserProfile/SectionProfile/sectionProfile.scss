@@ -5,6 +5,8 @@ $purple07 :rgba(134,47,79,0.7);
 $blue07: rgba(49,145,151,0.7);
 $blue04: rgba(49,145,151,0.4);
 
+@import '../../config';
+
 %flex-box {
     display: flex;
     flex-direction: row;
@@ -15,23 +17,37 @@ $blue04: rgba(49,145,151,0.4);
 .sectionProfile {
     @extend %flex-box;
     flex-direction: column;
-    align-items: flex-start;
-    width:fit-content;
+    text-align: left;
+    width:25%;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 1em;
     border-radius:1em;
     .avatar {
-        width:14em;
-        height:14em;
+        width: 13vw;
+        height: 13vw;
+        max-width: 208px;
+        max-height: 208px;
+    }
+    .section__details {
+        font-weight: 500;
+        color:#666;
     }
     .username {
         padding-top: 1em;
         font-size: 1.2em;
         font-weight: 500;
     }
+    .details__fields,
     .audience__info {
         padding-top: 1em;
+        cursor: pointer;
+        .icon {
+            margin-right: 0.5em;
+        }
+    }
+    .details__fields:hover {
+        color:#222;
     }
 }
 

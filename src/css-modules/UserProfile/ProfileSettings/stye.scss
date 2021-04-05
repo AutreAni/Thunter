@@ -1,12 +1,6 @@
 .settings__wrapper {
-    position: relative;   
-    form {
-        width:80%;
-    }
+    position: relative; 
 
-.input__field {
-    position: relative;
- 
     label {
         margin:0;
         margin-right:0.5em;
@@ -30,7 +24,7 @@
         font-size: 0.6em;
         left: 25%;
     }
-  }
+  
   button {
       position: absolute;
       top:1em;

@@ -1,15 +1,9 @@
 .audience__info {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   color: #666;
   font-size: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-weight: 500;
   cursor: pointer;
 }

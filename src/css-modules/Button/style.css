@@ -1,7 +1,5 @@
 .button__wrapper {
   display: inline;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -15,8 +13,7 @@
   font-size: inherit;
   padding: 0.5em 1.3em;
   margin-right: 1.5em;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button__wrapper button:hover {

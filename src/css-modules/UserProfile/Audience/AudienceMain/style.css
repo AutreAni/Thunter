@@ -4,21 +4,21 @@
 }
 
 .profile__info .audience__list ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   overflow-y: auto;
   height: 100%;
 }
 
 .profile__info .audience__list li {
   width: 45%;
+}
+
+@media only screen and (max-width: 450px) {
+  .profile__info .audience__list li {
+    width: 90%;
+  }
 }
 
 .profile__info .about__wrapper li {

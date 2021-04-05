@@ -2,36 +2,26 @@
   position: relative;
 }
 
-.settings__wrapper form {
-  width: 80%;
-}
-
-.settings__wrapper .input__field {
-  position: relative;
-}
-
-.settings__wrapper .input__field label {
+.settings__wrapper label {
   margin: 0;
   margin-right: 0.5em;
 }
 
-.settings__wrapper .input__field input {
+.settings__wrapper input {
   border: none;
   outline: none;
   padding: 0.7em;
   text-align: center;
   border-radius: 1em;
   background-color: transparent;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
-.settings__wrapper .input__field .icon {
+.settings__wrapper .icon {
   font-size: 0.8em;
 }
 
-.settings__wrapper .input__field span {
+.settings__wrapper span {
   position: absolute;
   top: 70%;
   font-size: 0.6em;

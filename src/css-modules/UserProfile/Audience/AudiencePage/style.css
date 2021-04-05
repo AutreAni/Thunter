@@ -1,11 +1,20 @@
 .audience__main {
   padding: 0.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: .5em;
+}
+
+.audience__main .background {
+  height: 30vh;
+}
+
+.audience__main .wrapper {
+  height: 43vh;
+}
+
+.audience__main .container {
+  padding: 0;
 }
 
 .audience__main .existing__audience {
@@ -29,5 +38,11 @@
 .audience__main .audience__list {
   height: 100%;
   overflow-x: auto;
+}
+
+@media only screen and (max-width: 450) {
+  .audience__main {
+    font-size: 80%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

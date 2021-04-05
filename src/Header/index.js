@@ -16,26 +16,29 @@ const Header = (props) => {
         className = "header">
             <SearchField/>
             <span 
-            className = "home"
+            className = "nav-li home"
             onClick = {props.goToHomePage}
             >
             <FontAwesomeIcon 
             icon = {faHome}
-            className = "header__icon"
+            className = "icon"
             />
             Home
             </span>
+            <span 
+            className = "nav-li home">
             <ShortProfile 
             userData = {props.userData}
             goToMainProfile = {props.goToMainProfile}
             />
+            </span>
             <span 
-            className = "signOut" 
+            className = "nav-li signOut" 
             onClick = {handleSignOut}
             >
             <FontAwesomeIcon 
             icon = {faSignOutAlt}
-            className = "header__icon"/>
+            className = "icon"/>
             Sign Out
             </span>
         </div>

@@ -1,54 +1,49 @@
 .background {
   width: 100%;
-  height: 40vh;
-  background: linear-gradient(45deg, rgba(246, 109, 26, 0.5), rgba(194, 29, 40, 0.5), rgba(134, 47, 79, 0.5), rgba(49, 145, 151, 0.7));
+  height: 38vh;
+  background: linear-gradient(45deg, #f66d1a, #c21d28, rgba(134, 47, 79, 0.5), rgba(49, 145, 151, 0.7));
   position: relative;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   font-size: 100%;
 }
 
+@media only screen and (max-width: 450px) {
+  .background {
+    height: 32vh;
+  }
+}
+
 .main__profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .main__profile .profile__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   z-index: 999;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  flex-direction: column;
   width: fit-content;
-  padding: 1em;
+  padding: 0 1%;
 }
 
 .main__profile .profile__wrapper .avatar__editable {
   position: relative;
   z-index: 999;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 50%;
   margin-top: -50%;
 }
 
 .main__profile .profile__wrapper .avatar__editable .mainProfile {
-  width: 15em;
-  height: 15em;
+  width: 20vw;
+  height: 20vw;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 6em;
+  min-height: 6em;
 }
 
 .main__profile .profile__wrapper .avatar__editable .uploadImg__wrapper {
@@ -56,7 +51,14 @@
 }
 
 .main__profile .profile__wrapper .username {
-  padding-top: 1em;
+  padding-top: 0.5em;
   font-size: 1.5em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 650px) {
+  .main__profile .profile__wrapper .username {
+    font-size: 1em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

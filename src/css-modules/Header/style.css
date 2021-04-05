@@ -1,33 +1,58 @@
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: normal !important;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
+}
+
+.header {
+  justify-content: space-between;
   padding: 1em 0;
 }
 
-.header .headerProfile,
-.header .signOut,
-.header .home {
+.header .nav-li {
+  display: block;
   color: #666;
   font-weight: 500;
   font-size: 1.1em;
-  height: 1.2em;
   cursor: pointer;
 }
 
-.header .headerProfile:hover,
-.header .signOut:hover,
-.header .home:hover {
-  color: black;
+.header .nav-li:hover {
+  color: #222;
 }
 
-.header .header__icon {
+.header .icon {
   margin-right: 0.3em;
 }
 /*# sourceMappingURL=style.css.map */

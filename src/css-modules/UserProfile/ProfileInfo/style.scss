@@ -1,27 +1,35 @@
+@import '../../config';
+@import '../../utils';
+
 .profile__info {
     width: 70vw;
     display: flex;
+    font-size: 110%;
     justify-content: space-between;
     position: relative;
+
     .details__title,
     .audience__info {
-        font-size: 110%;
         font-weight: 500;
+        padding:0 .8em;
         cursor: pointer;
         .icon {
-            font-size: 110%;
             margin-right:0.3em;
         }
+        @media only screen and (max-width: 450px){
+            font-size:70%;
+            font-weight: bold;
+            padding:0.2em;
+        } 
     }
     .details{
-        color:#666;
-        width:stretch;
+        color:$gray;
         display: flex;
         justify-content: center;
-        border-radius:.5em;
-        padding:1em;
+        border-radius:1em;
+        padding:1em 0;
         &:hover {
-            background-color: rgba(159, 219, 224, 0.1);
+            background-color: $light-blue;
             color:#333;
             transition: .5s;
         }
@@ -31,14 +39,21 @@
         top:100%;
         left:0;
         width: stretch;
-        height:35vh;
+        height:40vh;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         border-radius: 1em;
         padding:1em;
-        background-color: rgba(159, 219, 224, 0.1);
+        background-color: $light-blue;
+        @media only screen and (max-width: 450px){
+            height:50vh;
+            .shortProfile img{
+                width:25px;
+                height:25px;
+            }
+        }
         .details__fields {
             width: 100%;
             text-align: left;
@@ -66,6 +81,5 @@
        
        }
 
-    }
-   
+    }   
 }
