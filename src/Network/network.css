@@ -1,16 +1,28 @@
 @media only screen and (max-width: 650px) {
+  .networkDiv{
+   width: 320px;
+  }
   .networkClass{
     display: flex;
    flex-wrap: nowrap;
   }
   
+  .flexDiv .btn-color-c{
+    font-size: 10px;
+    width: 80px;
+  }
 }
 
 @media only screen and (max-width: 350px) {
+  .networkDiv{
+    width: 130px;
+   }
  .flexDiv{
-   width: 90%;
+   width: 100%;
  }
  .networkClass{
 flex-direction: column;
+width: 100%;
+
 }
 }
