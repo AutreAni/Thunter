@@ -32,6 +32,7 @@ margin-left: -70%;
 .profile-image {
   width: 60px;
   height: 60px;
+ 
   border-radius: 50%;
   border: 3px solid white;
   margin-right: 5px;
@@ -42,7 +43,7 @@ margin-left: -70%;
   padding: 2%;
   justify-content: space-around;
   border-radius: 5px;
-  margin-bottom: -15px;
+  margin-bottom: -1rem;
 }
 .navContainer{
   margin: 0 2% 2% -2%;

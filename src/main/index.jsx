@@ -1,9 +1,11 @@
-import TimeLine from "./timeLine";
+
 import './mainTimeLine.css'
+import Main from './timeLine';
 
 const TimelineItem = () => {
   return ( 
-    <TimeLine />
+
+    <Main />
    );
 }
  
