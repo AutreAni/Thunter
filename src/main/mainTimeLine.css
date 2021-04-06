@@ -1,6 +1,7 @@
 
  .divContainer{
-  width:510px;
+   width:510px; 
+  
   display:flex;
   flex-direction:column;
   color: gray;
@@ -27,8 +28,23 @@
 }
 .logo{
   max-width: 20%;
-  margin-left: -12px;
+  margin-left: -0.5rem;
 }
 .inputDiv-c{
   margin: -4% 1% 1%;
 }
+
+
+
+/* @media only screen and (max-width: 850px){
+  .container {
+   font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  .divContainer{
+    width:200px; 
+  
+ }
+} */

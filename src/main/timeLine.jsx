@@ -1,39 +1,47 @@
-import React, { Component } from 'react';
-import {getData} from './fakeData'
-import LikeButtons from '../PostTimeline/LikesButtons'
-import InputImg from '../PostTimeline/InputImg';
+import {useState, useEffect} from 'react'
+import MainList from './TimeLineList'
 
+const Main =() =>{
 
-class TimeLine extends Component {
-  state = { 
-    data:getData()
-   }
-  render() { 
-    
-    return ( 
-      <div style={{width:"600px",margin:"auto"}}>
-        {this.state.data.map(d =>(
-          <div key={d.id} className='divContainer'>
-             <p style={{fontSize:"12px"}}>{d.date}</p>
-            <div style={{marginTop:"-3%"}}> 
-            <img src={d.logo} className="logo" / >
-           <a href={d.link}>{d.title}</a> 
-            </div>
-            <p>{d.text}</p>
-           <img src={d.img} className=' imgStyle'/>
-         <div style={{marginLeft:'25%'}}>
-             <LikeButtons />
-         </div>
-         <div className='inputDiv-c'>
-          
-             <InputImg placeholder="Add a comment..." />
-        </div>
-
-          </div>
-        ))}
-      </div>
-     );
-  }
-}
+ const [mains,setMain] = useState(null )
+const [pending,setPending] = useState(true)
+const [error,setError] = useState(null)
  
-export default TimeLine;
+ 
+useEffect(()=>{
+  fetch(' http://localhost:3000/blogs')
+    .then(res=>{
+      if(!res.ok){
+       throw Error("could not fetch tha data")
+      }
+      return res.json();
+    })
+    .then(data =>{
+      setMain(data)
+      setPending(false)
+      setError(null)
+    })
+    .catch(err =>{
+      setPending(false)
+      setError(err.message)
+      
+      console.log(err.message)
+    }
+      )
+},[])
+  
+  
+  return(
+    <div  >
+      {error && <div> {error} </div>}
+      {pending && <div>Loading...</div>}
+     {mains &&<MainList blogs={mains} />}
+   
+     
+    </div>
+    
+  )
+}
+
+export default Main
+
