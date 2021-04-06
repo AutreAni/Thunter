@@ -7,43 +7,54 @@ import Age from '../About/Age/index';
 import Education from '../About/Education/index';
 import Employment from '../About/Employment/index';
 import LivesIn from '../About/LivesIn/index';
+import { Link } from 'react-router-dom';
 
 
 
-
-const SectionProfile = ({ userData, goToMainProfile, goToAudiencePage }) => {
+const SectionProfile = ({ userData, showUserProfile }) => {
+    const handleClick = () => {
+        showUserProfile(userData)
+    }
     return (
         <Fragment>
-            { userData ? <div className="sectionProfile">
-                <Avatar className="section__avatar"
-                    userData={userData} />
-                <Username userData={userData}
-                    goToMainProfile={goToMainProfile}
-                />
-                <div className = "section__details">
-                <AudienceInfo
-                    audience={userData.audience}
-                    showAudience={goToAudiencePage}
-                />
-                {userData.about?.birthDate ?
-                    (<Age
-                        birthDate={userData.about.birthDate}
+            { userData ? <div className="sectionProfile" onClick = {handleClick}>
+                <Link to="/profile">
+                <div className = "avatar__wrapper">
+                    <Avatar className="section__avatar"
+                        userData={userData} />
+                        <Username userData={userData}
                     />
-                    ) : null}
-                {userData.about?.LivesIn ?
-                    (<LivesIn
-                        livesIn={userData.about.livesIn}
-                    />) : null}
+                </div>
+                   
+                </Link>
+                <div className="section__details">
+                    <Link to="/audience">
+                        <AudienceInfo
+                            audience={userData.audience}
+                            pageToPreview = {() => null}
+                        />
+                    </Link>
+                    <Link to='/profile'>
+                        {userData.about?.birthDate ?
+                            (<Age
+                                birthDate={userData.about.birthDate}
+                            />
+                            ) : null}
+                        {userData.about?.LivesIn ?
+                            (<LivesIn
+                                livesIn={userData.about.livesIn}
+                            />) : null}
 
-                {userData.about?.employment ?
-                    (<Employment
-                        employment={userData.about.employment}
-                    />) : null}
-                {userData.about?.education ?
-                    (<Education
-                        education={userData.about.education}
-                    />) : null} 
-                    </div>
+                        {userData.about?.employment ?
+                            (<Employment
+                                employment={userData.about.employment}
+                            />) : null}
+                        {userData.about?.education ?
+                            (<Education
+                                education={userData.about.education}
+                            />) : null}
+                    </Link>
+                </div>
             </div> : null}
         </Fragment>
     )

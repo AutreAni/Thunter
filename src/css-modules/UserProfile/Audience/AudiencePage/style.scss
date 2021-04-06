@@ -4,12 +4,14 @@
     padding:0.5em;
     display: flex;
     box-shadow: 0 1px 2px $shadow-color;
+    height:85vh;
     border-radius: .5em;
     .background{
         height: 30vh;
     }
     .wrapper {
-        height:43vh;
+        height:82vh;
+
     }
     .container{
         padding:0;
@@ -18,7 +20,10 @@
         max-height: 80vh;
         overflow: hidden;
         width:30%;
-      
+        @media only screen and (max-width:650px){
+            width:50%;    
+       }
+           
     }
 
     .under__preview{
@@ -35,7 +40,16 @@
         height:100%;
         overflow-x: auto;
     }
-   @media only screen and (max-width:450){
+   @media only screen and (max-width:450px){
        font-size: 80%;
+   }
+}
+
+@media only screen and (max-width:650px){
+   .existing__audience {
+       width:50%
+   }
+   .audience__main .under__preview {
+       width:40%
    }
 }

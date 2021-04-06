@@ -3,14 +3,16 @@ import Avatar from '../Avatar/index';
 import Username from '../Username/index';
 import '../../css-modules/UserProfile/ShortProfile/style.css';
 
-const ShortProfile = (props) => {
+const ShortProfile = ({userData, showUserProfile}) => {
    
-    const userData = props.userData;
+    const handleClick = (e, obj) => {
+        showUserProfile( obj );
+    }
+    
     return (
         <Fragment>
             { userData ? <div className = "shortProfile"
-             onClick = {props.goToMainProfile}
-             >
+              onClick={(e) => handleClick(e, userData)}>
                     <Avatar className = "short__avatar"
                     userData = {userData}/>
                     <Username userData = {userData}/>

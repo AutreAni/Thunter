@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
 import Home from './Home/index';
 import MainProfile from './UserProfile/MainProfile/index';
 import AudiencePage from './UserProfile/Audience/AudiencePage';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState();
-  const [currentPage, setCurrentPage] = useState({ signing: true });
-
+  const [signedIn, setSignedIn] = useState(false);
+  const [userToPreview, setUserToPreview] = useState();
 
   const setData = ({ username, name, id, email, password, picture, backgroundImg, audience, about, skills }) => {
     setCurrentUser({
@@ -28,7 +28,7 @@ function App() {
         family: about?.family || null,
         livesIn: about?.livesIn || null,
         employment: about?.employment || null,
-        education : about?.education || null,
+        education: about?.education || null,
         birthDate: about?.birthDate || null
       },
       skills: {
@@ -41,28 +41,12 @@ function App() {
 
   const handleSubmit = (data) => {
     setData(data);
-    setCurrentPage({ homePage: true });
+    setSignedIn(true);
   }
 
   const performSignOut = () => {
     setCurrentUser(null);
-    setCurrentPage({ signing: true })
-  }
-
-  const goToMainProfile = () => {
-    setCurrentPage({ mainProfilePage: true });
-  }
-
-  const goToJobSearch = () => {
-    setCurrentPage({ jobSearchPage: true })
-  }
-
-  const goToHomePage = () => {
-    setCurrentPage({ homePage: true })
-  }
-
-  const goToAudiencePage = () => {
-    setCurrentPage({ audiencePage: true })
+    setSignedIn(false);
   }
 
   const updatePicture = (field, url) => {
@@ -79,39 +63,48 @@ function App() {
     })
   }
 
+  const showUserProfile = (obj) => {
+    setUserToPreview(obj);
+  }
+
   return (
     <div className="App">
-      { !currentPage.signing ?
-        (<Header
+      { signedIn ?
+      <Fragment>
+      <Router>
+        <Header
           userData={currentUser}
           performSignOut={performSignOut}
-          goToMainProfile={goToMainProfile}
-          goToHomePage={goToHomePage}
-        />) : null
+          showUserProfile = {showUserProfile}
+        />
+        <Switch>
+           <Route exact path="/" >
+            <Home
+              userData={currentUser}
+              showUserProfile = {showUserProfile}
+            />
+          </Route>
+          <Route path="/profile">
+            <MainProfile
+              userData= { userToPreview }
+              updatePicture={updatePicture}
+              updateUserData={updateUserData}
+            />
+          </Route>
+          <Route path="/audience">
+            <AudiencePage
+              userData={currentUser}
+              showUserProfile = {showUserProfile}
+            />
+          </Route>
+        </Switch>
+      </Router>
+      </Fragment>: 
+     ( <SignForm
+      performSubmit={handleSubmit}
+      />)
       }
-      { currentPage.signing ?
-        (<SignForm
-          performSubmit={handleSubmit}
-        />) : null
-      }
-      { currentPage.homePage ?
-        (<Home
-          userData={currentUser}
-          goToMainProfile={goToMainProfile}
-          goToJobSearch={goToJobSearch}
-          goToAudiencePage={goToAudiencePage}
-        />) : null}
-      { currentPage.mainProfilePage ?
-        (<MainProfile
-          userData={currentUser}
-          updatePicture={updatePicture}
-          updateUserData = {updateUserData}
-          goToAudiencePage={goToAudiencePage}
-        />) : null}
-      {currentPage.audiencePage ?
-        (<AudiencePage
-          userData={currentUser}
-        />) : null}
+      
     </div>
   );
 }

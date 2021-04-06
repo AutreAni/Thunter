@@ -3,11 +3,8 @@ import AudienceInfo from '../AudienceInfo/index';
 import AudienceList from '../AudienceList/index';
 import "../../../css-modules/UserProfile/Audience/AudienceMain/style.css";
 
-const AudienceMain = ({ userData, password, audiencePage, pageToPreview, showUserProfile }) => {
-    const handleClick = (e) => {
-        pageToPreview("audiencePage");
-    }
-    // const [userToPreview, setUserToPreview] = useState();
+const AudienceMain = ({ userData, showUserProfile, audienceList, pageToPreview }) => {
+   
     const [users, setUsers] = useState([]);
 
     const audience = userData.audience;
@@ -32,14 +29,15 @@ const AudienceMain = ({ userData, password, audiencePage, pageToPreview, showUse
             <span className="details__title">
                 <AudienceInfo
                     audience={audience}
-                    showAudience={handleClick} />
+                    pageToPreview = { pageToPreview }
+                    />
             </span>
-            {audiencePage && audience.length?
-                <div className="wrapper">
-                    <AudienceList
+            {audienceList ? <div className="wrapper">
+                <AudienceList
                         users={users}
                         showUserProfile={showUserProfile} />
-                </div> : null}
+             </div>: null }
+                
         </div>
     )
 }

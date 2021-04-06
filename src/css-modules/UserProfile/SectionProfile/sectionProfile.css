@@ -1,4 +1,4 @@
-.sectionProfile {
+.sectionProfile, .sectionProfile .avatar__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7,6 +7,7 @@
 
 .sectionProfile {
   flex-direction: column;
+  justify-content: flex-start;
   text-align: left;
   width: 25%;
   position: relative;
@@ -15,11 +16,25 @@
   border-radius: 1em;
 }
 
+.sectionProfile a {
+  color: inherit;
+}
+
+.sectionProfile a:active {
+  color: inherit;
+}
+
+.sectionProfile .avatar__wrapper {
+  width: 100%;
+  flex-direction: column;
+}
+
 .sectionProfile .avatar {
   width: 13vw;
   height: 13vw;
   max-width: 208px;
   max-height: 208px;
+  margin-bottom: 1.5em;
 }
 
 .sectionProfile .section__details {
@@ -28,14 +43,13 @@
 }
 
 .sectionProfile .username {
-  padding-top: 1em;
   font-size: 1.2em;
   font-weight: 500;
 }
 
 .sectionProfile .details__fields,
 .sectionProfile .audience__info {
-  padding-top: 1em;
+  padding-top: 1.5em;
   cursor: pointer;
 }
 

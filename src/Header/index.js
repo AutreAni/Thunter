@@ -4,44 +4,45 @@ import ShortProfile from '../UserProfile/ShortProfile/index';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import '../css-modules/Header/style.css';
+import { Link } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = ({ userData, performSignOut, showUserProfile }) => {
     const handleSignOut = () => {
-        props.performSignOut();
+        performSignOut();
     }
     return (
         <div
-         className = "container">
-        <div 
-        className = "header">
-            <SearchField/>
-            <span 
-            className = "nav-li home"
-            onClick = {props.goToHomePage}
-            >
-            <FontAwesomeIcon 
-            icon = {faHome}
-            className = "icon"
-            />
-            Home
-            </span>
-            <span 
-            className = "nav-li home">
-            <ShortProfile 
-            userData = {props.userData}
-            goToMainProfile = {props.goToMainProfile}
-            />
-            </span>
-            <span 
-            className = "nav-li signOut" 
-            onClick = {handleSignOut}
-            >
-            <FontAwesomeIcon 
-            icon = {faSignOutAlt}
-            className = "icon"/>
-            Sign Out
-            </span>
-        </div>
+            className="container">
+            <div
+                className="header">
+                <SearchField />
+                <Link to="/">
+                    <span
+                        className="nav-li home">
+                        <FontAwesomeIcon
+                            icon={faHome}
+                            className="icon"
+                        /> Home
+                    </span>
+                </Link>
+                <Link to="/profile">
+                    <span
+                        className="nav-li home">
+                        <ShortProfile
+                            userData={userData}
+                            showUserProfile = {showUserProfile}
+                        />
+                    </span>
+                </Link>
+                <span
+                    className="nav-li signOut"
+                    onClick={handleSignOut}>
+                    <FontAwesomeIcon
+                        icon={faSignOutAlt}
+                        className="icon" />
+                      Sign Out
+                </span>
+            </div>
         </div>
     )
 }
