@@ -5,7 +5,7 @@ import Employment from './Employment/index';
 import Education from './Education/index';
 import Age from './Age/index';
 
-const About = ({ about, aboutPage, pageToPreview }) => {
+const About = ({ about, aboutPage, pageToPreview, showUserProfile, emptyUserArray }) => {
     const handleClick = (e) => {
         pageToPreview("aboutPage");
     }
@@ -29,6 +29,9 @@ const About = ({ about, aboutPage, pageToPreview }) => {
                     {about.family ?
                         (<Family
                             ids={about.family}
+                            showUserProfile = {showUserProfile}
+                            pageToPreview = {pageToPreview}
+                            emptyUserArray = {emptyUserArray}
                         />) : null}
                     {about.employment ?
                         (<Employment

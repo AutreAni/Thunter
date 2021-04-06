@@ -16,14 +16,6 @@
   border-radius: 1em;
 }
 
-.sectionProfile a {
-  color: inherit;
-}
-
-.sectionProfile a:active {
-  color: inherit;
-}
-
 .sectionProfile .avatar__wrapper {
   width: 100%;
   flex-direction: column;
@@ -49,7 +41,9 @@
 
 .sectionProfile .details__fields,
 .sectionProfile .audience__info {
+  color: #666;
   padding-top: 1.5em;
+  color: #666;
   cursor: pointer;
 }
 

@@ -4,7 +4,7 @@ import ProfileDetails from './ProfileDetails/index';
 import '../../css-modules/UserProfile/MainProfile/style.css';
 import ProfileInfo from './ProfileInfo/index';
 
-const MainProfile = ({ userData, showAudience, updatePicture, updateUserData }) => {
+const MainProfile = ({ userData, updatePicture, updateUserData, showUserProfile }) => {
 
 
     return (
@@ -21,8 +21,8 @@ const MainProfile = ({ userData, showAudience, updatePicture, updateUserData }) 
                         />
                         <ProfileInfo
                             userData={userData}
-                            showAudience = {showAudience}
                             updateUserData = {updateUserData}
+                            showUserProfile = {showUserProfile}
                         />
                     </div>
                 </div>

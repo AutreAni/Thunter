@@ -3,10 +3,11 @@ import Avatar from '../Avatar/index';
 import Username from '../Username/index';
 import '../../css-modules/UserProfile/ShortProfile/style.css';
 
-const ShortProfile = ({userData, showUserProfile}) => {
+const ShortProfile = ({userData, showUserProfile, emptyUserArray}) => {
    
     const handleClick = (e, obj) => {
         showUserProfile( obj );
+        emptyUserArray();
     }
     
     return (

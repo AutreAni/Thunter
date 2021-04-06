@@ -89,6 +89,7 @@ function App() {
               userData= { userToPreview }
               updatePicture={updatePicture}
               updateUserData={updateUserData}
+              showUserProfile = {showUserProfile}
             />
           </Route>
           <Route path="/audience">

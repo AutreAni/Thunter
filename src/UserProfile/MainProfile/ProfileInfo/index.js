@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import About from '../../About/index';
 import Skills from '../../Skills/index';
 import AudienceMain from '../../Audience/AudienceMain/index';
@@ -12,6 +12,27 @@ const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
             [pageName]: !previewPage[pageName] 
         }));
     }
+    const [users, setUsers] = useState([]);
+
+    const audience = userData.audience;
+    let requestUrl = userData.password ?
+        `http://localhost:3000/users/` :
+        `http://localhost:3000/fbUsers/`;
+
+
+    useEffect(() => {
+        if (!users.length) {
+            (audience.forEach(user => {
+                fetch(`${requestUrl}${user}`)
+                    .then(response => response.json())
+                    .then(data => setUsers(users => [...users, data]))
+            }))
+        }
+    })
+
+    const emptyUserArray = () => {
+        setUsers([]);
+    }
 
     return (
         <Fragment>
@@ -19,16 +40,18 @@ const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
                 (<div className="profile__info">
                 <AudienceMain
                         userData = {userData}
-                        // audience={userData.audience}
                         pageToPreview={pageToPreview}
-                        // password = {userData.password}
                         showUserProfile = {showUserProfile}
                         audienceList = {previewPage?.audiencePage}
+                        users = {users}
+                        emptyUserArray = {emptyUserArray}
                     />
                     <About
                         about = {userData.about}
                         aboutPage={previewPage?.aboutPage}
                         pageToPreview={pageToPreview}
+                        showUserProfile = {showUserProfile}
+                        emptyUserArray = {emptyUserArray}
                     />                  
                     <Skills
                         skills={userData.skills}
