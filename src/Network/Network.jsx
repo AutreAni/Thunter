@@ -25,7 +25,8 @@ class Network extends Component {
     }
   
     return ( 
-      <Card className="box text-center">
+      <div className="flexDiv">
+         <Card className="box text-center">
         
         <Card.Img variant="top" src={this.state.person.picture.medium} className="rounded-circle"/>
         
@@ -39,6 +40,8 @@ class Network extends Component {
        
         
     </Card>
+      </div>
+ 
      );
   }
 }

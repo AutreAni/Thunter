@@ -18,7 +18,7 @@ class NavBar extends Component {
         <LikeButtons />
         <nav className="navContainer">
           <ul className ="ulClass">
-            <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input className=" btn btn-secondary ml-3" type="file"></input>}/> 
+            <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input className=" btn btn-secondary ml-3 " type="file"></input>}/> 
             <FontAwesomeIcon className="marginIcon" icon={faPhotoVideo} />
           
             </li>
