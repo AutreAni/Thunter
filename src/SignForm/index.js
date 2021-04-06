@@ -7,7 +7,6 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../css-modules/SignForm/style.css";
 
 
-
 function SignForm({ performSubmit }) {
     const [loggingin, setLoggingin] = useState(true);
     const [registering, setRegistering] = useState(false);

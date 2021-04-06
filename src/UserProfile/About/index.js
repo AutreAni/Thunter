@@ -9,7 +9,6 @@ const About = ({ about, aboutPage, pageToPreview }) => {
     const handleClick = (e) => {
         pageToPreview("aboutPage");
     }
-    console.log(about)
 
     return (
         <div className="details">

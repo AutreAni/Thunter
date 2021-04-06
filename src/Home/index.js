@@ -10,15 +10,14 @@ import TimelineItem from '../main';
 
 
 
-const Home = ({userData, goToMainProfile, goToAudiencePage}) => {
+const Home = ({ userData, showUserProfile }) => {
     return (
         <div className = "main" style={{ position: 'relative'}}>
             <div className = "container main__wrapper"
             style = {{display:"flex"}}>
             <SectionProfile
                 userData = {userData}
-                goToMainProfile = {goToMainProfile}
-                goToAudiencePage = {goToAudiencePage}
+                showUserProfile = {showUserProfile}
             />
             <Components userData = {userData}
             />

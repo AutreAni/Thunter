@@ -19,11 +19,11 @@ const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
                 (<div className="profile__info">
                 <AudienceMain
                         userData = {userData}
-                        audience={userData.audience}
-                        audiencePage={previewPage?.audiencePage}
+                        // audience={userData.audience}
                         pageToPreview={pageToPreview}
-                        password = {userData.password}
+                        // password = {userData.password}
                         showUserProfile = {showUserProfile}
+                        audienceList = {previewPage?.audiencePage}
                     />
                     <About
                         about = {userData.about}

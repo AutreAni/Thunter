@@ -15,32 +15,45 @@ $blue04: rgba(49,145,151,0.4);
 }
 
 .sectionProfile {
+    a {
+        color:inherit;
+        &:active {
+            color:inherit;
+        }
+    }
     @extend %flex-box;
     flex-direction: column;
+    justify-content: flex-start;
     text-align: left;
     width:25%;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 1em;
     border-radius:1em;
+    .avatar__wrapper {
+        width:100%;
+        @extend %flex-box;
+        flex-direction: column;
+    }
     .avatar {
         width: 13vw;
         height: 13vw;
         max-width: 208px;
         max-height: 208px;
+        margin-bottom:1.5em;
+
     }
     .section__details {
         font-weight: 500;
         color:#666;
     }
     .username {
-        padding-top: 1em;
         font-size: 1.2em;
         font-weight: 500;
     }
     .details__fields,
     .audience__info {
-        padding-top: 1em;
+        padding-top: 1.5em;
         cursor: pointer;
         .icon {
             margin-right: 0.5em;
