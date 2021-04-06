@@ -1,0 +1,16 @@
+@media only screen and (max-width: 650px) {
+  .networkClass{
+    display: flex;
+   flex-wrap: nowrap;
+  }
+  
+}
+
+@media only screen and (max-width: 350px) {
+ .flexDiv{
+   width: 90%;
+ }
+ .networkClass{
+flex-direction: column;
+}
+}

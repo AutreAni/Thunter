@@ -85,3 +85,37 @@ ul.likeUl{
   display: inline-block;
   margin: 5px 15px;
 }
+
+@media only screen and (max-width: 650px) {
+ 
+  .ulClass svg{
+    display: none;
+   }
+   .ulClass .exampleDiv {
+     width: 40%;
+     margin:0;
+ }
+  .ulClass {
+      padding-right: 2%;
+  }
+  .divContainer {
+    margin-left: -1rem;
+}
+.navDiv ul.likeUl{
+margin: 5px 0 0;
+}
+}
+
+@media only screen and (max-width: 350px) {
+  .ulClass .exampleDiv {
+    margin:0 1%;
+}
+.divContainer {
+  width: 340px;
+}
+button.btn-color-c{
+  font-size: 0.7rem;
+  width: 45px;
+  padding: 5px 2px;
+}
+}

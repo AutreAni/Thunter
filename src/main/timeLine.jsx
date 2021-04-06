@@ -37,7 +37,6 @@ useEffect(()=>{
       {pending && <div>Loading...</div>}
      {mains &&<MainList blogs={mains} />}
    
-     
     </div>
     
   )
