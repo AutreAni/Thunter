@@ -1,37 +1,20 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import About from '../../About/index';
 import Skills from '../../Skills/index';
 import AudienceMain from '../../Audience/AudienceMain/index';
 import '../../../css-modules/UserProfile/ProfileInfo/style.css';
 import ProfileSettings from '../../ProfileSettings/index';
 
-const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
+const ProfileInfo = ({ userData, showUserProfile, updateUserData, users }) => {
     const [previewPage, setPreviewPage] = useState({});
     const pageToPreview = (pageName) => {
         setPreviewPage(previewPage => ({ 
             [pageName]: !previewPage[pageName] 
         }));
     }
-    const [users, setUsers] = useState([]);
-
-    const audience = userData.audience;
-    let requestUrl = userData.password ?
-        `http://localhost:3000/users/` :
-        `http://localhost:3000/fbUsers/`;
-
-
-    useEffect(() => {
-        if (!users.length) {
-            (audience.forEach(user => {
-                fetch(`${requestUrl}${user}`)
-                    .then(response => response.json())
-                    .then(data => setUsers(users => [...users, data]))
-            }))
-        }
-    })
 
     const emptyUserArray = () => {
-        setUsers([]);
+        console.log(users)
     }
 
     return (
@@ -43,8 +26,6 @@ const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
                         pageToPreview={pageToPreview}
                         showUserProfile = {showUserProfile}
                         audienceList = {previewPage?.audiencePage}
-                        users = {users}
-                        emptyUserArray = {emptyUserArray}
                     />
                     <About
                         about = {userData.about}

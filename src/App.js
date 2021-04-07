@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
@@ -12,6 +12,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState();
   const [signedIn, setSignedIn] = useState(false);
   const [userToPreview, setUserToPreview] = useState();
+ 
 
   const setData = ({ username, name, id, email, password, picture, backgroundImg, audience, about, skills }) => {
     setCurrentUser({
@@ -38,6 +39,7 @@ function App() {
       }
     })
   }
+
 
   const handleSubmit = (data) => {
     setData(data);

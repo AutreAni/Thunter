@@ -4,8 +4,7 @@ import ProfileDetails from './ProfileDetails/index';
 import '../../css-modules/UserProfile/MainProfile/style.css';
 import ProfileInfo from './ProfileInfo/index';
 
-const MainProfile = ({ userData, updatePicture, updateUserData, showUserProfile }) => {
-
+const MainProfile = ({ userData, updatePicture, updateUserData, showUserProfile, users }) => {
 
     return (
         <Fragment>
@@ -23,6 +22,7 @@ const MainProfile = ({ userData, updatePicture, updateUserData, showUserProfile 
                             userData={userData}
                             updateUserData = {updateUserData}
                             showUserProfile = {showUserProfile}
+                            users = {users}
                         />
                     </div>
                 </div>

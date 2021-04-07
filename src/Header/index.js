@@ -31,6 +31,8 @@ const Header = ({ userData, performSignOut, showUserProfile }) => {
                         <ShortProfile
                             userData={userData}
                             showUserProfile = {showUserProfile}
+                            emptyUserArray = {()=>null}
+                            pageToPreview = {()=>null}
                         />
                     </span>
                 </Link>
