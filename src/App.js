@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import Header from './Header/index';
@@ -6,6 +6,7 @@ import Home from './Home/index';
 import MainProfile from './UserProfile/MainProfile/index';
 import AudiencePage from './UserProfile/Audience/AudiencePage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import JobSearchPage from './JobSearch/JobSearchPage';
 
 
 function App() {
@@ -100,8 +101,12 @@ function App() {
               showUserProfile = {showUserProfile}
             />
           </Route>
+          <Route path="/jobs">
+            <JobSearchPage              
+            />
+          </Route>
         </Switch>
-      </Router>
+        </Router>
       </Fragment>: 
      ( <SignForm
       performSubmit={handleSubmit}

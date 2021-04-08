@@ -11,12 +11,12 @@ const AudienceMain = ({ userData, showUserProfile, audienceList, pageToPreview})
 
     useEffect(() => {
            const audience = userData.audience;
-           setUsers([]);
            (audience.forEach(user => {
                 fetch(`${requestUrl}${user}`)
                     .then(response => response.json())
                     .then(data => setUsers(users => [...users, data]))
             }))
+            return() => { setUsers([]) }
     },[userData]);
 
     return (
