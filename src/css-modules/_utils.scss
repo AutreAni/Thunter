@@ -19,6 +19,29 @@
         }
 }
 
+%button__blue {
+    color:white !important;
+    border:1px solid $blue !important;
+    background-color: $blue !important;
+    border-radius: 1em;
+    &:hover {
+        background-color: transparent !important;
+        color:$blue !important;
+        cursor: pointer;
+    }
+}
+%button__transparent__blue {
+    color:$blue !important;
+    border:1px solid $blue !important;
+    background-color:white !important;
+    border-radius: 1em;
+    &:hover {
+        background-color: $blue  !important;
+        color:white !important;
+        cursor: pointer;
+    }
+}
+
 
 .active{
     &:before {

@@ -8,11 +8,13 @@ const JobSearchForm = ({ params, onParamChange }) => {
         <input type = "text" value = {params.location}
         placeholder = "location"
         autoComplete = "on" name = "location" onChange = {onParamChange}/>
+        <div className = "full__time">
         <label>
         <input type = "checkbox" value = {params.full_time}
         name = "full_time" onChange = {onParamChange}
         />Full time
-         </label>   
+         </label>  
+         </div> 
         </form>
     )
 }

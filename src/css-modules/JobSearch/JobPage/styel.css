@@ -1,4 +1,4 @@
-.header {
+.job form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,34 +35,21 @@
   text-align: left;
 }
 
-.header {
-  justify-content: space-between;
-  padding: 1em 0;
+.job {
+  padding: 1em;
+  background-color: rgba(159, 219, 224, 0.1);
 }
 
-.header a {
-  text-decoration: none;
+.job form {
+  width: 50%;
+  margin: 0 auto;
 }
 
-.header .nav-li {
-  display: block;
-  color: #666;
-  font-weight: 500;
-  font-size: 1.1em;
-  cursor: pointer;
+.job form input {
+  border: 1px solid #319197;
+  outline: none;
+  border-radius: 1.5em;
+  padding: 0.5em 1em;
+  margin-right: 1em;
 }
-
-.header .nav-li:hover {
-  color: #222;
-}
-
-.header .icon {
-  margin-right: 0.3em;
-}
-
-@media only screen and (min-width: 650px) {
-  .header .jobs {
-    display: none;
-  }
-}
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styel.css.map */

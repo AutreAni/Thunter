@@ -4,7 +4,7 @@
 }
 
 .container {
-  width:90vw;
+  width:95vw !important;
   margin:0 auto;
 }
 
@@ -20,10 +20,18 @@
 
 @media only screen and (max-width: 650px){
   .container {
-    width:95vw;
     font-size: 70%;
   }
-
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 98vw !important;
+  }
+}
+@media (min-width: 576px){
+  .container {
+    max-width: 98vw !important;
+  }
 }
 
 *::-webkit-scrollbar-track

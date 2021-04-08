@@ -60,8 +60,8 @@
     padding:1em 1em  1em 3.2em;
     box-shadow: 0 1px 2px $shadow-color;
     &:hover {
-        box-shadow: .3px .3px 2px $orange,
-                    -.3px -.3px 2px $orange;
+        box-shadow: .3px .3px 2px $purple,
+                    -.3px -.3px 2px $purple;
     }
     input {
         width:100%;
@@ -87,7 +87,7 @@
     justify-content: flex-start;
     margin-top:2em;
     button {
-        background:$background-gradient;
+        background:linear-gradient(45deg, $blue, $purple, $red);
         color:white;
         border:none;
         outline: none;

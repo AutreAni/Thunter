@@ -6,14 +6,25 @@
 }
 
 .sectionProfile {
+  background-color: white;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
-  width: 25%;
+  width: 20%;
+  height: fit-content;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
+}
+
+@media only screen and (max-width: 650px) {
+  .sectionProfile {
+    display: none;
+  }
+}
+
+.sectionProfile a {
+  text-decoration: none !important;
 }
 
 .sectionProfile .avatar__wrapper {

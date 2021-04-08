@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './timeLine.css'
+// import './timeLine.css'
 
 
 import NavBar from './NavBar';

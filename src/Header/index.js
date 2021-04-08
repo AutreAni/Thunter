@@ -2,7 +2,7 @@ import React from 'react';
 import SearchField from './SearchField/index';
 import ShortProfile from '../UserProfile/ShortProfile/index';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignOutAlt, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import '../css-modules/Header/style.css';
 import { Link } from 'react-router-dom';
 
@@ -18,16 +18,25 @@ const Header = ({ userData, performSignOut, showUserProfile }) => {
                 <SearchField />
                 <Link to="/">
                     <span
-                        className="nav-li home">
+                        className="nav-li">
                         <FontAwesomeIcon
                             icon={faHome}
                             className="icon"
                         /> Home
                     </span>
                 </Link>
+                <Link to="/jobs">
+                    <span
+                        className="nav-li jobs">
+                        <FontAwesomeIcon
+                            icon={faBriefcase}
+                            className="icon"
+                        /> Jobs
+                    </span>
+                </Link>
                 <Link to="/profile">
                     <span
-                        className="nav-li home">
+                        className="nav-li">
                         <ShortProfile
                             userData={userData}
                             showUserProfile = {showUserProfile}

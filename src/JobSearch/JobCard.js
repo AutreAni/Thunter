@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import '../css-modules/JobSearch/JobCard/style.css';
 
 const JobCard = ({ job }) => {
     const [open, setOpen] = useState(false);
@@ -8,9 +9,9 @@ const JobCard = ({ job }) => {
     }
     return (
         <div className = "job__card">
+        <div className = "job__details">
         <div className = "job__title">
-            {job.title} -
-            <span className = "company__name">
+            {job.title} at <span className = "company__name">
                 {job.company}
             </span>
         </div>
@@ -24,15 +25,22 @@ const JobCard = ({ job }) => {
         <div className = "job__apply__link">
         <ReactMarkdown source = {job.how_to_apply}/>
            </div>
-        <div className = "company__logo">
-            <img style = {{height:'50px'}}src = {job.company_logo} alt = {job.company}/>
-        </div>
+        
         <div className = "view__details">
             <span className = "details__btn"
-             onClick = {handleClick}>View Details</span>
-               {open ? <ReactMarkdown
-                source = {job.description}
-                /> : null }             
+             onClick = {handleClick}>
+            {open ? "Hide Details" : "View Details" } 
+             </span>
+               {open ? 
+               <div className = "job__description">
+               <ReactMarkdown
+                source = {job.description}/>
+                </div>
+                : null }             
+        </div>
+        </div>
+        <div className = "company__logo">
+            <img src = {job.company_logo} alt = {job.company}/>
         </div>
         </div>
     )

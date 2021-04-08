@@ -79,7 +79,6 @@ border: 1px solid lightgray;
 /* likes style */
 ul.likeUl{
   list-style: none;
-  margin-left: -35%;
 }
 .likeUl li{
   display: inline-block;

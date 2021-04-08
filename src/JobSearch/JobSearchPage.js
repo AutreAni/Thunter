@@ -1,29 +1,13 @@
-import React, { useState } from 'react';
-import useFetchJobs from './useFetchJobs';
+import React from 'react';
 import JobCard from './JobCard';
 import JobsPagination from './JobsPagination';
 import JobSearchForm from './JobSearchForm';
+import '../css-modules/JobSearch/JobPage/styel.css';
 
 function JobSearchPage( {params, page, loading, error, jobs, setPage, handleParamChange, hasNextPage}) {
-    // const [params, setParams] = useState({});
-    // const [page, setPage] = useState(1);
-    // const { jobs, loading, error, hasNextPage } = useFetchJobs(params, page);
-
-    // const handleParamChange = (e) => {
-    //     const param = e.target.name;
-    //     const value = e.target.value;
-    //     setPage(1);
-    //     setParams(prevParams => {
-    //         return{
-    //             ...prevParams,
-    //             [param]: value
-    //         }
-    //     })
-    // }
 
     return (
-        <div>
-            <h3>Looking for a job?</h3>
+        <div className = "container job">
             <JobSearchForm
             params = {params}
             onParamChange = {handleParamChange}/>

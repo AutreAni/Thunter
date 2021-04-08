@@ -1,0 +1,130 @@
+.timeline ul, .timeline ul li, .timeline .navDiv, .timeline .navDiv .navContainer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline button {
+  color: #319197 !important;
+  border: 1px solid #319197 !important;
+  background-color: white !important;
+  border-radius: 1em;
+}
+
+.timeline button:hover {
+  background-color: #319197 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: normal !important;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
+}
+
+.timeline {
+  width: 45%;
+}
+
+.timeline ul {
+  list-style: none;
+  width: 100%;
+  color: #666;
+}
+
+.timeline ul li {
+  margin-right: 1em;
+}
+
+.timeline ul li:last-child {
+  margin-right: 0;
+}
+
+.timeline input {
+  border-radius: 1.5em;
+  outline: none;
+  border: none;
+  background-color: rgba(159, 219, 224, 0.1);
+  padding: 0.5em 0.8em;
+}
+
+.timeline button {
+  outline: none;
+}
+
+.timeline button:focus {
+  box-shadow: none !important;
+}
+
+@media only screen and (max-width: 650px) {
+  .timeline {
+    width: 100%;
+  }
+}
+
+.timeline .navDiv {
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1em;
+  padding-top: 3em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+.timeline .navDiv .navContainer {
+  margin-left: 1em;
+  width: stretch;
+}
+
+.timeline .navDiv .navContainer input {
+  padding: 0 1.5em;
+  padding: .5em 1.5em;
+  width: stretch;
+  background-color: white;
+}
+
+.timeline .navDiv .navContainer ul {
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 1em;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.timeline .navDiv .navContainer ul button {
+  padding: 0.3em 1.2em;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-radius: 1.5em;
+}
+
+.timeline .navDiv .navContainer ul svg {
+  margin-left: 0.5em;
+}
+/*# sourceMappingURL=style.css.map */

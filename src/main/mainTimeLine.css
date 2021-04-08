@@ -1,24 +1,25 @@
-
- .divContainer{
-   width:510px; 
-  
+.divContainer{
+  background-color: white;
   display:flex;
   flex-direction:column;
   color: gray;
   padding: 2%;
-  border:1px solid lightgray;
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: left;
 }
 .divContainer a{
   text-decoration: none;
-  color:gray
+  color:#666;
 }
 .divContainer a:hover{
   color:#8b6335;
 }
-
+.divContainer .likeUl {
+  padding: 1em;
+  justify-content: flex-start;
+  color:#319197;
+}
 
 .imgStyle {
   max-width:100%;
@@ -28,24 +29,12 @@
 }
 .logo{
   max-width: 20%;
-  margin-left: -0.5rem;
-}
-.inputDiv-c{
-  margin: -4% 1% 1%;
 }
 
-@media only screen and (max-width: 650px) {
-  .divContainer {
-    width: 370px;
-    margin: 5px -2px;
-   
-}
+input{
+  width:stretch;
+  background-color: rgba(159, 219, 224, 0.1);
 }
 
-@media only screen and (max-width: 350px) {
-  .divContainer {
-    width: 250px;
-}
-}
 
 
