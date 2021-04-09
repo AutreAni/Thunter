@@ -1,21 +1,21 @@
 
 import React from 'react';
 import Network from './Network'
-import './network.css'
+// import './network.css'
 
 const NetworkIndex = () => {
 
-  return ( 
-    <div className="networkDiv">
-    <h6 style={{textAlign:'center'}}> Audience you may know </h6>
-    <div className="networkClass">
-        <Network  />
-        <Network  />
-        <Network  /> 
-        <Network  />
+  return (
+    <div className="network">
+      <span className="network__title"> People you may reach </span>
+      <div className="network__wrapper">
+        <Network />
+        <Network />
+        <Network />
+        <Network />
+      </div>
     </div>
-    </div>
-   );
+  );
 }
- 
+
 export default NetworkIndex;

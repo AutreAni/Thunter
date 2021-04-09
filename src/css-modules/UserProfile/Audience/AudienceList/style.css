@@ -24,4 +24,8 @@
 .audience__list li .shortProfile:hover {
   background-color: rgba(49, 145, 151, 0.03);
 }
+
+.audience__list li a {
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */

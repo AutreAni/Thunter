@@ -2,7 +2,8 @@ import React from 'react';
 import JobCard from './JobCard';
 import JobsPagination from './JobsPagination';
 import JobSearchForm from './JobSearchForm';
-import '../css-modules/JobSearch/JobPage/styel.css';
+import '../css-modules/JobSearch/JobPage/style.css';
+import '../css-modules/JobSearch/Response/response.css'
 
 function JobSearchPage( {params, page, loading, error, jobs, setPage, handleParamChange, hasNextPage}) {
 
@@ -11,13 +12,13 @@ function JobSearchPage( {params, page, loading, error, jobs, setPage, handlePara
             <JobSearchForm
             params = {params}
             onParamChange = {handleParamChange}/>
-            <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
-            {loading && <h1>Loading...</h1>}
-            {error && <h1>Error. Try Refreshing.</h1>}
+            {!loading && !error && <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />}
+            {loading && <div className = "response__wrapper loading"><span>Loading...</span></div>}
+            {error && <div className = "response__wrapper error"><span>Error.Please, refresh the page</span></div>}
             {jobs.map(job => {
                 return <JobCard key={job.id} job={job} />
             })}
-            <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
+            {!loading && !error && <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />}
         </div>
     )
 }

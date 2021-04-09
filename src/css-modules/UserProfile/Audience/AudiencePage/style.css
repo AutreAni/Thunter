@@ -31,9 +31,11 @@
 }
 
 .audience__main .under__preview {
-  width: 65%;
+  width: 70%;
+  max-height: 82vh;
   margin: 0 auto;
   font-size: 80%;
+  overflow: hidden;
 }
 
 .audience__main .audience__info {
@@ -58,7 +60,7 @@
     width: 50%;
   }
   .audience__main .under__preview {
-    width: 40%;
+    width: 50%;
   }
 }
 /*# sourceMappingURL=style.css.map */
