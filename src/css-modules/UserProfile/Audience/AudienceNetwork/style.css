@@ -1,0 +1,126 @@
+.network__wrapper, .network__wrapper .cards__wrapper .card__item, .network__wrapper .cards__wrapper .button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.network__wrapper .cards__wrapper .button__wrapper .button {
+  color: #319197 !important;
+  border: 1px solid #319197 !important;
+  background-color: white !important;
+  border-radius: 1em;
+}
+
+.network__wrapper .cards__wrapper .button__wrapper .button:hover {
+  background-color: #319197 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: normal !important;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
+}
+
+.network {
+  padding: 1em;
+  width: 100%;
+}
+
+.network__wrapper {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.network__wrapper .cards__wrapper {
+  width: 30%;
+  margin: 0 3em;
+  padding: 1em 0;
+  border-radius: 1em;
+  color: #666;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.network__wrapper .cards__wrapper:hover {
+  background-color: rgba(250, 250, 250, 0.6);
+}
+
+.network__wrapper .cards__wrapper .card__item {
+  flex-direction: column;
+  width: 100%;
+}
+
+.network__wrapper .cards__wrapper .card__item img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+
+.network__wrapper .cards__wrapper .card__item .name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.network__wrapper .cards__wrapper .card__item p {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.network__wrapper .cards__wrapper:nth-child(3), .network__wrapper .cards__wrapper:nth-child(4) {
+  margin-bottom: 0;
+}
+
+.network__wrapper .cards__wrapper .button__wrapper {
+  margin-top: .5em;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.network__wrapper .cards__wrapper .button__wrapper .button {
+  padding: 0.3em 0.8em;
+  border-radius: 1.5em;
+}
+
+@media only screen and (max-width: 650px) {
+  .network__wrapper .cards__wrapper {
+    width: 80%;
+    margin: 1em auto;
+  }
+}
+
+span.network__title {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #666;
+  padding: 1em;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,6 @@
-import React from 'react'
-import { Pagination } from 'react-bootstrap'
+import React from 'react';
+import '../css-modules/JobSearch/Pagination/style.css';
+// import { Pagination } from 'react-bootstrap'
 
 export default function JobsPagination({ page, setPage, hasNextPage }) {
   const adjustPage = (amount) => {
@@ -7,15 +8,14 @@ export default function JobsPagination({ page, setPage, hasNextPage }) {
   }
 
   return (
-    <Pagination>
-      {page !== 1 && <Pagination.Prev onClick={() => adjustPage(-1)} />}
-       {page !== 1 && <Pagination.Item onClick={() => setPage(1)}>1</Pagination.Item>}
-      {page > 2 && <Pagination.Ellipsis />}
-      {page > 2 && <Pagination.Item onClick={() => adjustPage(-1)}>{page - 1}</Pagination.Item>}
-      <Pagination.Item>{page}</Pagination.Item>
-      {hasNextPage && <Pagination.Item onClick={() => adjustPage(1)}>{page + 1}</Pagination.Item>}
-      
-      {hasNextPage && <Pagination.Next onClick={() => adjustPage(1)} />} 
-    </Pagination>
+    <div className = "pagination">
+      {page !== 1 && <span className = "item prev" onClick={() => adjustPage(-1)}>&#10094;</span>}
+       {page !== 1 && <span className = "item" onClick={() => setPage(1)}>1</span>}
+      {page > 2 && <span className = "item elipsis">&#8230;</span>}
+      {page > 2 && <span className = "item" onClick={() => adjustPage(-1)}>{page - 1}</span>}
+      <span className = "item current">{page}</span>
+      {hasNextPage && <span className = "item" onClick={() => adjustPage(1)}>{page + 1}</span>}      
+      {hasNextPage && <span className = "item next" onClick={() => adjustPage(1)}>&#10095;</span>} 
+    </div>
   )
 }

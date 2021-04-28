@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,kBAAkB,CAAC;EACf,WAAW,EAAC,GAAG;EACf,UAAU,EAAE,MAAM;EAClB,KAAK,ECDF,OAAe;EDElB,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,GAAG;CACjB",
+    "sources": [
+        "response.scss",
+        "../../_config.scss"
+    ],
+    "names": [],
+    "file": "response.css"
+}
