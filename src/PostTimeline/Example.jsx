@@ -12,7 +12,7 @@ function Example(props) {
 
   return (
     <div className='exampleDiv'>
-      <Button variant="secondary" onClick={handleShow} className="btn-color-c">
+      <Button  onClick={handleShow} className="btn-color-c">
        {props.name}
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -27,7 +27,7 @@ function Example(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button onClick={handleClose}>
             Save Changes
           </Button>
         </Modal.Footer>

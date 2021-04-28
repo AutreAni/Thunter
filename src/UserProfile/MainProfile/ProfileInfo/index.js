@@ -5,12 +5,16 @@ import AudienceMain from '../../Audience/AudienceMain/index';
 import '../../../css-modules/UserProfile/ProfileInfo/style.css';
 import ProfileSettings from '../../ProfileSettings/index';
 
-const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
+const ProfileInfo = ({ userData, showUserProfile, updateUserData, users }) => {
     const [previewPage, setPreviewPage] = useState({});
     const pageToPreview = (pageName) => {
         setPreviewPage(previewPage => ({ 
             [pageName]: !previewPage[pageName] 
         }));
+    }
+
+    const emptyUserArray = () => {
+        console.log(users)
     }
 
     return (
@@ -19,9 +23,7 @@ const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
                 (<div className="profile__info">
                 <AudienceMain
                         userData = {userData}
-                        // audience={userData.audience}
                         pageToPreview={pageToPreview}
-                        // password = {userData.password}
                         showUserProfile = {showUserProfile}
                         audienceList = {previewPage?.audiencePage}
                     />
@@ -29,6 +31,8 @@ const ProfileInfo = ({ userData, showUserProfile, updateUserData }) => {
                         about = {userData.about}
                         aboutPage={previewPage?.aboutPage}
                         pageToPreview={pageToPreview}
+                        showUserProfile = {showUserProfile}
+                        emptyUserArray = {emptyUserArray}
                     />                  
                     <Skills
                         skills={userData.skills}

@@ -1,33 +1,52 @@
 .settings__wrapper {
     position: relative; 
-
+    form {
+        margin-top:1em;
+        width:100%;
+    }
     label {
         margin:0;
         margin-right:0.5em;
+        width:10%;
+    }
+    .input__wrapper{
+        width:80%;
+        position: relative;
     }
     input {
         border:none;
         outline: none;
-        padding: 0.7em;
+        padding: 0.3em 0.7em;
         text-align: center;
+        font-size: 0.8em;
         border-radius: 1em;
-        background-color: transparent;
-        width:fit-content;
+        background-color: white;
+    }
+    .details__fields {
+        position: relative;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
     }
     .icon {
         font-size: 0.8em;
-        // margin-left:-2em;
+        position: absolute;
+        top:50%;
+        transform:translateY(-50%);
+        right:1em;
+        color:#666;
     }
     span {
         position: absolute;
-        top: 70%;
+        top:100%;
         font-size: 0.6em;
-        left: 25%;
+        left: 50%;
+        transform: translateX(-50%);
     }
   
   button {
       position: absolute;
-      top:1em;
+      top:0.5em;
       right:1em;
       font-weight: 500;
       background-color: transparent;

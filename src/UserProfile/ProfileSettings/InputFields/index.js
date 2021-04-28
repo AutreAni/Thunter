@@ -17,7 +17,8 @@ const InputField = ({ labelName, handleBlur, handleInputChange,
 
     return (
         <div className="details__fields input__field">
-            <label>{labelName}
+            <label>{labelName}</label>
+            <div className = "input__wrapper">
                 <input
                     type={type}
                     name={name}
@@ -30,9 +31,9 @@ const InputField = ({ labelName, handleBlur, handleInputChange,
                 <FontAwesomeIcon
                     icon={faPen}
                     className="icon"
-                />
-            </label>
-            {name === "about.birthDate" ? <span>Format YYYY/MM//DD</span> : null}
+                />   
+                {name === "about.birthDate" ? <span>Format YYYY/MM//DD</span> : null}
+                </div>         
         </div>
     )
 }

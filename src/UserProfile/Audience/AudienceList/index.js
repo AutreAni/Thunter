@@ -3,7 +3,7 @@ import ShortProfile from '../../ShortProfile/index';
 import '../../../css-modules/UserProfile/Audience/AudienceList/style.css';
 import { Link } from 'react-router-dom';
 
-const AudienceList = ({ users, showUserProfile }) => {
+const AudienceList = ({ users, showUserProfile, pageToPreview }) => {
  
       const usersList = users.length ? (users.map(user => {
         return <li
@@ -11,7 +11,9 @@ const AudienceList = ({ users, showUserProfile }) => {
             <Link to='/profile'>
                 <ShortProfile
                     userData={user}
-                    showUserProfile = {showUserProfile} />
+                    showUserProfile = {showUserProfile}
+                    pageToPreview = { pageToPreview }
+                    />
             </Link>
         </li>
     })) : null;

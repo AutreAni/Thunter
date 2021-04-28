@@ -10,7 +10,6 @@ const InputImg = (props) => {
        <Avatar userData = {props.userData}  /> 
        </span>      
        :null}
-       <input className="navInput" type="text" placeholder={props.placeholder} />
     </div>
    );
 }

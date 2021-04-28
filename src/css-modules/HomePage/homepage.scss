@@ -1,5 +1,14 @@
-.main__wrapper {
-    display: flex;
-    justify-content: space-between;
+@import '../config';
+@import '../utils';
+
+.main {
+    @extend %flex-box;
     align-items: flex-start;
+    background-color: $light-blue;
+    padding:1em 0;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }

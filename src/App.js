@@ -1,17 +1,12 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
-import Header from './Header/index';
 import Home from './Home/index';
-import MainProfile from './UserProfile/MainProfile/index';
-import AudiencePage from './UserProfile/Audience/AudiencePage';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 
 function App() {
   const [currentUser, setCurrentUser] = useState();
   const [signedIn, setSignedIn] = useState(false);
-  const [userToPreview, setUserToPreview] = useState();
+
 
   const setData = ({ username, name, id, email, password, picture, backgroundImg, audience, about, skills }) => {
     setCurrentUser({
@@ -39,6 +34,7 @@ function App() {
     })
   }
 
+
   const handleSubmit = (data) => {
     setData(data);
     setSignedIn(true);
@@ -63,48 +59,21 @@ function App() {
     })
   }
 
-  const showUserProfile = (obj) => {
-    setUserToPreview(obj);
-  }
 
   return (
     <div className="App">
       { signedIn ?
-      <Fragment>
-      <Router>
-        <Header
+        (<Home
           userData={currentUser}
           performSignOut={performSignOut}
-          showUserProfile = {showUserProfile}
-        />
-        <Switch>
-           <Route exact path="/" >
-            <Home
-              userData={currentUser}
-              showUserProfile = {showUserProfile}
-            />
-          </Route>
-          <Route path="/profile">
-            <MainProfile
-              userData= { userToPreview }
-              updatePicture={updatePicture}
-              updateUserData={updateUserData}
-            />
-          </Route>
-          <Route path="/audience">
-            <AudiencePage
-              userData={currentUser}
-              showUserProfile = {showUserProfile}
-            />
-          </Route>
-        </Switch>
-      </Router>
-      </Fragment>: 
-     ( <SignForm
-      performSubmit={handleSubmit}
-      />)
+          updatePicture={updatePicture}
+          updateUserData={updateUserData}
+        />)
+        :
+        (<SignForm
+          performSubmit={handleSubmit}
+        />)
       }
-      
     </div>
   );
 }

@@ -1,0 +1,75 @@
+@import '../config';
+@import '../utils';
+
+.timeline {
+    ul {
+        list-style: none;
+        @extend %flex-box;
+        width:100%;
+        color:$gray;
+        li {
+            margin-right:1em;
+            @extend %flex-box;
+            &:last-child {
+                margin-right:0;
+            }
+        }
+    }
+    input {
+        border-radius: 1.5em;
+        outline: none;
+        border:none;
+        background-color: $light-blue;
+        padding:0.5em 0.8em;
+    }
+    button {
+        @extend %button__transparent__blue;
+        outline: none;
+        &:focus{
+            box-shadow: none !important;
+        }
+    }
+    width:45%;
+    @media only screen and(max-width:650px) {
+        width:100%;
+    }
+    .navDiv{
+        @extend %flex-box;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding:1em;
+        padding-top:3em;
+        border-radius:0.5em;
+        margin-bottom: 1em;
+        .navContainer {
+            margin-left:1em;
+            width:stretch;
+
+            input {
+                padding:0 1.5em;
+                padding: .5em 1.5em;
+                width: stretch;
+                background-color: white;
+                }
+                ul {
+                    width:100%;
+                    @extend %flex-box;
+                    justify-content: space-around;
+                    margin-top:1em;
+                    padding:0;
+                    font-size:0.9em;
+                    button {
+                        padding:0.3em 1.2em;
+                        font-size:0.9em;
+                        font-weight: 500;
+                        border-radius: 1.5em;
+                    }
+                    svg {
+                        margin-left: 0.5em;
+                    }
+                }
+        }
+            
+    }
+    
+}

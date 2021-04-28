@@ -15,21 +15,22 @@ $blue04: rgba(49,145,151,0.4);
 }
 
 .sectionProfile {
-    a {
-        color:inherit;
-        &:active {
-            color:inherit;
-        }
+    @media only screen and (max-width: 650px){
+        display: none;
     }
+    background-color: white;
     @extend %flex-box;
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
-    width:25%;
+    width:20%;
+    height:fit-content;
     position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 1em;
-    border-radius:1em;
+    border-radius:0.5em;
+    a {
+        text-decoration: none !important;
+    }
     .avatar__wrapper {
         width:100%;
         @extend %flex-box;
@@ -53,14 +54,18 @@ $blue04: rgba(49,145,151,0.4);
     }
     .details__fields,
     .audience__info {
+        color: $gray;
         padding-top: 1.5em;
+        color : $gray;
         cursor: pointer;
         .icon {
             margin-right: 0.5em;
         }
+        
     }
+ 
     .details__fields:hover {
         color:#222;
     }
-}
 
+}

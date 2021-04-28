@@ -1,0 +1,133 @@
+.job__card, .job__badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details__btn {
+  color: #319197 !important;
+  border: 1px solid #319197 !important;
+  background-color: white !important;
+  border-radius: 1em;
+}
+
+.details__btn:hover {
+  background-color: #319197 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: normal !important;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
+}
+
+.job__details {
+  margin-right: 1em;
+}
+
+.job__card {
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  background-color: white;
+  margin: 1em 0;
+  text-align: left;
+  color: #666;
+  border: 1px solid rgba(159, 219, 224, 0.1);
+  box-shadow: 2px 2px 6px solid rgba(159, 219, 224, 0.1);
+  padding: 0.5em;
+}
+
+.job__title {
+  font-weight: 500;
+  font-size: 1.1em;
+  padding-top: 0.5em;
+}
+
+.job__title .company__name {
+  font-weight: bold;
+}
+
+.job__date {
+  font-size: 0.9em;
+}
+
+.job__badge {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 0.5em;
+}
+
+.job__badge span {
+  color: white;
+  background-color: #319197;
+  font-weight: bold;
+  font-size: 0.7em;
+  padding: 0 0.3em;
+  border-radius: 1em;
+  margin-right: 0.5em;
+}
+
+.job__badge span:last-child {
+  margin-right: 0;
+}
+
+.job__apply__link {
+  font-size: 0.9em;
+  padding-top: 0.5em;
+  word-break: break-word;
+}
+
+.job__description {
+  padding-top: 1em;
+  font-size: 0.7em;
+}
+
+.company__logo img {
+  max-width: 4em;
+}
+
+.details__btn {
+  width: fit-content;
+  padding: 0.3em 0.8em;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 850px) {
+  .job__details {
+    width: 100%;
+    margin-right: 0;
+  }
+  .company__logo img {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

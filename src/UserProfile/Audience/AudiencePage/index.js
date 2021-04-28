@@ -4,7 +4,7 @@ import AudienceMain from '../AudienceMain/index';
 import NetworkIndex from '../../../Network/index';
 
 
-const AudiencePage = ({ userData, showUserProfile }) => { 
+const AudiencePage = ({ userData, showUserProfile, users }) => { 
 
     return (
         <div className="container">
@@ -13,7 +13,9 @@ const AudiencePage = ({ userData, showUserProfile }) => {
                    <AudienceMain
                     userData = {userData}
                     showUserProfile = {showUserProfile}
+                    users = {users}
                     audienceList = {true}
+                    pageToPreview = {()=>null}
                    />
                 </div>
                 <div className="under__preview">
