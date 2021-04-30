@@ -13,7 +13,7 @@ const MainList = ({blogs}) =>{
           <div key={d.id} className='divContainer'>
              <p>{d.date}</p>
             <div> 
-               <img src={d.logo} className="logo" alt = "logo" />
+               <img src={d.logo} className="logoT" alt = "logo" />
                <a href={d.link}>{d.title}</a> 
             </div>
             <p>{d.text}</p>
