@@ -16,6 +16,10 @@ import JobSearchPage from '../JobSearch/JobSearchPage';
 import JobSection from '../JobSearch/JobSection';
 import '../css-modules/HomePage/homepage.css';
 import '../css-modules/Timeline/style.css';
+import '../css-modules/JobSectionCssShushan/style.css';
+import Jobs from '../JobSectionByShushan/homePageJobs';
+import Search from '../JobSectionByShushan/Search';
+import JobSearchForm from '../JobSectionByShushan/JobSearchForm'
 
 
 
@@ -24,7 +28,7 @@ const Home = ({ userData, performSignOut, updatePicture, updateUserData }) => {
     const [params, setParams] = useState({});
     const [page, setPage] = useState(1);
     const { jobs, loading, error, hasNextPage } = useFetchJobs(params, page);
-  
+    const [state, setState] = useState(true);
 
     const handleParamChange = (e) => {
         const param = e.target.name;
@@ -68,13 +72,21 @@ const Home = ({ userData, performSignOut, updatePicture, updateUserData }) => {
                                         <TimelineItem />
                                     </div>
                                 </div>
-                                <div className="job__section">
+                                {/* <div className="job__section">
                                     {jobs.length ?
                                         <JobSection
                                             jobs={jobs} />
                                         :
                                         <Courses />
                                     }
+                                </div> */}
+                                <div className="job__section">
+      
+                                    <a className="a" href ='#' onClick={(evt)=>{
+                                    evt.preventDefault(); 
+                                    setState(!state);
+                                    }}>{state ?  'back': <Search />}</a>
+                                    {state ? <JobSearchForm /> : <Jobs />}
                                 </div>
                                 {/* <Provider store={store}>
                                     <HomePage />
