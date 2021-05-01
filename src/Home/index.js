@@ -72,6 +72,7 @@ const Home = ({ userData, performSignOut, updatePicture, updateUserData }) => {
                                         <TimelineItem />
                                     </div>
                                 </div>
+    {/* Ani */}
                                 {/* <div className="job__section">
                                     {jobs.length ?
                                         <JobSection
@@ -80,6 +81,7 @@ const Home = ({ userData, performSignOut, updatePicture, updateUserData }) => {
                                         <Courses />
                                     }
                                 </div> */}
+    {/*  Shushan */}
                                 <div className="job__section">
       
                                     <a className="a" href ='#' onClick={(evt)=>{
@@ -88,6 +90,7 @@ const Home = ({ userData, performSignOut, updatePicture, updateUserData }) => {
                                     }}>{state ?  'back': <Search />}</a>
                                     {state ? <JobSearchForm /> : <Jobs />}
                                 </div>
+
                                 {/* <Provider store={store}>
                                     <HomePage />
                                 </Provider> */}
