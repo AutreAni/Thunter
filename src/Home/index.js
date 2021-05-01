@@ -85,8 +85,8 @@ const Home = ({ userData, performSignOut, updatePicture, updateUserData }) => {
                                     <a className="a" href ='#' onClick={(evt)=>{
                                     evt.preventDefault(); 
                                     setState(!state);
-                                    }}>{state ?  'back': <Search />}</a>
-                                    {state ? <JobSearchForm /> : <Jobs />}
+                                    }}>{state ? <Search /> : 'back' }</a>
+                                    {state ? <Jobs />: <JobSearchForm />}
                                 </div>
                                 {/* <Provider store={store}>
                                     <HomePage />
