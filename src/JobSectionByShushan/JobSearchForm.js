@@ -10,7 +10,7 @@ const JobSearchForm = () => {
         placeholder = "location"
         autoComplete = "on" name = "location" />
         <div className = "full__time">
-        <label class="full__time__label">Full Time
+        <label className="full__time__label">Full Time
         <input type="checkbox" 
         name = "full_time" />
         <span class="checkmark"></span>
