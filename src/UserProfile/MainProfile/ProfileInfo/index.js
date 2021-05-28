@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import About from '../../About/index';
 import Skills from '../../Skills/index';
 import AudienceMain from '../../Audience/AudienceMain/index';

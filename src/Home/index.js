@@ -7,8 +7,6 @@ import Header from '../Header/index';
 import MainProfile from '../UserProfile/MainProfile/index';
 import AudiencePage from '../UserProfile/Audience/AudiencePage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import JobSearchPage from '../JobSearch/JobSearchPage';
-// import JobSection from '../JobSearch/JobSection';
 import '../css-modules/HomePage/homepage.css';
 import '../css-modules/Timeline/style.css';
 import '../css-modules/JobSectionCssShushan/style.css';
