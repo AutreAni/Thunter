@@ -72,6 +72,10 @@
   transition: .5s;
 }
 
+.profile__info .active-subpage {
+  background-color: rgba(159, 219, 224, 0.1);
+}
+
 .profile__info .wrapper {
   position: absolute;
   top: 100%;
@@ -106,6 +110,7 @@
   padding: 0.5em;
   box-shadow: inset 0.5px 0.5px 3px rgba(0, 0, 0, 0.05), inset -0.5px -0.5px 3px rgba(0, 0, 0, 0.05);
   border-radius: 0.5em;
+  position: relative;
 }
 
 .profile__info .wrapper .details__fields .icon {

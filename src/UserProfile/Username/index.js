@@ -1,13 +1,14 @@
 import React from 'react';
 import '../../css-modules/UserProfile/Username/style.css';
 
-const Username = ({userData, goToMainProfile}) => {
+const Username = ({goToMainProfile, username}) => {
+
     return (
         <span 
         className = "username"
         onClick = {goToMainProfile}
         >
-        {userData.username}
+        {username}
         </span>
     )
 }

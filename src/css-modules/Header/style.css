@@ -37,7 +37,6 @@
 
 .header {
   justify-content: space-between;
-  padding: 1em 0;
 }
 
 .header a {
@@ -50,10 +49,26 @@
   font-weight: 500;
   font-size: 1.1em;
   cursor: pointer;
+  height: 100%;
+  padding: 10px 15px;
+  line-height: 40px;
 }
 
 .header .nav-li:hover {
   color: #222;
+}
+
+.header .active-nav {
+  background-color: rgba(159, 219, 224, 0.1);
+  border-radius: 5px;
+}
+
+.header .active-nav .shortProfile {
+  background-color: rgba(159, 219, 224, 0.02);
+}
+
+.header .shortProfile {
+  padding: 0;
 }
 
 .header .icon {

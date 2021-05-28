@@ -7,51 +7,57 @@ import Age from '../About/Age/index';
 import Education from '../About/Education/index';
 import Employment from '../About/Employment/index';
 import LivesIn from '../About/LivesIn/index';
+import { setUserToPreview } from '../../actions/features/userToPreviewSlicer';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { setActivePage } from '../../actions/features/activePageSlice'
 
 
+const SectionProfile = () => {
+    const currentUser = useSelector(state => state.currentUser)
+    const dispatch = useDispatch();
 
-const SectionProfile = ({ userData, showUserProfile }) => {
-    const handleClick = () => {
-        showUserProfile(userData)
+    const showUserProfile = () => {
+        dispatch(setActivePage("PROFILE"));
+        dispatch(setUserToPreview(currentUser))
     }
     return (
         <Fragment>
-            { userData ? <div className="sectionProfile" onClick = {handleClick}>
+            { currentUser ? <div className="sectionProfile" onClick = {showUserProfile}>
                 <Link to="/profile">
                 <div className = "avatar__wrapper">
-                    <Avatar className="section__avatar"
-                        userData={userData} />
-                        <Username userData={userData}
-                    />
+                        <Avatar className="section__avatar"
+                        avatar={currentUser.picture} />
+                        <Username 
+                        username={currentUser.username}/>
                 </div>
                    
                 </Link>
                 <div className="section__details">
                     <Link to="/audience">
                         <AudienceInfo
-                            audience={userData.audience}
+                            audience={currentUser.audience}
                             pageToPreview = {() => null}
                         />
                     </Link>
                     <Link to='/profile'>
-                        {userData.about?.birthDate ?
+                        {currentUser.about?.birthDate ?
                             (<Age
-                                birthDate={userData.about.birthDate}
+                                birthDate={currentUser.about.birthDate}
                             />
                             ) : null}
-                        {userData.about?.LivesIn ?
+                        {currentUser.about?.LivesIn ?
                             (<LivesIn
-                                livesIn={userData.about.livesIn}
+                                livesIn={currentUser.about.livesIn}
                             />) : null}
 
-                        {userData.about?.employment ?
+                        {currentUser.about?.employment ?
                             (<Employment
-                                employment={userData.about.employment}
+                                employment={currentUser.about.employment}
                             />) : null}
-                        {userData.about?.education ?
+                        {currentUser.about?.education ?
                             (<Education
-                                education={userData.about.education}
+                                education={currentUser.about.education}
                             />) : null}
                     </Link>
                 </div>

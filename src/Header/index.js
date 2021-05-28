@@ -1,50 +1,66 @@
-import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setActivePage } from '../actions/features/activePageSlice';
 import SearchField from './SearchField/index';
 import ShortProfile from '../UserProfile/ShortProfile/index';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome, faSignOutAlt, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import '../css-modules/Header/style.css';
 import { Link } from 'react-router-dom';
+import { setCurrentUser } from '../actions/features/currentUserSlice';
 
-const Header = ({ userData, performSignOut, showUserProfile }) => {
+const Header = ({ showUserProfile }) => {
+    const activePage = useSelector(state => state.activePage);
+    const userData = useSelector(state => state.currentUser);
+
+
+    const dispatch  = useDispatch();
     const handleSignOut = () => {
-        performSignOut();
+        dispatch(setCurrentUser(null));
     }
     return (
         <div
-            className="container">
+            className="wrapper">
             <div
                 className="header">
                 <SearchField />
-                <Link to="/">
+                <Link to="/"
+                onClick = {() => dispatch(setActivePage("HOME"))}
+                >
                     <span
-                        className="nav-li">
+                        className={`nav-li ${activePage === "HOME"?"active-nav":""}`}
+                        >
                         <FontAwesomeIcon
                             icon={faHome}
                             className="icon"
                         /> Home
                     </span>
                 </Link>
-                <Link to="/jobs">
+                <Link className = "jobs"
+                onClick = {() => dispatch(setActivePage("JOBS"))}
+                to="/jobs">
                     <span
-                        className="nav-li jobs">
+                        className={`nav-li jobs ${activePage === "JOBS"?"active-nav":""}`}
+                        >
                         <FontAwesomeIcon
                             icon={faBriefcase}
                             className="icon"
                         /> Jobs
                     </span>
                 </Link>
-                <Link to="/profile">
+                <Link to="/profile"
+                onClick = {() => dispatch(setActivePage("PROFILE"))}
+                >
                     <span
-                        className="nav-li">
+                        className={`nav-li ${activePage === "PROFILE"?"active-nav":""}`}
+                        >
                         <ShortProfile
-                            userData={userData}
-                            showUserProfile = {showUserProfile}
+                            userData = { userData }
                             emptyUserArray = {()=>null}
                             pageToPreview = {()=>null}
                         />
                     </span>
                 </Link>
+                <Link to="/">
                 <span
                     className="nav-li signOut"
                     onClick={handleSignOut}>
@@ -53,6 +69,7 @@ const Header = ({ userData, performSignOut, showUserProfile }) => {
                         className="icon" />
                       Sign Out
                 </span>
+                </Link>
             </div>
         </div>
     )

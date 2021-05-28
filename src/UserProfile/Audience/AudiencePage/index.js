@@ -1,25 +1,38 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import '../../../css-modules/UserProfile/Audience/AudiencePage/style.css';
-import AudienceMain from '../AudienceMain/index';
+import AudienceList from '../AudienceList/index';
 import NetworkIndex from '../../../Network/index';
+import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
 
-const AudiencePage = ({ userData, showUserProfile, users }) => { 
+const AudiencePage = () => {
+    const audience = useSelector(state => state.currentUser.audience);
+    const [users, setUsers] = useState([]);
+    let requestUrl = `http://localhost:3000/users/`;
+
+    useEffect(() => {
+           (audience.forEach(user => {
+                fetch(`${requestUrl}${user}`)
+                    .then(response => response.json())
+                    .then(data => setUsers(users => [...users, data]))
+            }))
+            return() => { setUsers([]) }
+    },[audience]);
 
     return (
-        <div className="container">
+        <div className="wrapper">
             <div className="audience__main">
                 <div className="existing__audience">
-                   <AudienceMain
-                    userData = {userData}
-                    showUserProfile = {showUserProfile}
-                    users = {users}
-                    audienceList = {true}
-                    pageToPreview = {()=>null}
-                   />
+                    <div className="audience__info">
+                        <FontAwesomeIcon icon={faUserFriends} className="icon audience__icon" />
+                        <span className="audience__qt">Audience {audience?.length}</span>
+                    </div>
+                    <AudienceList users={ users } />
                 </div>
                 <div className="under__preview">
-                 <NetworkIndex />             
+                    <NetworkIndex />
                 </div>
             </div>
         </div>

@@ -1,78 +1,41 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import './App.css';
 import SignForm from "./SignForm/index";
 import Home from './Home/index';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState();
-  const [signedIn, setSignedIn] = useState(false);
+
+  const currentUser = useSelector(state => state.currentUser);
 
 
-  const setData = ({ username, name, id, email, password, picture, backgroundImg, audience, about, skills }) => {
-    setCurrentUser({
-      username: username ? username : name.split(" ")[0],
-      name: name,
-      id: id,
-      email,
-      password,
-      picture: picture?.data?.url || picture || null,
-      backgroundImg: backgroundImg ? backgroundImg : null,
-      audience: audience ? audience : null,
-      currentUser: true,
-      about: {
-        family: about?.family || null,
-        livesIn: about?.livesIn || null,
-        employment: about?.employment || null,
-        education: about?.education || null,
-        birthDate: about?.birthDate || null
-      },
-      skills: {
-        languages: skills?.languages || null,
-        softwareSkills: skills?.softwareSkills || null,
-        otherSkills: skills?.otherSkills || null,
-      }
-    })
-  }
 
-
-  const handleSubmit = (data) => {
-    setData(data);
-    setSignedIn(true);
-  }
 
   const performSignOut = () => {
-    setCurrentUser(null);
-    setSignedIn(false);
+    // setCurrentUser(null);
   }
 
   const updatePicture = (field, url) => {
-    setCurrentUser({
-      ...currentUser,
-      [field]: url
-    });
+    // setCurrentUser({
+    //   ...currentUser,
+    //   [field]: url
+    // });
   }
 
   const updateUserData = (obj) => {
-    setCurrentUser({
-      ...currentUser,
-      ...obj
-    })
+    // setCurrentUser({
+    //   ...currentUser,
+    //   ...obj
+    // })
   }
 
 
   return (
     <div className="App">
-      { signedIn ?
-        (<Home
-          userData={currentUser}
-          performSignOut={performSignOut}
-          updatePicture={updatePicture}
-          updateUserData={updateUserData}
-        />)
+      { currentUser ?
+        <Home />       
         :
-        (<SignForm
-          performSubmit={handleSubmit}
-        />)
+        <SignForm />
       }
     </div>
   );

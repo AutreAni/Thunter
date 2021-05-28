@@ -8,26 +8,37 @@
     }
     @extend %flex-box;
     justify-content: space-between;
-    padding:1em 0;
     .nav-li {
         display: block;
         color:$gray;
         font-weight: 500;
         font-size: $primary-font-size;
         cursor: pointer;
+        height:100%;
+        padding:10px 15px;
+        line-height: 40px;
         &:hover {
             color:$darkgray;
         }
+    }
+    .active-nav {
+        background-color:$light-blue;
+        border-radius: 5px;
+        .shortProfile{
+            background-color:rgba(159, 219, 224, 0.02);
+        }
+    }
+    .shortProfile {
+        padding:0;
     }
 
     .icon {
         margin-right:0.3em;
     }
     .jobs {
-        // display: none;
         @media only screen and (min-width:650px){
              display: none;
         } 
     }
-   
+      
 }

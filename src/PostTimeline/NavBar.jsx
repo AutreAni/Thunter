@@ -11,7 +11,7 @@ class NavBar extends Component {
   render() { 
     return ( 
       <div className="navDiv">
-        <InputImg userData = {this.props.userData} />
+        <InputImg />
         {/* <LikeButtons /> */}
         <nav className="navContainer">
         <input className="navInput" type="text" placeholder = "Add a post..." />

@@ -27,21 +27,12 @@
         width:100%;
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
-    .icon {
-        font-size: 0.8em;
-        position: absolute;
-        top:50%;
-        transform:translateY(-50%);
-        right:1em;
-        color:#666;
-    }
+    
     span {
-        position: absolute;
-        top:100%;
+        display: block;
         font-size: 0.6em;
-        left: 50%;
-        transform: translateX(-50%);
     }
   
   button {

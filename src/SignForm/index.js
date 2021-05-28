@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import InputField from './InputField';
+import { validateData } from './validate';
+import { setCurrentUser } from '../actions/features/currentUserSlice';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../css-modules/SignForm/style.css";
 
 
-function SignForm({ performSubmit }) {
+
+const SignForm = () => {
     const [loggingin, setLoggingin] = useState(true);
     const [registering, setRegistering] = useState(false);
     const [validUsername, setValidUsername] = useState(true);
@@ -15,6 +19,7 @@ function SignForm({ performSubmit }) {
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
+    const dispatch = useDispatch();
 
     let fbLogin = false;
     let processing = false;
@@ -39,41 +44,6 @@ function SignForm({ performSubmit }) {
         setValidEmail(true);
         setValidConfPass(true);
         setValidPassword(true);
-    }
-
-    const validateUsername = (text) => {
-        if (!text) return false;
-        return text.length;
-    }
-
-    const validatePassword = (password) => {
-        if (!password.match(/[a-z]/g) ||
-            !password.match(/[A-Z]/g) ||
-            !password.match(/[0-9]/g) ||
-            password.length < 8) {
-            return false;
-        }
-        return true;
-    }
-
-    const validateConfirm = (password) => {
-        let pass = document.querySelector("input[name = Password]");
-        if (password !== pass.value) {
-            return false;
-        }
-        return true;
-    }
-
-    const validateEmail = (email) => {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    }
-
-    const validateData = {
-        Username: validateUsername,
-        Password: validatePassword,
-        Email: validateEmail,
-        ConfPass: validateConfirm,
     }
 
     const setValidData = {
@@ -101,6 +71,7 @@ function SignForm({ performSubmit }) {
 
 
     const saveUserData = (data, url) => {
+        return function(dispatch){
         fetch(url, {
             method: "POST",
             headers: {
@@ -109,8 +80,9 @@ function SignForm({ performSubmit }) {
             body: JSON.stringify(data),
         })
             .then(response => response.json())
-            .then(data => performSubmit(data))
+            .then(data => dispatch(setCurrentUser(data)))
             .catch(error => console.log(error));
+     }
     }
 
     const filterData = (data, obj) => {
@@ -122,7 +94,7 @@ function SignForm({ performSubmit }) {
             user.password === obj.password);
         if (loggingin && !fbLogin) {
             filteredByUsername.length && filteredByPassord.length ?
-                performSubmit(filteredByUsername[0]) :
+            dispatch(setCurrentUser(filteredByUsername[0])) :
                 setWrongDataMsg("Wrong username or password");
         } else if (registering) {
             if (filteredByUsername.length || filteredByEmail.length || filteredByPassord.length) {
@@ -135,7 +107,7 @@ function SignForm({ performSubmit }) {
                 saveUserData(obj, " http://localhost:3000/users")
             }
         } else if (fbLogin) {
-            filteredByEmail.length ? performSubmit(filteredByEmail[0]) : saveUserData(obj, "http://localhost:3000/fbUsers")
+            filteredByEmail.length ? dispatch(setCurrentUser(filteredByUsername[0])) : saveUserData(obj, "http://localhost:3000/fbUsers")
         }
     }
 

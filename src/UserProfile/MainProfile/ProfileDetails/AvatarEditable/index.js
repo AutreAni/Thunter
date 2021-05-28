@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import Avatar from '../../../Avatar/index';
 import UploadImg from '../../UploadImg/index';
 import AddPicture from '../../AddPicture/index';
+import { useSelector } from 'react-redux';
 
 const AvatarEditable = ({ userData, updatePicture}) => {
+    const currentUserId = useSelector(state => state.currentUser.id)
     const [uploadField, setUploadField] = useState();
     const [camera, setCamera] = useState(true);
 
@@ -23,10 +25,10 @@ const AvatarEditable = ({ userData, updatePicture}) => {
         <div className="avatar__editable">
             <Avatar
                 className="mainProfile"
-                userData={userData}
+                avatar={userData.picture}
                 updatePicture={updatePicture}
             />
-            {camera && userData.currentUser ? <AddPicture handleClick={createUplaodField} /> : null}
+            {camera && userData.id === currentUserId ? <AddPicture handleClick={createUplaodField} /> : null}
             {uploadField ?
                 <UploadImg
                     updatePicture = {updatePicture}
