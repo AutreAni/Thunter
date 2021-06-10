@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Axios from 'axios';
 import Button from '../../../Button/index';
 import '../../../css-modules/UserProfile/UploadImg/style.css';
-import { updateCurrentUser } from '../../../actions/features/currentUserSlice';
+import { updateCurrentUser } from '../../../actions/currentUser';
 import { useDispatch } from 'react-redux';
 
 const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {

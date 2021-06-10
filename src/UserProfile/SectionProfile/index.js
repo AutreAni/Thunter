@@ -7,10 +7,10 @@ import Age from '../About/Age/index';
 import Education from '../About/Education/index';
 import Employment from '../About/Employment/index';
 import LivesIn from '../About/LivesIn/index';
-import { setUserToPreview } from '../../actions/features/userToPreviewSlicer';
+import { setUserToPreview } from '../../actions/userToPreview';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setActivePage } from '../../actions/features/activePageSlice'
+import { setActivePage } from '../../actions/activePage'
 
 
 const SectionProfile = () => {

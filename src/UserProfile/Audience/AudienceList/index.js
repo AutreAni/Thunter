@@ -1,10 +1,20 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import ShortProfile from '../../ShortProfile/index';
 import '../../../css-modules/UserProfile/Audience/AudienceList/style.css';
 import { Link } from 'react-router-dom';
+import { fetchAudienceList, emptyAudinceList } from '../../../actions/audienceList';
+import { useDispatch, useSelector } from 'react-redux'
 
-const AudienceList = ({ users }) => {
- 
+const AudienceList = ({ audience }) => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+          dispatch(fetchAudienceList(audience));
+          return () => dispatch(emptyAudinceList())
+    },[audience]);
+
+    const users = useSelector(state => state.audienceList);
+
       const usersList = users.length ? (users.map(user => {
         return <li
             key={user.id}>

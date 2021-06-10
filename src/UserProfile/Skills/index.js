@@ -2,7 +2,7 @@ import React from 'react';
 import Languages from './Languages/index';
 import SoftwareSkills from './SoftwareSkills/index';
 import OtherSkills from './OtherSkills/index';
-import { setActiveSubpage } from '../../actions/features/activeSubpageSlicer';
+import { setActiveSubpage } from '../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Skills = () => {

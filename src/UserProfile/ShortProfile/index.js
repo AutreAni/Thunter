@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
-import { setUserToPreview } from '../../actions/features/userToPreviewSlicer';
+import { setUserToPreview } from '../../actions/userToPreview';
 import '../../css-modules/UserProfile/ShortProfile/style.css';
 import { useDispatch } from 'react-redux';
 

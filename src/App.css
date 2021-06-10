@@ -9,6 +9,9 @@
   margin:0 auto;
 
 }
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+}
 
 * {
   box-sizing: border-box;
