@@ -1,6 +1,11 @@
 @import '../config';
 @import '../utils';
 
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
 .sign__form { 
     width:100vw;
     height:100vh;
@@ -42,6 +47,10 @@
             background-color: white;
         }
     }
+    input{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 0px 1000px white inset;  
+     }
 
     @media only screen and (max-width: 650px){
         font-size: 90%;
@@ -70,7 +79,7 @@
         border:none;
         margin:0;
         outline: none;
-        background-color: white;
+        background-color: white;         
     }
     .icon {
         color:$gray;

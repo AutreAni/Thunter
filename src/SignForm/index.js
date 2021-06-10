@@ -20,9 +20,9 @@ const SignForm = () => {
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
+    const [loading, setLoading] = useState(false);
     const BASE_URL = `http://localhost:3000/users`;
     let fbLogin = false;
-    let processing = false;
     const dispatch = useDispatch();
 
     const createLoginForm = () => {
@@ -67,6 +67,7 @@ const SignForm = () => {
         const name = e.target.name;
         if (!name) return;
         setValidData[name](true);
+        setWrongDataMsg(null);
     }
 
 
@@ -76,41 +77,51 @@ const SignForm = () => {
     }
 
     const checkUserLoginCredentials = (obj) => {
+        setLoading(true);
         const url = fbLogin ? `${BASE_URL}?email=${obj.email}` : `${BASE_URL}?username=${obj.username}&password=${obj.password}`
         fetch(url)
             .then(response => {
                 if (response.status !== 200) {
-                    processing = false;
+                    setLoading(false);
                     throw new Error();
                 }
+                setLoading(false);
                 setWrongDataMsg(null);
                 return response.json()
             })
             .then(data => {
                 if (!data.length && !fbLogin) {
+                    setLoading(false);
                     setWrongDataMsg("Wrong username or password");
                     return;
                 } else if (!data.length && fbLogin) {
+                    setLoading(false);
                     registerNewUser(obj);
                     return;
                 }
                 dispatch(setCurrentUser(data[0]))
             })
-            .catch(err => setWrongDataMsg("Server is not connected"))
+            .catch(err => {
+                setLoading(false);
+                setWrongDataMsg("Server is not connected")
+            })
     }
 
     const checkUserRegisterCredentials = (obj) => {
+        setLoading(true);
         fetch(`${BASE_URL}?username=${obj.username}`)
             .then(response => {
                 if (response.status !== 200) {
-                    processing = false;
+                    setLoading(false);
                     throw new Error();
                 }
+                setLoading(false);
                 setWrongDataMsg(null);
                 return response.json()
             })
             .then(data => {
                 if (data.length) {
+                    setLoading(false);
                     setWrongDataMsg("Username is already taken")
                     return;
                 } else {
@@ -118,25 +129,34 @@ const SignForm = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data.length) {
+                                setLoading(false);
                                 setWrongDataMsg("An account with this email already exists");
                                 return
                             } else {
+                                setLoading(false);
                                 setWrongDataMsg(null);
                                 registerNewUser(obj)
                             }
                         })
-                        .catch(err => setWrongDataMsg("Server is not connected"))
+                        .catch(err => {
+                            setLoading(false);
+                            setWrongDataMsg("Server is not connected")
+                        })
                 }
             })
-            .catch(err => setWrongDataMsg("Server is not connected"))
+            .catch(err => {
+                setLoading(false);
+                setWrongDataMsg("Server is not connected")
+            })
     }
 
     const handleFbClick = () => {
-        if (processing) return;
         fbLogin = true;
+        // setLoading(true);
     }
 
     const responseFacebook = (response) => {
+        // setLoading(false);
         if (!fbLogin) return;
         if (response.status === "unknown") {
             fbLogin = false;
@@ -151,9 +171,6 @@ const SignForm = () => {
 
 
     const formSubmit = (e) => {
-        debugger;
-        if (processing) return;
-        processing = true;
         const form = e.target.closest("form");
         e.preventDefault();
         let data = {};
@@ -164,21 +181,18 @@ const SignForm = () => {
 
         if (loggingin && !fbLogin) {
             if (!data.username.length || !data.password.length) {
-                processing = false;
                 setWrongDataMsg("*All fields are required");
                 return;
             }
         } else if (registering) {
             if (!data.username.length || !data.password.length
                 || !data.email.length || !data.confPass.length) {
-                processing = false;
                 setWrongDataMsg("*All fields are required");
                 return;
             } else if (!validUsername
                 || !validEmail
                 || !validPassword
                 || !validConfPass) {
-                processing = false;
                 return;
             } else {
                 checkUserRegisterCredentials(data);
@@ -254,7 +268,13 @@ const SignForm = () => {
                                 errorMsg={!validConfPass ? ("*Passwords should match") : null}
                             />) : null}
 
-                        <div className="sign__btn">
+                        <div className={`sign__btn ${wrongDataMsg
+                            || loading
+                            || (registering
+                                && (!validUsername
+                                    || !validPassword
+                                    || !validEmail
+                                    || !validConfPass)) ? "disabled" : ""}`}>
                             <button>{registering ? "Register" : "Log In"}</button>
                             {wrongDataMsg ? <p className="errorMsg">{wrongDataMsg}</p> : null}
                         </div>

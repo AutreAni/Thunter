@@ -15,9 +15,6 @@ $blue04: rgba(49,145,151,0.4);
 }
 
 .sectionProfile {
-    @media only screen and (max-width: 650px){
-        display: none;
-    }
     background-color: white;
     @extend %flex-box;
     flex-direction: column;

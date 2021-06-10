@@ -82,6 +82,11 @@
   box-shadow: none !important;
 }
 
+.timeline-avatar img {
+  width: 45px;
+  height: 45px;
+}
+
 @media only screen and (max-width: 650px) {
   .timeline {
     width: 100%;
@@ -89,9 +94,8 @@
 }
 
 .timeline .navDiv {
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
-  padding: 1em;
   padding-top: 3em;
   border-radius: 0.5em;
   margin-bottom: 1em;
@@ -99,11 +103,10 @@
 
 .timeline .navDiv .navContainer {
   margin-left: 1em;
-  width: stretch;
+  width: 80%;
 }
 
 .timeline .navDiv .navContainer input {
-  padding: 0 1.5em;
   padding: .5em 1.5em;
   width: stretch;
   background-color: white;
@@ -118,7 +121,7 @@
 }
 
 .timeline .navDiv .navContainer ul button {
-  padding: 0.3em 1.2em;
+  padding: 0.8vw 1.6vw;
   font-size: 0.9em;
   font-weight: 500;
   border-radius: 1.5em;

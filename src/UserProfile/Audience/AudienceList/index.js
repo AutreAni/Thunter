@@ -11,7 +11,7 @@ const AudienceList = ({ audience }) => {
     useEffect(() => {
           dispatch(fetchAudienceList(audience));
           return () => dispatch(emptyAudinceList())
-    },[audience]);
+    },[audience, dispatch]);
 
     const users = useSelector(state => state.audienceList);
 

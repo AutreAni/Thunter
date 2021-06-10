@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import SectionProfile from '../UserProfile/SectionProfile/index';
 import Components from '../PostTimeline/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,13 +21,22 @@ const Home = () => {
     const currentUser = useSelector(state => state.currentUser);
     const userToPreview = useSelector(state => state.userToPreview);
     const [state, setState] = useState(true);
-
+    const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+    
+    useEffect(()=>{
+        const setWidth = () => {
+            setInnerWidth(window.innerWidth);
+        }
+        window.addEventListener("resize",setWidth)
+        return (()=> window.removeEventListener("resize"),setWidth);
+    },[innerWidth])
 
     return (
         <Fragment>
             <Router>
                 <Header
                     userData={currentUser}
+                    innerWidth = {innerWidth}
                 />
                 <Switch>
                     <Route exact path="/">
@@ -35,7 +44,9 @@ const Home = () => {
                             style={{ position: 'relative' }}>
                             <div className="wrapper main__wrapper"
                                 style={{ display: "flex" }}>
+                                {innerWidth >= 650 ?
                                 <SectionProfile /> 
+                                :null }
                                 <div className="timeline">
                                     <Components />
                                     <div>
@@ -43,7 +54,8 @@ const Home = () => {
                                     </div>
                                 </div>
                             
-                                <div className="job__section"
+                                {innerWidth >= 650? 
+                                    <div className="job__section"
                                 style = {{width:"25%"}}>
       
                                     <span className="a" href ='#' onClick={(evt)=>{
@@ -52,6 +64,7 @@ const Home = () => {
                                     }}>{state ? <Search /> : 'back' }</span>
                                     {state ? <Jobs />: <JobSearchForm />}
                                 </div>
+                                :null}
                              </div>
                         </div>
                     </Route>

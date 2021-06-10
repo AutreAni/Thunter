@@ -7,7 +7,7 @@ const InputImg = () => {
  
   return ( 
     <div className="inputDiv">
-      <span style = {{width:"45px", height:"45px"}}>
+      <span className = "timeline-avatar">
        <Avatar avatar = { avatar }  /> 
        </span>      
     </div>

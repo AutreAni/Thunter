@@ -8,7 +8,7 @@ import '../css-modules/Header/style.css';
 import { Link } from 'react-router-dom';
 import { removeCurrentUser } from '../actions/currentUser';
 
-const Header = () => {
+const Header = ({innerWidth}) => {
     const activePage = useSelector(state => state.activePage);
     const userData = useSelector(state => state.currentUser);
 
@@ -35,7 +35,8 @@ const Header = () => {
                         /> Home
                     </span>
                 </Link>
-                <Link className = "jobs"
+               { innerWidth < 650 ?
+                   <Link className = "jobs"
                 onClick = {() => dispatch(setActivePage("JOBS"))}
                 to="/jobs">
                     <span
@@ -47,6 +48,7 @@ const Header = () => {
                         /> Jobs
                     </span>
                 </Link>
+                :null}
                 <Link to="/profile"
                 onClick = {() => dispatch(setActivePage("PROFILE"))}
                 >

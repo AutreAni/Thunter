@@ -17,12 +17,6 @@
   border-radius: 0.5em;
 }
 
-@media only screen and (max-width: 650px) {
-  .sectionProfile {
-    display: none;
-  }
-}
-
 .sectionProfile a {
   text-decoration: none !important;
 }
