@@ -7,7 +7,7 @@ const Avatar = ({className, avatar }) => {
     return (
             <img className = {className + " avatar"}
             src = {avatar || placeholderImg }   
-            alt="placeholder"></img>
+            alt=""></img>
     )
 }
 

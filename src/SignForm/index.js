@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import InputField from './InputField';
 import { validateData } from './validate';
-import { setCurrentUser } from '../actions/features/currentUserSlice';
+import { setCurrentUser } from '../actions/currentUser';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../css-modules/SignForm/style.css";
+import { registerCurrentUser } from '../actions/currentUser';
 
 
 
@@ -19,10 +20,10 @@ const SignForm = () => {
     const [validPassword, setValidPassword] = useState(true);
     const [validConfPass, setValidConfPass] = useState(true);
     const [wrongDataMsg, setWrongDataMsg] = useState();
-    const dispatch = useDispatch();
-
+    const [loading, setLoading] = useState(false);
+    const BASE_URL = `http://localhost:3000/users`;
     let fbLogin = false;
-    let processing = false;
+    const dispatch = useDispatch();
 
     const createLoginForm = () => {
         if (!registering && loggingin) return;
@@ -66,91 +67,110 @@ const SignForm = () => {
         const name = e.target.name;
         if (!name) return;
         setValidData[name](true);
+        setWrongDataMsg(null);
     }
 
 
 
-    const saveUserData = (data, url) => {
-        return function(dispatch){
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.json())
-            .then(data => dispatch(setCurrentUser(data)))
-            .catch(error => console.log(error));
-     }
+    const registerNewUser = (data) => {
+        dispatch(registerCurrentUser(data, BASE_URL))
     }
 
-    const filterData = (data, obj) => {
-        let filteredByUsername = data.filter(user =>
-            user.username === obj.username);
-        let filteredByEmail = data.filter(user =>
-            user.email === obj.email)
-        let filteredByPassord = data.filter(user =>
-            user.password === obj.password);
-        if (loggingin && !fbLogin) {
-            filteredByUsername.length && filteredByPassord.length ?
-            dispatch(setCurrentUser(filteredByUsername[0])) :
-                setWrongDataMsg("Wrong username or password");
-        } else if (registering) {
-            if (filteredByUsername.length || filteredByEmail.length || filteredByPassord.length) {
-                if (filteredByUsername.length) setWrongDataMsg("Username already exists");
-                else if (filteredByEmail.length) setWrongDataMsg("An account with this email already exists");
-                else { setWrongDataMsg("Password is already occupied") }
-                processing = false;
-            } else {
-                setWrongDataMsg(null);
-                saveUserData(obj, " http://localhost:3000/users")
-            }
-        } else if (fbLogin) {
-            filteredByEmail.length ? dispatch(setCurrentUser(filteredByUsername[0])) : saveUserData(obj, "http://localhost:3000/fbUsers")
-        }
-    }
-
-    const checkUserDataExists = (obj, url) => {
+    const checkUserLoginCredentials = (obj) => {
+        setLoading(true);
+        const url = fbLogin ? `${BASE_URL}?email=${obj.email}` : `${BASE_URL}?username=${obj.username}&password=${obj.password}`
         fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (!data) {
-                    if (loggingin && !fbLogin) {
-                        processing = false;
-                        setWrongDataMsg("Wrong username or password");
-                        return;
-                    } else {
-                        setWrongDataMsg(null);
-                        saveUserData(obj, url);
-                    }
-                } else {
-                    filterData(data, obj)
+            .then(response => {
+                if (response.status !== 200) {
+                    setLoading(false);
+                    throw new Error();
                 }
+                setLoading(false);
+                setWrongDataMsg(null);
+                return response.json()
+            })
+            .then(data => {
+                if (!data.length && !fbLogin) {
+                    setLoading(false);
+                    setWrongDataMsg("Wrong username or password");
+                    return;
+                } else if (!data.length && fbLogin) {
+                    setLoading(false);
+                    registerNewUser(obj);
+                    return;
+                }
+                dispatch(setCurrentUser(data[0]))
+            })
+            .catch(err => {
+                setLoading(false);
+                setWrongDataMsg("Server is not connected")
             })
     }
 
-
+    const checkUserRegisterCredentials = (obj) => {
+        setLoading(true);
+        fetch(`${BASE_URL}?username=${obj.username}`)
+            .then(response => {
+                if (response.status !== 200) {
+                    setLoading(false);
+                    throw new Error();
+                }
+                setLoading(false);
+                setWrongDataMsg(null);
+                return response.json()
+            })
+            .then(data => {
+                if (data.length) {
+                    setLoading(false);
+                    setWrongDataMsg("Username is already taken")
+                    return;
+                } else {
+                    fetch(`${BASE_URL}?email=${obj.email}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.length) {
+                                setLoading(false);
+                                setWrongDataMsg("An account with this email already exists");
+                                return
+                            } else {
+                                setLoading(false);
+                                setWrongDataMsg(null);
+                                registerNewUser(obj)
+                            }
+                        })
+                        .catch(err => {
+                            setLoading(false);
+                            setWrongDataMsg("Server is not connected")
+                        })
+                }
+            })
+            .catch(err => {
+                setLoading(false);
+                setWrongDataMsg("Server is not connected")
+            })
+    }
 
     const handleFbClick = () => {
-        if (processing) return;
         fbLogin = true;
+        // setLoading(true);
     }
 
     const responseFacebook = (response) => {
-        if(!fbLogin) return;      
+        // setLoading(false);
+        if (!fbLogin) return;
         if (response.status === "unknown") {
             fbLogin = false;
             return;
         }
-        checkUserDataExists(response, "http://localhost:3000/fbUsers");
+        checkUserLoginCredentials({
+            email: response.email,
+            username: response.name.split(" ")[0],
+            picture: response.picture.data.url,
+        });
     }
 
 
     const formSubmit = (e) => {
-        debugger;
-        if (processing) return;
-        processing = true;
         const form = e.target.closest("form");
         e.preventDefault();
         let data = {};
@@ -158,32 +178,31 @@ const SignForm = () => {
         data["email"] = registering ? form.Email.value : null;
         data["password"] = form.Password.value;
         data["confPass"] = registering ? form.ConfPass.value : null;
-       
+
         if (loggingin && !fbLogin) {
             if (!data.username.length || !data.password.length) {
-                processing = false;
                 setWrongDataMsg("*All fields are required");
                 return;
             }
         } else if (registering) {
             if (!data.username.length || !data.password.length
                 || !data.email.length || !data.confPass.length) {
-                    processing = false;
-                    setWrongDataMsg("*All fields are required");
+                setWrongDataMsg("*All fields are required");
                 return;
             } else if (!validUsername
                 || !validEmail
                 || !validPassword
                 || !validConfPass) {
-                    processing = false;
-                    return;
+                return;
+            } else {
+                checkUserRegisterCredentials(data);
             }
 
         }
-        checkUserDataExists(data, "http://localhost:3000/users");
+        checkUserLoginCredentials(data);
     }
 
-    
+
 
     return (
         <div className="sign__form">
@@ -249,7 +268,13 @@ const SignForm = () => {
                                 errorMsg={!validConfPass ? ("*Passwords should match") : null}
                             />) : null}
 
-                        <div className="sign__btn">
+                        <div className={`sign__btn ${wrongDataMsg
+                            || loading
+                            || (registering
+                                && (!validUsername
+                                    || !validPassword
+                                    || !validEmail
+                                    || !validConfPass)) ? "disabled" : ""}`}>
                             <button>{registering ? "Register" : "Log In"}</button>
                             {wrongDataMsg ? <p className="errorMsg">{wrongDataMsg}</p> : null}
                         </div>
@@ -260,16 +285,16 @@ const SignForm = () => {
                                     <span className="or text">or</span>
                                     <span className="or"></span>
                                 </div>
-                                <div className = "fbButton">
-                                <FontAwesomeIcon icon={faFacebook} 
-                                className ="faFacebook" />
-                                <FacebookLogin
-                                    appId="455003679284935"
-                                    autoLoad={false}
-                                    fields="name,email,picture"
-                                    onClick={handleFbClick}
-                                    callback={responseFacebook}
-                                />
+                                <div className="fbButton">
+                                    <FontAwesomeIcon icon={faFacebook}
+                                        className="faFacebook" />
+                                    <FacebookLogin
+                                        appId="455003679284935"
+                                        autoLoad={false}
+                                        fields="name,email,picture"
+                                        onClick={handleFbClick}
+                                        callback={responseFacebook}
+                                    />
                                 </div>
                             </div>) : null}
                     </form>

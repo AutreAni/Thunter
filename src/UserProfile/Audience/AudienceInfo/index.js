@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import '../../../css-modules/UserProfile/Audience/AudienceInfo/style.css';
-import { setActiveSubpage } from '../../../actions/features/activeSubpageSlicer';
+import { setActiveSubpage } from '../../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 
 const AudienceInfo = ({ audience }) => {

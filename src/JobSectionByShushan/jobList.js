@@ -6,9 +6,7 @@ const JobList = ({jobs}) =>{
       <div className='wraper'>
          {jobs.map(el =>(
             <div key={el.id} className='divContainer'>
-               <span>{el.date}</span>
-               {console.log(typeof el.text)}
-               
+               <span>{el.date}</span>               
                <div> 
                  <img src={el.logo} className="logo" alt = "logo" />
                  <p><a href={el.link}>{el.title}</a></p> 

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const InputField = (props) => {
+    const [value, setValue] = useState("");
     const handleBlur = (e) => {
         props.handleFocusout(e)
+    }
+    const handleChange = (e) => {
+        setValue(e.target.value);
     }
 
     return (
@@ -16,6 +20,8 @@ const InputField = (props) => {
             type = {props.inputType} 
             placeholder = {props.placeholder}
             onBlur = {handleBlur}
+            value = {value}
+            onChange = {handleChange}
             />   
              {props.errorMsg ? 
              (<span className = "error__msg">
@@ -26,4 +32,4 @@ const InputField = (props) => {
     )
 }
 
-export default InputField
+export default InputField;

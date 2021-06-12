@@ -1,1 +1,0 @@
-export const setUserToPreview = (data) => dispatch => dispatch({type: "SAVE_USER_TO_PREVIEW", payload: data})

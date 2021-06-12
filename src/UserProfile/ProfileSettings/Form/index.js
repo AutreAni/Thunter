@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputField from '../InputFields/index';
-import { updateCurrentUser } from '../../../actions/features/currentUserSlice';
-import { setActiveSubpage } from '../../../actions/features/activeSubpageSlicer';
+import { updateCurrentUser } from '../../../actions/currentUser';
+import { setActiveSubpage } from '../../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Form = () => {

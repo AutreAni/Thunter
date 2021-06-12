@@ -15,7 +15,7 @@
         font-size: $primary-font-size;
         cursor: pointer;
         height:100%;
-        padding:10px 15px;
+        padding:1vw 1.5vw;
         line-height: 40px;
         &:hover {
             color:$darkgray;
@@ -35,10 +35,5 @@
     .icon {
         margin-right:0.3em;
     }
-    .jobs {
-        @media only screen and (min-width:650px){
-             display: none;
-        } 
-    }
-      
+       
 }

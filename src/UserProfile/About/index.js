@@ -4,7 +4,7 @@ import Family from './Family/index';
 import Employment from './Employment/index';
 import Education from './Education/index';
 import Age from './Age/index';
-import { setActiveSubpage } from '../../actions/features/activeSubpageSlicer';
+import { setActiveSubpage } from '../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 
 

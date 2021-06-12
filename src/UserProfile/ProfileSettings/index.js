@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCog} from '@fortawesome/free-solid-svg-icons';
 import Form from './Form/index';
 import '../../css-modules/UserProfile/ProfileSettings/stye.css'
-import { setActiveSubpage } from '../../actions/features/activeSubpageSlicer';
+import { setActiveSubpage } from '../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 
 const ProfileSettings = () => {

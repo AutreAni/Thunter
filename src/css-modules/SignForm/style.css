@@ -48,6 +48,11 @@
   text-align: left;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .sign__form {
   width: 100vw;
   height: 100vh;
@@ -96,6 +101,10 @@
 
 .sign__form .btn__wrapper .button {
   background-color: white;
+}
+
+.sign__form input {
+  box-shadow: 0 0 0px 1000px white inset;
 }
 
 @media only screen and (max-width: 650px) {
