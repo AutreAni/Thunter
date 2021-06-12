@@ -45,6 +45,7 @@
           .button {
             @extend %button;
             background-color: white;
+            cursor: pointer;
         }
     }
     input{
@@ -147,6 +148,7 @@
         color:white !important;
         font-weight: 300 !important;
         text-transform: capitalize !important;
+        cursor: pointer;
         &:hover {
            background-color: #405ba5 !important;
          }
