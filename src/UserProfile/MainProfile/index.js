@@ -9,9 +9,9 @@ const MainProfile = ({ userData, updatePicture, updateUserData, showUserProfile,
     return (
         <Fragment>
             {userData ?
-                <div className="container">
+                <div className="wrapper">
                     <Background userData={userData}
-                        updatePicture={updatePicture}
+                        // updatePicture={updatePicture}
                     />
                     <div className="main__profile">
                         <ProfileDetails

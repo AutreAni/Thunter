@@ -1,24 +1,25 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
+import { setUserToPreview } from '../../actions/features/userToPreviewSlicer';
 import '../../css-modules/UserProfile/ShortProfile/style.css';
+import { useDispatch } from 'react-redux';
 
-const ShortProfile = ({ userData, showUserProfile, pageToPreview }) => {
-   
-    const handleClick = (e, obj) => {
-        showUserProfile( obj );
-        pageToPreview(null);
+const ShortProfile = ({ userData }) => {
+    const dispatch = useDispatch();
+
+    const showUserProfile = () => {
+        dispatch(setUserToPreview(userData));
     }
-    
+
     return (
-        <Fragment>
-            { userData ? <div className = "shortProfile"
-              onClick={(e) => handleClick(e, userData)}>
-                    <Avatar className = "short__avatar"
-                    userData = {userData}/>
-                    <Username userData = {userData}/>
-            </div> : null}
-        </Fragment>
+        <div className="shortProfile"
+            onClick={showUserProfile}>
+            <Avatar
+                className="short__avatar"
+                avatar={userData.picture} />
+            <Username username={userData.username} />
+        </div>
     )
 }
 

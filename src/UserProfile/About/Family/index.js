@@ -3,7 +3,7 @@ import AudienceList from "../../Audience/AudienceList/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-const Family = ({ids, showUserProfile, pageToPreview }) => {
+const Family = ({ ids }) => {
     const [family, setFamily] = useState([]);
     useEffect(() => {
         if (!family.length) {
@@ -22,10 +22,7 @@ const Family = ({ids, showUserProfile, pageToPreview }) => {
                     className="icon"
                 />
         <span>Family</span>
-        <AudienceList users = {family}
-         showUserProfile = {showUserProfile}
-         pageToPreview = {pageToPreview}
-        />
+        <AudienceList users = {family} />
         </div>
     )
 }

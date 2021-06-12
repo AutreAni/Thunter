@@ -9,7 +9,7 @@ const ProfileDetails = ({userData, updatePicture}) => {
                 userData = {userData}
                 updatePicture = {updatePicture}
                 />
-                <Username userData = {userData}/>
+                <Username username = {userData.username}/>
             
         </div>
     )

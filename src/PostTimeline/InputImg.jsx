@@ -1,15 +1,15 @@
 import React from 'react';
 import Avatar from '../UserProfile/Avatar/index';
+import { useSelector } from 'react-redux';
 
-const InputImg = (props) => {
+const InputImg = () => {
+  const avatar = useSelector(state => state.currentUser.picture)
  
   return ( 
     <div className="inputDiv">
-      {props.userData ? 
       <span style = {{width:"45px", height:"45px"}}>
-       <Avatar userData = {props.userData}  /> 
+       <Avatar avatar = { avatar }  /> 
        </span>      
-       :null}
     </div>
    );
 }

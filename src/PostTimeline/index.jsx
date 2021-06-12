@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import './timeLine.css'
 
 
 import NavBar from './NavBar';
 
-const Components = (props) => {
+const Components = () => {
   return ( 
     <React.Fragment>
-      <NavBar userData = {props.userData}/>
+      <NavBar/>
     </React.Fragment>
    );
 }

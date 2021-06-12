@@ -2,14 +2,12 @@ import React from 'react';
 import placeholderImg from '../../Images/profile-placeholder.png';
 import '../../css-modules/UserProfile/Avatar/avatar.css';
 
-const Avatar = (props) => {
+
+const Avatar = ({className, avatar }) => {
     return (
-            <img className = {props.className + " avatar"}
-            src = {(props.userData.picture
-                         ? props.userData.picture : 
-                            placeholderImg                      
-                        )}
-                        alt="placeholder"></img>
+            <img className = {className + " avatar"}
+            src = {avatar || placeholderImg }   
+            alt="placeholder"></img>
     )
 }
 

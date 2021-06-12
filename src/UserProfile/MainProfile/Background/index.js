@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import AddPicture from '../AddPicture/index'
 import UploadImg from '../UploadImg/index';
+import {useSelector } from 'react-redux';
 
-const Background = ({userData, updatePicture}) => {
+const Background = ({userData}) => {
+    const currentUserId = useSelector(state => state.currentUser.id)
     const [uploadField, setUploadField] = useState();
     const [camera, setCamera] = useState(true);
 
@@ -23,10 +25,10 @@ const Background = ({userData, updatePicture}) => {
     return (
         <div className="background">
             {userData.backgroundImg ? <img className="bg__img" alt="bg" src={userData.backgroundImg} /> : null}
-           {camera && userData.currentUser? <AddPicture handleClick={createUplaodField} /> : null} 
+            {camera && userData.id === currentUserId ? <AddPicture handleClick={createUplaodField} /> : null} 
             {uploadField ?
                 <UploadImg
-                    updatePicture = {updatePicture}
+                    // updatePicture = {updatePicture}
                     fieldName = "backgroundImg"
                     userData={userData}
                     removeUploadField = {removeUploadField}

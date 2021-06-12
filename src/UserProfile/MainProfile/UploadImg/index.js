@@ -2,13 +2,16 @@ import React, { useState, useRef } from 'react';
 import Axios from 'axios';
 import Button from '../../../Button/index';
 import '../../../css-modules/UserProfile/UploadImg/style.css';
+import { updateCurrentUser } from '../../../actions/features/currentUserSlice';
+import { useDispatch } from 'react-redux';
 
-const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addCamera }) => {
+const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {
     const [imageSelected, setImageSelected] = useState();
     const [fileExtention, setFileExtention] = useState();
     const [uploadButtonName, setUploadButtonName] = useState('Upload photo');
     const [wrongExtention, setWrongExtention] = useState(false);
     const fileInput = useRef(null);
+    const dispatch = useDispatch();
 
     const handleClick = (publicId) => {
         console.log(userData)
@@ -25,9 +28,11 @@ const UploadImg = ({ userData, updatePicture, fieldName, removeUploadField, addC
             })
             .then(response => response.json())
             .then(data => {
+                console.log("update",{[fieldName]: url})
+                console.log(updateCurrentUser);
                 addCamera();
                 removeUploadField();
-                updatePicture(fieldName, url)
+                dispatch(updateCurrentUser({[fieldName]: url}))
 
             })
             .catch(error => console.log(error))

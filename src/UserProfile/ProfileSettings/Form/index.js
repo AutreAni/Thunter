@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import InputField from '../InputFields/index';
+import { updateCurrentUser } from '../../../actions/features/currentUserSlice';
+import { setActiveSubpage } from '../../../actions/features/activeSubpageSlicer';
+import { useSelector, useDispatch } from 'react-redux';
 
-const Form = ({ userData, updateUserData, pageToPreview }) => {
+const Form = () => {
     const [errorMsg, setErrorMsg] = useState();
-
     const [changedData, setChangedData] = useState({});
-    const url = userData.password ?
-        `http://localhost:3000/users` :
-        ` http://localhost:3000/FbUsers`;
-
+    const url = `http://localhost:3000/users` ;
+    const dispatch = useDispatch();
+    const userData = useSelector(state => state.currentUser);
 
 
     const validateUsername = value => {
@@ -82,9 +83,8 @@ const Form = ({ userData, updateUserData, pageToPreview }) => {
                                 })
                                     .then(response => response.json())
                                     .then(data => {
-                                        updateUserData(data);
-                                        pageToPreview(null);
-
+                                        dispatch(updateCurrentUser(data));
+                                        dispatch(setActiveSubpage("")) 
                                     })
                                     .catch(error => console.log(error));
                             }
@@ -101,9 +101,8 @@ const Form = ({ userData, updateUserData, pageToPreview }) => {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        updateUserData(data);
-                        pageToPreview(null);
-
+                        dispatch(updateCurrentUser(data));
+                        dispatch(setActiveSubpage("")) 
                     })
                     .catch(error => console.log(error));
             }

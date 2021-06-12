@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 
 const InputField = ({ labelName, handleBlur, handleInputChange,
@@ -19,6 +17,7 @@ const InputField = ({ labelName, handleBlur, handleInputChange,
         <div className="details__fields input__field">
             <label>{labelName}</label>
             <div className = "input__wrapper">
+            <div>
                 <input
                     type={type}
                     name={name}
@@ -27,13 +26,10 @@ const InputField = ({ labelName, handleBlur, handleInputChange,
                     onChange={handleChange}
                     pattern={pattern}
                 />
-                {errorMsg ? <span className="errorMsg"> {errorMsg}</span> : null}
-                <FontAwesomeIcon
-                    icon={faPen}
-                    className="icon"
-                />   
                 {name === "about.birthDate" ? <span>Format YYYY/MM//DD</span> : null}
-                </div>         
+               </div> 
+                {errorMsg ? <span className="errorMsg"> {errorMsg}</span> : null}
+           </div>         
         </div>
     )
 }

@@ -1,0 +1,1 @@
+export const setActiveSubpage = (page) =>  ({type: `SET_SUBPAGE_TO_${page}`, payload: page})

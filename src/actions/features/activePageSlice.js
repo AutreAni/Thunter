@@ -1,0 +1,1 @@
+export const setActivePage = (page) =>  ({type: `SET_PAGE_TO_${page}`, payload: page})
