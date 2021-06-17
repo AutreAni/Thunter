@@ -5,6 +5,16 @@
     padding:0.5em;
     border-radius: 0.5em;
     background-color: white;
+    .username {
+        padding-left:0.5em;
+        color:#666;
+        font-weight: 500;
+        font-size: 1em;  
+        &:hover {
+            color: #000;
+        }
+    }
+    
 }
 
 .short__avatar {
@@ -12,13 +22,3 @@
     height:40px;
 }
 
-.shortProfile .username {
-    padding-left:0.5em;
-    color:#666;
-    font-weight: 500;
-    font-size: 1em;  
-}
-
-.shortProfile .username:hover {
-    color: #000;
-}

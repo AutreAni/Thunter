@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Avatar from '../Avatar/index';
 import Username from '../Username/index';
-import '../../css-modules/UserProfile/SectionProfile/sectionProfile.css';
+import '../../css-modules/UserProfile/SectionProfile/sectionProfile.scss';
 import AudienceInfo from '../Audience/AudienceInfo/index';
 import Age from '../About/Age/index';
 import Education from '../About/Education/index';

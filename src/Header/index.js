@@ -4,7 +4,7 @@ import SearchField from './SearchField/index';
 import ShortProfile from '../UserProfile/ShortProfile/index';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome, faSignOutAlt, faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import '../css-modules/Header/style.css';
+import '../css-modules/Header/style.scss';
 import { Link } from 'react-router-dom';
 import { removeCurrentUser } from '../actions/currentUser';
 

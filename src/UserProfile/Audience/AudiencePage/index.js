@@ -1,4 +1,4 @@
-import '../../../css-modules/UserProfile/Audience/AudiencePage/style.css';
+import '../../../css-modules/UserProfile/Audience/AudiencePage/style.scss';
 import AudienceList from '../AudienceList/index';
 import NetworkIndex from '../../../Network/index';
 import { useSelector } from 'react-redux';

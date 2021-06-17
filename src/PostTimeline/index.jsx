@@ -1,5 +1,5 @@
 import React from 'react';
-// import './timeLine.css'
+import '../css-modules/Timeline/style.scss'
 
 
 import NavBar from './NavBar';

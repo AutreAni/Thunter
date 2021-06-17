@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import ShortProfile from '../../ShortProfile/index';
-import '../../../css-modules/UserProfile/Audience/AudienceList/style.css';
+import '../../../css-modules/UserProfile/Audience/AudienceList/style.scss';
 import { Link } from 'react-router-dom';
 import { fetchAudienceList, emptyAudinceList } from '../../../actions/audienceList';
 import { useDispatch, useSelector } from 'react-redux'

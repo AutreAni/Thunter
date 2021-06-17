@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import About from '../../About/index';
 import Skills from '../../Skills/index';
 import AudienceMain from '../../Audience/AudienceMain/index';
-import '../../../css-modules/UserProfile/ProfileInfo/style.css';
+import '../../../css-modules/UserProfile/ProfileInfo/style.scss';
 import ProfileSettings from '../../ProfileSettings/index';
 import { useSelector } from 'react-redux';
 

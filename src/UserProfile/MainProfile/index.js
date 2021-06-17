@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Background from './Background/index';
 import ProfileDetails from './ProfileDetails/index';
-import '../../css-modules/UserProfile/MainProfile/style.css';
+import '../../css-modules/UserProfile/MainProfile/style.scss';
 import ProfileInfo from './ProfileInfo/index';
 
 const MainProfile = ({ userData, updatePicture, updateUserData, showUserProfile, users }) => {
