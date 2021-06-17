@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Axios from 'axios';
 import Button from '../../../Button/index';
-import '../../../css-modules/UserProfile/UploadImg/style.css';
+import '../../../css-modules/UserProfile/UploadImg/style.scss';
 import { updateCurrentUser } from '../../../actions/currentUser';
 import { useDispatch } from 'react-redux';
 

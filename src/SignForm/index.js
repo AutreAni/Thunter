@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser, faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import "../css-modules/SignForm/style.css";
+import "../css-modules/SignForm/style.scss";
 import { registerCurrentUser } from '../actions/currentUser';
 
 

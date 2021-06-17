@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCog} from '@fortawesome/free-solid-svg-icons';
 import Form from './Form/index';
-import '../../css-modules/UserProfile/ProfileSettings/stye.css'
+import '../../css-modules/UserProfile/ProfileSettings/stye.scss'
 import { setActiveSubpage } from '../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 

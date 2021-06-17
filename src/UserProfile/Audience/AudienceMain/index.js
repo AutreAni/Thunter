@@ -1,6 +1,6 @@
 import AudienceInfo from '../AudienceInfo/index';
 import AudienceList from '../AudienceList/index';
-import "../../../css-modules/UserProfile/Audience/AudienceMain/style.css";
+import "../../../css-modules/UserProfile/Audience/AudienceMain/style.scss";
 import { useSelector } from 'react-redux';
 
 const AudienceMain = () => {

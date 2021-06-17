@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
-import '../../../css-modules/UserProfile/Audience/AudienceInfo/style.css';
+import '../../../css-modules/UserProfile/Audience/AudienceInfo/style.scss';
 import { setActiveSubpage } from '../../../actions/activeSubpage';
 import { useSelector, useDispatch } from 'react-redux';
 
