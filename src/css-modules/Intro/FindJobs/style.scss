@@ -1,0 +1,34 @@
+@import '../../config';
+@import '../../utils';
+
+.find-jobs{
+    margin-top:8vh;
+    &-cover {
+        background-image: url('../../../Images/pexels-photo-3184416.jpeg');
+        height:35vh;
+        background-position: center bottom;
+        background-size: cover;
+        position: relative;
+        @extend %flex-box;
+        &::after {
+            content: "";
+            z-index:99;
+            background-image: $background-gradient;
+            opacity: 0.6;
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+        }
+        h1 {
+            color:white;
+            position: relative;
+            display: block;
+            z-index:999;
+            text-align: center;
+            font-weight: 400;
+        }
+    }
+}
+

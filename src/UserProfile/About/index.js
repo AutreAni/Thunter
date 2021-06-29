@@ -13,9 +13,7 @@ const About = () => {
     const about = useSelector(state => state.userToPreview.about)
     const dispatch = useDispatch();
 
-    const setPageToAbout = () => activePage ==="ABOUT"? 
-                             dispatch(setActiveSubpage("")):
-                             dispatch(setActiveSubpage("ABOUT"));
+    const setPageToAbout = () => dispatch(setActiveSubpage("ABOUT"));
 
     return (
         <div 
@@ -37,7 +35,6 @@ const About = () => {
                         />) : null}
                     {about.family ?
                         (<Family
-                            ids={about.family}
                         />) : null}
                     {about.employment ?
                         (<Employment

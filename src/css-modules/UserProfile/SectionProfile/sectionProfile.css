@@ -1,0 +1,74 @@
+.sectionProfile, .sectionProfile .avatar__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionProfile {
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  height: fit-content;
+  position: relative;
+}
+
+.sectionProfile a {
+  text-decoration: none !important;
+  width: 100%;
+  border-bottom: 1px solid rgba(181, 202, 204, 0.3);
+}
+
+.sectionProfile .avatar__wrapper {
+  width: 100%;
+  flex-direction: column;
+  background-color: white;
+  padding: 3.5vh 1vw;
+  border-radius: 5px 5px 0 0;
+}
+
+.sectionProfile .avatar {
+  width: 13vw;
+  height: 13vw;
+  max-width: 208px;
+  max-height: 208px;
+  margin-bottom: 2px;
+}
+
+.sectionProfile .section__details {
+  font-weight: 500;
+  color: #666;
+}
+
+.sectionProfile .username {
+  font-size: 1.4em;
+  font-weight: 500;
+  padding-top: 3vh;
+}
+
+.sectionProfile .details__fields,
+.sectionProfile .audience__info {
+  background-color: white;
+  padding: 2vh 1vw;
+  color: #666;
+  width: 100%;
+  padding-top: 1.5em;
+  color: #666;
+  cursor: pointer;
+}
+
+.sectionProfile .details__fields .icon,
+.sectionProfile .audience__info .icon {
+  margin-right: 0.5em;
+}
+
+.sectionProfile .audience__info {
+  border-bottom: 1px solid rgba(181, 202, 204, 0.3);
+  padding-bottom: 3vh;
+  width: 100%;
+}
+
+.sectionProfile .details__fields:hover {
+  color: #222;
+}
+/*# sourceMappingURL=sectionProfile.css.map */

@@ -10,9 +10,7 @@ const ProfileSettings = () => {
     const activePage = useSelector(state => state.userToPreview.activeSubpage);
      const dispatch = useDispatch();
 
-    const setActivePage = () => activePage ==="SETTINGS"? 
-                            dispatch(setActiveSubpage("")):
-                            dispatch(setActiveSubpage("SETTINGS"));
+    const setActivePage = () => dispatch(setActiveSubpage("SETTINGS"));
     return (
         <div
          className = {`details ${activePage ==="SETTINGS" ? "active-subpage" : ""}`}>

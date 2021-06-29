@@ -1,8 +1,10 @@
 .App {
   text-align: center;
-  width:100vw;
 }
 
+* {
+  box-sizing: border-box;
+}
 .wrapper {
   box-sizing: border-box;
   width:95vw;
@@ -13,9 +15,6 @@ input:-internal-autofill-selected {
   background-color: transparent !important;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 @media only screen and (max-width: 850px){
   .wrapper {

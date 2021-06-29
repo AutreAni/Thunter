@@ -1,0 +1,10 @@
+@import '../../config';
+@import '../../utils';
+
+
+.build-profile {
+    @extend %flex-box;
+    img {
+        width: 200px;
+    }
+}

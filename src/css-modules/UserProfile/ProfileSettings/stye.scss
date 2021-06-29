@@ -1,3 +1,5 @@
+@import '../../config';
+
 .settings__wrapper {
     position: relative; 
     form {
@@ -7,19 +9,21 @@
     label {
         margin:0;
         margin-right:0.5em;
-        width:10%;
+        width:20%;
     }
     .input__wrapper{
-        width:80%;
         position: relative;
+        min-width:50%;
     }
     input {
-        border:none;
+        width:100%;
+        border:1px solid $blue;
+        border-radius: 5px;
         outline: none;
         padding: 0.3em 0.7em;
+        margin:0;
         text-align: center;
         font-size: 0.8em;
-        border-radius: 1em;
         background-color: white;
     }
     .details__fields {

@@ -1,0 +1,61 @@
+.settings__wrapper {
+  position: relative;
+}
+
+.settings__wrapper form {
+  margin-top: 1em;
+  width: 100%;
+}
+
+.settings__wrapper label {
+  margin: 0;
+  margin-right: 0.5em;
+  width: 20%;
+}
+
+.settings__wrapper .input__wrapper {
+  position: relative;
+  min-width: 50%;
+}
+
+.settings__wrapper input {
+  width: 100%;
+  border: 1px solid #319197;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.3em 0.7em;
+  margin: 0;
+  text-align: center;
+  font-size: 0.8em;
+  background-color: white;
+}
+
+.settings__wrapper .details__fields {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.settings__wrapper span {
+  display: block;
+  font-size: 0.6em;
+}
+
+.settings__wrapper button {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-weight: 500;
+  background-color: transparent;
+  color: #666;
+  border: none;
+  outline: none;
+  z-index: 99;
+}
+
+.settings__wrapper:hover {
+  color: black;
+}
+/*# sourceMappingURL=stye.css.map */

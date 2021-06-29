@@ -12,7 +12,9 @@ import '../css-modules/Timeline/style.scss';
 import '../css-modules/JobSectionCssShushan/style.css';
 import Jobs from '../JobSectionByShushan/homePageJobs';
 import Search from '../JobSectionByShushan/Search';
+import Intro from '../Intro/index';
 import JobSearchForm from '../JobSectionByShushan/JobSearchForm';
+import SignForm from '../SignForm/index';
 import { useSelector } from 'react-redux';
 
 
@@ -22,61 +24,83 @@ const Home = () => {
     const userToPreview = useSelector(state => state.userToPreview);
     const [state, setState] = useState(true);
     const [innerWidth, setInnerWidth] = useState(window.innerWidth)
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         const setWidth = () => {
             setInnerWidth(window.innerWidth);
         }
-        window.addEventListener("resize",setWidth)
-        return (()=> window.removeEventListener("resize"),setWidth);
-    },[innerWidth])
+        window.addEventListener("resize", setWidth)
+        return (() => window.removeEventListener("resize"), setWidth);
+    }, [innerWidth])
 
     return (
         <Fragment>
             <Router>
                 <Header
                     userData={currentUser}
-                    innerWidth = {innerWidth}
+                    innerWidth={innerWidth}
                 />
+
                 <Switch>
                     <Route exact path="/">
-                        <div className="main"
-                            style={{ position: 'relative' }}>
-                            <div className="wrapper main__wrapper"
-                                style={{ display: "flex" }}>
-                                {innerWidth >= 650 ?
-                                <SectionProfile /> 
-                                :null }
-                                <div className="timeline">
-                                    <Components />
-                                    <div>
-                                        <TimelineItem />
+                        {!currentUser ?
+                            <Intro />
+                            :
+                            <div className="main"
+                                style={{ position: 'relative' }}>
+                                <div className="wrapper main__wrapper"
+                                    style={{ display: "flex" }}>
+                                    {innerWidth >= 650 ?
+                                        <SectionProfile />
+                                        : null}
+                                    <div className="timeline">
+                                        <Components />
+                                        <div>
+                                            <TimelineItem />
+                                        </div>
                                     </div>
+
+                                    {innerWidth >= 650 ?
+                                        <div className="job__section">
+
+                                            <span className="a" href='#' onClick={(evt) => {
+                                                evt.preventDefault();
+                                                setState(!state);
+                                            }}>{state ? <Search /> : 'back'}</span>
+                                            {state ? <Jobs /> : <JobSearchForm />}
+                                        </div>
+                                        : null}
                                 </div>
-                            
-                                {innerWidth >= 650? 
-                                    <div className="job__section"
-                                style = {{width:"25%"}}>
-      
-                                    <span className="a" href ='#' onClick={(evt)=>{
-                                    evt.preventDefault(); 
-                                    setState(!state);
-                                    }}>{state ? <Search /> : 'back' }</span>
-                                    {state ? <Jobs />: <JobSearchForm />}
-                                </div>
-                                :null}
-                             </div>
-                        </div>
+                            </div>
+                        }
                     </Route>
-                    <Route path="/profile">
-                        <MainProfile
-                            userData = { userToPreview.id === currentUser.id ? currentUser :  userToPreview }
-                           />
+                    <Route path='/jobs'>
+                        <span className="a" href='#' onClick={(evt) => {
+                            evt.preventDefault();
+                            setState(!state);
+                        }}>{state ? <Search /> : 'back'}</span>
+                        {state ? <Jobs /> : <JobSearchForm />}
                     </Route>
-                    <Route path="/audience">
-                        <AudiencePage />
-                    </Route>
-                 </Switch>
+                    {currentUser ?
+                        <Route path="/profile">
+                            <MainProfile
+                                userData={userToPreview.id === currentUser.id ? currentUser : userToPreview}
+                            />
+                        </Route> : null
+                    }
+                    {currentUser ?
+                        <Route path="/audience">
+                            <AudiencePage />
+                        </Route>
+                        : null
+                    }
+                    {!currentUser? 
+                        <Route path="/sign-page">
+                            <SignForm/>
+                        </Route>
+                        :null
+                    }
+                </Switch>
             </Router>
         </Fragment>
     )

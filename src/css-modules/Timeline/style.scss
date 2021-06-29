@@ -33,17 +33,18 @@
         width:45px;
         height:45px;
     }
-    width:45%;
     @media only screen and(max-width:650px) {
         width:100%;
     }
     .navDiv{
         @extend %flex-box;
-        justify-content: space-around;
+        background-color: white;
+        padding:0 5%;
+        justify-content: flex-start;
         align-items: flex-start;
         padding-top:3em;
-        border-radius:0.5em;
-        margin-bottom: 1em;
+        border-radius:5px 5px 0 0;
+        margin-bottom: 1vh;
         .navContainer {
             margin-left:1em;
             width:80%;
@@ -51,6 +52,7 @@
                 padding: .5em 1.5em;
                 width: stretch;
                 background-color: white;
+                border:1px solid $blue;
                 }
                 ul {
                     width:100%;
@@ -60,7 +62,7 @@
                     padding:0;
                     font-size:0.9em;
                     button {
-                        padding:0.8vw 1.6vw;
+                        padding:0.7vw 1.2vw;
                         font-size:0.9em;
                         font-weight: 500;
                         border-radius: 1.5em;

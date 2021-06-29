@@ -8,16 +8,16 @@
 }
 .sign__form { 
     width:100vw;
-    height:100vh;
+    margin-top:10vh;
+    // background-color: $main-bg-color;
     @extend %flex-box;
     .main__wrapper {
         box-shadow:$box-shadow;
         width:40vw;
-        padding:2em 0;
+        padding:1.5em 0;
         @media only screen and (max-width: 920px){
             width:55vw;
         }
-
         @media only screen and (max-width: 650px){
             width:90vw;
         }
@@ -37,7 +37,7 @@
         width:fit-content;
         margin-right:0.1em;
         position: relative;
-        padding:0.8em 1.2em;
+        padding:0.6em 1em;
         border:3px solid transparent;
         background: white;
         background-clip: padding-box;
@@ -64,10 +64,10 @@
 .inputField {
     width:100%;
     position: relative;
-    margin-top:2.5em;
+    margin-top:2em;
     border:1px solid $gray;
     border-radius: 5px;
-    padding:1em 1em  1em 3.2em;
+    padding:0.6em 0.6em  0.6em 2em;
     box-shadow: 0 1px 2px $shadow-color;
     &:hover {
         box-shadow: .3px .3px 2px $purple,
@@ -103,7 +103,7 @@
         outline: none;
         border-radius: 2.5em;
         font-size: $primary-font-size;
-        padding:0.8em 1.5em;
+        padding:0.8em 1.2em;
         margin-right:1.5em;
         box-shadow: $box-shadow;
     
@@ -126,6 +126,7 @@
     .text{
         width:10%;
         border:none;
+        text-align: center;
     }
     .fbButton {
         width:fit-content;

@@ -1,14 +1,16 @@
 import { combineReducers } from 'redux';
-import activePageReducer from './activePageReducer';
 import currentUserReducer from './currentUserReducer';
 import userToPreviewReducer from './userToPreviewReducer';
 import audienceListReducer from './audienceListReducer';
+import searchResultReducer from './searchResult';
+import jobsReducer from './jobsReducer';
 
 const rootReducer = combineReducers({
         currentUser: currentUserReducer,
-        activePage: activePageReducer,
         userToPreview: userToPreviewReducer,
         audienceList: audienceListReducer,
+        searchResult: searchResultReducer,
+        jobs: jobsReducer
 })
 
 export default rootReducer;

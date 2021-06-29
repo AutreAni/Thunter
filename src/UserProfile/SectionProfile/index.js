@@ -10,34 +10,36 @@ import LivesIn from '../About/LivesIn/index';
 import { setUserToPreview } from '../../actions/userToPreview';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setActivePage } from '../../actions/activePage'
+import { useHistory } from "react-router-dom";
+
 
 
 const SectionProfile = () => {
     const currentUser = useSelector(state => state.currentUser)
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();    
+    let history = useHistory();
 
     const showUserProfile = () => {
-        dispatch(setActivePage("PROFILE"));
+        history.push('/profile');
         dispatch(setUserToPreview(currentUser))
     }
     return (
         <Fragment>
-            { currentUser ? <div className="sectionProfile" onClick = {showUserProfile}>
+            {currentUser ? <div className="sectionProfile" onClick={showUserProfile}>
                 <Link to="/profile">
-                <div className = "avatar__wrapper">
+                    <div className="avatar__wrapper">
                         <Avatar className="section__avatar"
-                        avatar={currentUser.picture} />
-                        <Username 
-                        username={currentUser.username}/>
-                </div>
-                   
+                            avatar={currentUser.picture} />
+                        <Username
+                            username={currentUser.username} />
+                    </div>
+
                 </Link>
                 <div className="section__details">
                     <Link to="/audience">
                         <AudienceInfo
                             audience={currentUser.audience}
-                            pageToPreview = {() => null}
+                            pageToPreview={() => null}
                         />
                     </Link>
                     <Link to='/profile'>

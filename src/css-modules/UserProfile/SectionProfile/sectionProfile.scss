@@ -14,44 +14,51 @@ $blue04: rgba(49,145,151,0.4);
     align-items: center;
 }
 
-.sectionProfile {
-    background-color: white;
+.sectionProfile {   
     @extend %flex-box;
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
-    width:20%;
     height:fit-content;
     position: relative;
-    padding: 1em;
-    border-radius:0.5em;
     a {
         text-decoration: none !important;
+        width:100%;
+        border-bottom: 1px solid $main-bg-color;
+       
     }
     .avatar__wrapper {
         width:100%;
         @extend %flex-box;
         flex-direction: column;
+        background-color: white;
+        padding:3.5vh 1vw;
+        border-radius: 5px 5px 0 0;
     }
     .avatar {
         width: 13vw;
         height: 13vw;
         max-width: 208px;
         max-height: 208px;
-        margin-bottom:1.5em;
+        margin-bottom:2px;
 
     }
     .section__details {
         font-weight: 500;
         color:#666;
+        
     }
     .username {
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 500;
+        padding-top: 3vh;
     }
     .details__fields,
     .audience__info {
+        background-color: white;
+        padding:2vh 1vw;
         color: $gray;
+        width:100%;
         padding-top: 1.5em;
         color : $gray;
         cursor: pointer;
@@ -60,6 +67,11 @@ $blue04: rgba(49,145,151,0.4);
         }
         
     }
+   .audience__info {
+    border-bottom: 1px solid $main-bg-color;
+    padding-bottom: 3vh;
+    width:100%;
+   }
  
     .details__fields:hover {
         color:#222;

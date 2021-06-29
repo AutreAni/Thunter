@@ -1,0 +1,226 @@
+.sign__form .btn__wrapper .button, .sign__form, .sign__form .buttons__wrapper, .sign__btn, .facebook__login .or__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign__form .btn__wrapper .button {
+  border: none;
+  margin: 0;
+  outline: none;
+  font-size: 1.1em;
+  color: #666;
+  outline: none;
+}
+
+.sign__form .btn__wrapper .button:hover {
+  color: #222;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: normal !important;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.sign__form {
+  width: 100vw;
+  margin-top: 10vh;
+}
+
+.sign__form .main__wrapper {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  width: 40vw;
+  padding: 1.5em 0;
+}
+
+@media only screen and (max-width: 920px) {
+  .sign__form .main__wrapper {
+    width: 55vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .sign__form .main__wrapper {
+    width: 90vw;
+  }
+}
+
+.sign__form .inner__wrapper {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.sign__form .buttons__wrapper {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.sign__form .btn__wrapper {
+  display: inline-block;
+  width: fit-content;
+  margin-right: 0.1em;
+  position: relative;
+  padding: 0.6em 1em;
+  border: 3px solid transparent;
+  background: white;
+  background-clip: padding-box;
+  border-radius: 2.5em;
+}
+
+.sign__form .btn__wrapper .button {
+  background-color: white;
+  cursor: pointer;
+}
+
+.sign__form input {
+  box-shadow: 0 0 0px 1000px white inset;
+}
+
+@media only screen and (max-width: 650px) {
+  .sign__form {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .sign__form {
+    font-size: 70%;
+  }
+}
+
+.inputField {
+  width: 100%;
+  position: relative;
+  margin-top: 2em;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 0.6em 0.6em  0.6em 2em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.inputField:hover {
+  box-shadow: 0.3px 0.3px 2px #862f4f, -0.3px -0.3px 2px #862f4f;
+}
+
+.inputField input {
+  width: 100%;
+  font-size: 1em;
+  line-height: 1em;
+  border: none;
+  margin: 0;
+  outline: none;
+  background-color: white;
+}
+
+.inputField .icon {
+  color: #666;
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  font-size: 1.2em;
+  transform: translateY(-50%);
+}
+
+.sign__btn {
+  justify-content: flex-start;
+  margin-top: 2em;
+}
+
+.sign__btn button {
+  background: linear-gradient(45deg, #319197, #862f4f, #c21d28);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 2.5em;
+  font-size: 1.1em;
+  padding: 0.8em 1.2em;
+  margin-right: 1.5em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sign__btn button:hover {
+  background: linear-gradient(135deg, #319197, #862f4f, #c21d28);
+}
+
+.facebook__login {
+  margin-top: 1.5em;
+}
+
+.facebook__login .or__wrapper {
+  width: 100%;
+}
+
+.facebook__login .or {
+  width: 45%;
+  border-top: 1px solid #666;
+}
+
+.facebook__login .text {
+  width: 10%;
+  border: none;
+  text-align: center;
+}
+
+.facebook__login .fbButton {
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 1em;
+}
+
+.facebook__login .fbButton .faFacebook {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.2em;
+}
+
+.facebook__login .fbButton button {
+  border-radius: 2.5em !important;
+  font-size: 1em !important;
+  padding: 1em 1.4em !important;
+  padding-left: 2.8em !important;
+  color: white !important;
+  font-weight: 300 !important;
+  text-transform: capitalize !important;
+  cursor: pointer;
+}
+
+.facebook__login .fbButton button:hover {
+  background-color: #405ba5 !important;
+}
+/*# sourceMappingURL=style.css.map */
