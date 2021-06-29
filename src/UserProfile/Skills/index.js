@@ -10,9 +10,7 @@ const Skills = () => {
     const activePage = useSelector(state => state.userToPreview.activeSubpage);
     const skills = useSelector(state => state.userToPreview.skills)
 
-    const setActivePage = () =>  activePage === "SKILLS"?
-                                dispatch(setActiveSubpage("")):
-                                dispatch(setActiveSubpage("SKILLS"));
+    const setActivePage = () =>  dispatch(setActiveSubpage("SKILLS"));
     return (
         <div
           className = {`details ${activePage ==="SKILLS" ? "active-subpage" : ""}`}>

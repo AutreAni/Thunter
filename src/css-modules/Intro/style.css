@@ -1,0 +1,87 @@
+.intro-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro button {
+  color: #319197 !important;
+  border: 1px solid #319197 !important;
+  background-color: white !important;
+  border-radius: 1em;
+}
+
+.intro button:hover {
+  background-color: #319197 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f66d1a, #f66d1a, #c21d28, #c21d28, #862f4f, #862f4f, #319197);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.errorMsg {
+  color: #c21d28;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: normal !important;
+}
+
+.error__msg {
+  position: absolute;
+  font-size: 0.7em;
+  font-weight: bold;
+  top: 105%;
+  left: 0;
+  color: #c21d28;
+  text-align: left;
+}
+
+.intro p {
+  font-weight: 300;
+  color: #666;
+  margin: 0;
+}
+
+.intro button {
+  margin-top: 2vh;
+  padding: 5px 15px;
+}
+
+.intro h1 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.intro-details {
+  width: 70vw;
+  margin: 9vh auto;
+}
+
+.intro-details .browse-wrapper {
+  margin-left: 3vw;
+}
+
+@media only screen and (max-width: 650px) {
+  .intro-details {
+    width: 95vw;
+  }
+  .intro-details img {
+    display: none;
+  }
+  .intro-details .browse-wrapper {
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

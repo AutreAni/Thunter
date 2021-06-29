@@ -1,0 +1,31 @@
+.profile__info .details .audience__info {
+  padding: 0;
+  font-size: 100%;
+}
+
+.profile__info .audience__list ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.profile__info .audience__list li {
+  width: 45%;
+}
+
+@media only screen and (max-width: 450px) {
+  .profile__info .audience__list li {
+    width: 90%;
+  }
+}
+
+.profile__info .about__wrapper li {
+  width: 100%;
+}
+
+.profile__info .shortProfile {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

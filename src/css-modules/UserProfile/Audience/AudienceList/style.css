@@ -1,0 +1,31 @@
+.audience__list {
+  overflow-x: auto;
+}
+
+.audience__list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.audience__list li {
+  display: block;
+  width: 90%;
+  margin: 1em 0.5em;
+  margin-top: 1em;
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0.5em;
+}
+
+.audience__list li .shortProfile {
+  min-width: fit-content;
+}
+
+.audience__list li .shortProfile:hover {
+  background-color: rgba(49, 145, 151, 0.03);
+}
+
+.audience__list li a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

@@ -9,12 +9,18 @@ import { faUser, faLock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../css-modules/SignForm/style.scss";
 import { registerCurrentUser } from '../actions/currentUser';
+import { useHistory, useLocation  } from "react-router-dom";
 
 
 
 const SignForm = () => {
-    const [loggingin, setLoggingin] = useState(true);
-    const [registering, setRegistering] = useState(false);
+    const usePathname = () => {
+        const location = useLocation();
+        return location.pathname;
+    }
+    const pathName = usePathname();
+    const [loggingin, setLoggingin] = useState(pathName==="/sign-page/login");
+    const [registering, setRegistering] = useState(pathName==="/sign-page/sign-up");
     const [validUsername, setValidUsername] = useState(true);
     const [validEmail, setValidEmail] = useState(true);
     const [validPassword, setValidPassword] = useState(true);
@@ -24,6 +30,7 @@ const SignForm = () => {
     const BASE_URL = `http://localhost:3000/users`;
     let fbLogin = false;
     const dispatch = useDispatch();
+    let history = useHistory();
 
     const createLoginForm = () => {
         if (!registering && loggingin) return;
@@ -46,7 +53,6 @@ const SignForm = () => {
         setValidConfPass(true);
         setValidPassword(true);
     }
-
     const setValidData = {
         Username: setValidUsername,
         Password: setValidPassword,
@@ -73,12 +79,18 @@ const SignForm = () => {
 
 
     const registerNewUser = (data) => {
-        dispatch(registerCurrentUser(data, BASE_URL))
+        dispatch(registerCurrentUser(data, BASE_URL));
+        history.push('/');
     }
 
     const checkUserLoginCredentials = (obj) => {
         setLoading(true);
-        const url = fbLogin ? `${BASE_URL}?email=${obj.email}` : `${BASE_URL}?username=${obj.username}&password=${obj.password}`
+        const url = fbLogin ? 
+        `${BASE_URL}?email=${obj.email}` :
+         obj.username.includes("@")?
+         `${BASE_URL}?email=${obj.username}&password=${obj.password}`:
+         `${BASE_URL}?username=${obj.username}&password=${obj.password}`;
+
         fetch(url)
             .then(response => {
                 if (response.status !== 200) {
@@ -99,7 +111,9 @@ const SignForm = () => {
                     registerNewUser(obj);
                     return;
                 }
-                dispatch(setCurrentUser(data[0]))
+                dispatch(setCurrentUser(data[0]));
+                history.push('/');
+
             })
             .catch(err => {
                 setLoading(false);
@@ -150,13 +164,12 @@ const SignForm = () => {
             })
     }
 
+
     const handleFbClick = () => {
         fbLogin = true;
-        // setLoading(true);
     }
 
     const responseFacebook = (response) => {
-        // setLoading(false);
         if (!fbLogin) return;
         if (response.status === "unknown") {
             fbLogin = false;
@@ -196,10 +209,12 @@ const SignForm = () => {
                 return;
             } else {
                 checkUserRegisterCredentials(data);
+                return
             }
 
         }
         checkUserLoginCredentials(data);
+        
     }
 
 
@@ -282,7 +297,7 @@ const SignForm = () => {
                             <div className="facebook__login">
                                 <div className="or__wrapper">
                                     <span className="or"></span>
-                                    <span className="or text">or</span>
+                                    <span className="or text"> or</span>
                                     <span className="or"></span>
                                 </div>
                                 <div className="fbButton">

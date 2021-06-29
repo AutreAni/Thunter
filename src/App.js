@@ -3,18 +3,14 @@ import './App.css';
 import SignForm from "./SignForm/index";
 import Home from './Home/index';
 import { useSelector } from 'react-redux';
-
+import Intro from './Intro/index';
 function App() {
   //state removed from app
-  const currentUser = useSelector(state => state.currentUser);
   return (
-    <div className="App">
-      { currentUser ?
+    // <div className="App">
+    //   { currentUser ?
         <Home />       
-        :
-        <SignForm />
-      }
-    </div>
+        
   );
 }
 

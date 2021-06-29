@@ -84,7 +84,7 @@ const Form = () => {
                                     .then(response => response.json())
                                     .then(data => {
                                         dispatch(updateCurrentUser(data));
-                                        dispatch(setActiveSubpage("")) 
+                                        dispatch(setActiveSubpage("ABOUT")) 
                                     })
                                     .catch(error => console.log(error));
                             }
@@ -102,7 +102,7 @@ const Form = () => {
                     .then(response => response.json())
                     .then(data => {
                         dispatch(updateCurrentUser(data));
-                        dispatch(setActiveSubpage("")) 
+                        dispatch(setActiveSubpage("ABOUT")) 
                     })
                     .catch(error => console.log(error));
             }

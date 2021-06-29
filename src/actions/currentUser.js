@@ -15,11 +15,7 @@ export const registerCurrentUser = (data, url) => dispatch => {
         body: JSON.stringify(data),
     })
         .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            dispatch({ type: SAVE_CURRENT_USER, payload: data })
-
-        })
+        .then(data => dispatch({ type: SAVE_CURRENT_USER, payload: data }))
         .catch(error => console.log(error));
 }
 
