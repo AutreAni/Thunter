@@ -15,7 +15,7 @@
     "eslint-plugin-react-hooks": "0.0.0-25bfa287f",
     "moment": "^2.29.1",
     "node-forge": "^0.10.0",
-    "node-modules": "^0.0.1",
+    "node-modules": "0.0.1",
     "node-sass": "^5.0.0",
     "parcel-bundler": "^1.12.4",
     "react": "^17.0.1",
