@@ -10,6 +10,21 @@
   text-align: center;
 }
 
+.divContainer span{
+  margin-top: 10px;
+}
+ 
+
+ .divContainer a{ 
+   text-decoration: none;
+   color:#319197 ;
+   text-align: center;
+ }
+ 
+ .divContainer p{
+  width: 22vw;
+ }
+
 a{
   text-decoration: none;
   color:#319197 ;
@@ -21,15 +36,15 @@ a{
 }
 
 
-.imgStyle {
-  max-width:80%;
+.myimgStyle {
+  max-width:20vw;
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 15px;
 
 }
-.logo{
-  max-width: 30%;
+.mylogo{
+  max-width: 7vw;
   
 }
 
