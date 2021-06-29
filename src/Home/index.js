@@ -62,7 +62,6 @@ const Home = () => {
 
                                     {innerWidth >= 650 ?
                                         <div className="job__section">
-
                                             <span className="a" href='#' onClick={(evt) => {
                                                 evt.preventDefault();
                                                 setState(!state);

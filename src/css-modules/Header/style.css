@@ -63,9 +63,9 @@
 
 .header .header-logo {
   background-image: url("../../Images/header-logo2.png");
-  width: 11vw;
-  min-width: 180px;
-  margin-right: 4vw;
+  width: 12vw;
+  min-width: 160px;
+  margin-right: 1vw;
   height: 100%;
   background-size: cover;
   background-position: center;

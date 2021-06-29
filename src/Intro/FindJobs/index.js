@@ -8,7 +8,7 @@ const FindJobs = () => {
     return (
         <div className="find-jobs">
             <div className="find-jobs-cover">
-                <h1>WE BRING TALENT AND COMPNAIES TOGETHER</h1>
+                <h1>WE BRING TALENT AND COMPANIES TOGETHER</h1>
             </div>
             <div className="intro-details">
             <img src = {magnifyingGlass} alt = 'magnifying-glass'></img>

@@ -55,10 +55,17 @@
 
 .sign__form {
   width: 100vw;
-  margin-top: 10vh;
+  margin-top: 8vh;
+  height: 92vh;
+  position: relative;
+  background-color: rgba(181, 202, 204, 0.3);
+  z-index: 999;
 }
 
 .sign__form .main__wrapper {
+  position: relative;
+  z-index: 99;
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   width: 40vw;
   padding: 1.5em 0;
@@ -77,6 +84,8 @@
 }
 
 .sign__form .inner__wrapper {
+  position: relative;
+  z-index: 999;
   width: 80%;
   margin: 0 auto;
   height: 100%;

@@ -8,10 +8,16 @@
 }
 .sign__form { 
     width:100vw;
-    margin-top:10vh;
-    // background-color: $main-bg-color;
-    @extend %flex-box;
+    margin-top:8vh;
+    height:92vh;
+    position: relative;     
+    background-color: $main-bg-color;
+    z-index: 999;
+    @extend %flex-box; 
     .main__wrapper {
+        position: relative;
+        z-index: 99;
+        background-color: white;
         box-shadow:$box-shadow;
         width:40vw;
         padding:1.5em 0;
@@ -23,6 +29,8 @@
         }
     }
     .inner__wrapper {
+        position: relative;
+        z-index: 999;
         width:80%;
         margin:0 auto;
         height:100%;
@@ -59,6 +67,16 @@
     @media only screen and (max-width: 350px){
         font-size: 70%;
     }
+    // &:after {
+    //     position: absolute;
+    //     width:100%;
+    //     height:100%;     
+    //     top:0;
+    //     left:0;
+    //     content: "";      
+    //     background-color: $main-bg-color;
+    //     z-index: -999;
+    // }
 }
 
 .inputField {

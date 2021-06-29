@@ -5,7 +5,7 @@
     margin-top:8vh;
     &-cover {
         background-image: url('../../../Images/pexels-photo-3184416.jpeg');
-        height:35vh;
+        height:45vh;
         background-position: center bottom;
         background-size: cover;
         position: relative;
@@ -24,10 +24,7 @@
         h1 {
             color:white;
             position: relative;
-            display: block;
             z-index:999;
-            text-align: center;
-            font-weight: 400;
         }
     }
 }

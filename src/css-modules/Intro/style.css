@@ -59,9 +59,14 @@
   padding: 5px 15px;
 }
 
+.intro h1 {
+  text-align: center;
+  font-weight: 400;
+}
+
 .intro-details {
   width: 70vw;
-  margin: 6vh auto;
+  margin: 9vh auto;
 }
 
 .intro-details .browse-wrapper {
