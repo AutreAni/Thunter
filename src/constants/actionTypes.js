@@ -16,6 +16,13 @@ export const SET_SUBPAGE_TO_ = "SET_SUBPAGE_TO_";
 
 
 
+//for my check H
+export const ADDLIST = "ADDLIST"
+export const DELETELIST = "DELETELIST"
+
+
+
+
 
 
 
