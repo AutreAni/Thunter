@@ -12,6 +12,7 @@ import '../css-modules/Timeline/style.scss';
 import '../css-modules/JobSectionCssShushan/style.css';
 import Jobs from '../JobSectionByShushan/homePageJobs';
 import Search from '../JobSectionByShushan/Search';
+import Back from '../JobSectionByShushan/back';
 import Intro from '../Intro/index';
 import JobSearchForm from '../JobSectionByShushan/JobSearchForm';
 import SignForm from '../SignForm/index';
@@ -62,12 +63,14 @@ const Home = () => {
 
                                     {innerWidth >= 650 ?
                                         <div className="job__section">
-                                            <span className="a" href='#' onClick={(evt) => {
+                                        <span className="a" href='#' onClick={(evt) => {
                                                 evt.preventDefault();
                                                 setState(!state);
-                                            }}>{state ? <Search /> : 'back'}</span>
+                                            }}>{state ? <Search /> : <Back />}</span>
                                             {state ? <Jobs /> : <JobSearchForm />}
+                                            
                                         </div>
+                                        
                                         : null}
                                 </div>
                             </div>

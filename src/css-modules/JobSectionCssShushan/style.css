@@ -15,21 +15,9 @@ a{
   color:#319197 ;
 }
 
-.p{
-  font-size: large;
-  font-family: 'Courier New', Courier, monospace;
-}
 
 .p a:hover{
   color:#176a70 ; 
-}
-
-/* p::before{
-content:" "
-} */
-
-.divContainer a:hover{
-  color:#176a70;
 }
 
 

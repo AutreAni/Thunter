@@ -1,12 +1,13 @@
 
 import LessText from './LessText';
+import {NewDate} from './date';
 
 const JobList = ({jobs}) =>{
     return (
       <div className='wraper'>
          {jobs.map(el =>(
             <div key={el.id} className='divContainer'>
-               <span>{el.date}</span>               
+               <span> <NewDate /></span>               
                <div> 
                  <img src={el.logo} className="logo" alt = "logo" />
                  <p><a href={el.link}>{el.title}</a></p> 

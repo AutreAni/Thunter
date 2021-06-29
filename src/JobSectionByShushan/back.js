@@ -1,10 +1,10 @@
 import '../css-modules/JobSectionCssShushan/jobSearchForm.css';
 
-function Search(){
+function Back(){
     return (
         <div className='serchJob'>
-            <p className='p'><a href="/some/valid/uri">Search For Jobs</a></p>
+            <p className='p'><a href="/some/valid/uri">Back</a></p>
         </div>
     )
 }
-export default Search
+export default Back
