@@ -77,11 +77,13 @@ const Home = () => {
                         }
                     </Route>
                     <Route path='/jobs'>
+                        <div className='jobsByShush'>
                         <span className="a" href='#' onClick={(evt) => {
                             evt.preventDefault();
                             setState(!state);
                         }}>{state ? <Search /> : 'back'}</span>
                         {state ? <Jobs /> : <JobSearchForm />}
+                        </div>
                     </Route>
                     {currentUser ?
                         <Route path="/profile">
