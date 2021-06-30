@@ -61,15 +61,10 @@
   }
 }
 
-.header .header-logo {
-  background-image: url("../../Images/header-logo2.png");
-  width: 12vw;
-  min-width: 160px;
+.header .header-logo img {
+  width: 13vw;
+  min-width: 130px;
   margin-right: 1vw;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
 }
 
 .header a {

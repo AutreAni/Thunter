@@ -65,7 +65,6 @@
         top:100%;
         left:0;
         width: stretch;
-        height:50vh;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
@@ -74,7 +73,7 @@
         padding:1em;
         background-color: $main-bg-color;
         @media only screen and (max-width: 450px){
-            height:50vh;
+            // height:50vh;
             .shortProfile img{
                 width:25px;
                 height:25px;

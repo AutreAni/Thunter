@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { removeCurrentUser } from '../actions/currentUser';
 import SearchResultField from './SearchResultField';
 import { useLocation } from 'react-router-dom';
+import headerLogo from '../Images/header-logo2.png';
 
 const Header = ({ innerWidth }) => {
     const [searchActive, setSearchActive] = useState(false);
@@ -45,6 +46,7 @@ const Header = ({ innerWidth }) => {
                 <Link
                     className="header-logo"
                     to="/">
+                <img src= {headerLogo} alt = "header-logo"></img>
                 </Link>
                 {userData ?
                     <SearchField

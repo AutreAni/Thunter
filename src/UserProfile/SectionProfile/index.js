@@ -10,17 +10,14 @@ import LivesIn from '../About/LivesIn/index';
 import { setUserToPreview } from '../../actions/userToPreview';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from "react-router-dom";
 
 
 
 const SectionProfile = () => {
     const currentUser = useSelector(state => state.currentUser)
-    const dispatch = useDispatch();    
-    let history = useHistory();
+    const dispatch = useDispatch();
 
     const showUserProfile = () => {
-        history.push('/profile');
         dispatch(setUserToPreview(currentUser))
     }
     return (
