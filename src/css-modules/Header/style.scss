@@ -7,12 +7,11 @@
     top:0;
     height:8vh;
     background-color: white;
-    z-index:999;
+    z-index:12;
     width:100%;
     padding: 0 2.5vw;
     box-shadow:1px 0px 4px 0 $shadow-color ;
     .logo-wrapper {
-        height: 50px;
         display: flex;
         align-items: center;
         @media only screen and (max-width: 650px) {
@@ -22,15 +21,10 @@
         }
         
     }
-    .header-logo {
-        background-image: url('../../Images/header-logo2.png');
-        width:12vw;
-        min-width:160px;
+    .header-logo img {
+        width:13vw;
+        min-width: 150px;
         margin-right:1vw;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        cursor: pointer;
     }   
     
     a {
@@ -40,7 +34,6 @@
     justify-content: space-between;
     .nav-list-wrapper {
         display: flex;
-        // box-shadow:1px 1px 4px $shadow-color;
         @media only screen and (max-width: 650px) {
             position: fixed;
             font-size: 80%;
@@ -60,13 +53,10 @@
         display: block;
         color:$gray;
         font-weight: 500;
-        // font-size: $primary-font-size;
-        cursor: pointer;
         height:100%;
         padding:0.3vw 1vw;
         line-height: 40px;
         margin-left:3vw;
-       
         &:hover {
             color:$darkgray;
             background-color: $light-blue;
@@ -83,6 +73,11 @@
     .active-nav {
         background-color:$light-blue;
         border-radius: 5px;
+        pointer-events: none;
+        cursor: alias;
+        a {
+            pointer-events: none;
+        }
         .shortProfile{
             background-color: transparent;
         }
@@ -111,12 +106,12 @@
             transform: translateY(-50%);
             color:$gray;
         }
+        
         input {
             background-color:white !important;
             outline: none;
             border:1px solid $blue;
             border-radius: 4px;
-            width: 200px;
             padding:0 35px;
             height:5vh;
             margin:0;
@@ -140,7 +135,7 @@
         background-color: white;
         width:30vw;
         list-style: none;
-        left:21.5vw;
+        left:13vw;
         max-height: 50vh;
         overflow: auto;
         li {

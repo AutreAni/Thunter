@@ -3,7 +3,6 @@ import currentUserReducer from './currentUserReducer';
 import userToPreviewReducer from './userToPreviewReducer';
 import audienceListReducer from './audienceListReducer';
 import searchResultReducer from './searchResult';
-import jobsReducer from './jobsReducer';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +10,6 @@ const rootReducer = combineReducers({
         userToPreview: userToPreviewReducer,
         audienceList: audienceListReducer,
         searchResult: searchResultReducer,
-        jobs: jobsReducer
 })
 
 export default rootReducer;

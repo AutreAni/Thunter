@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -118,6 +122,8 @@
 }
 
 span.network__title {
+  display: block;
+  text-align: center;
   font-size: 1.5em;
   font-weight: 500;
   color: #666;

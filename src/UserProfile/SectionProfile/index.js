@@ -10,23 +10,22 @@ import LivesIn from '../About/LivesIn/index';
 import { setUserToPreview } from '../../actions/userToPreview';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from "react-router-dom";
 
 
 
 const SectionProfile = () => {
     const currentUser = useSelector(state => state.currentUser)
-    const dispatch = useDispatch();    
-    let history = useHistory();
+    const dispatch = useDispatch();
 
     const showUserProfile = () => {
-        history.push('/profile');
-        dispatch(setUserToPreview(currentUser))
+        dispatch(setUserToPreview(currentUser));
+        console.log("console.",currentUser);
+
     }
     return (
         <Fragment>
             {currentUser ? <div className="sectionProfile" onClick={showUserProfile}>
-                <Link to="/profile">
+                <Link to="/profile/about">
                     <div className="avatar__wrapper">
                         <Avatar className="section__avatar"
                             avatar={currentUser.picture} />
@@ -36,13 +35,15 @@ const SectionProfile = () => {
 
                 </Link>
                 <div className="section__details">
-                    <Link to="/audience">
-                        <AudienceInfo
-                            audience={currentUser.audience}
-                            pageToPreview={() => null}
-                        />
-                    </Link>
-                    <Link to='/profile'>
+                    {currentUser.audience?.length ?
+                        <Link to="/audience">
+                            <AudienceInfo
+                                audience={currentUser.audience}
+                                pageToPreview={() => null}
+                            />
+                        </Link>
+                        : null}
+                    <Link to='/profile/about'>
                         {currentUser.about?.birthDate ?
                             (<Age
                                 birthDate={currentUser.about.birthDate}

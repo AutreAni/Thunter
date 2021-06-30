@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;

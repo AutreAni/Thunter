@@ -9,7 +9,7 @@ import AudiencePage from '../UserProfile/Audience/AudiencePage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../css-modules/HomePage/homepage.scss';
 import '../css-modules/Timeline/style.scss';
-import '../css-modules/JobSectionCssShushan/style.css';
+import '../css-modules/JobSectionCssShushan/style.scss';
 import Jobs from '../JobSectionByShushan/homePageJobs';
 import Search from '../JobSectionByShushan/Search';
 import Back from '../JobSectionByShushan/back';
@@ -77,11 +77,13 @@ const Home = () => {
                         }
                     </Route>
                     <Route path='/jobs'>
+                        <div className='jobsByShush'>
                         <span className="a" href='#' onClick={(evt) => {
                             evt.preventDefault();
                             setState(!state);
                         }}>{state ? <Search /> : 'back'}</span>
                         {state ? <Jobs /> : <JobSearchForm />}
+                        </div>
                     </Route>
                     {currentUser ?
                         <Route path="/profile">

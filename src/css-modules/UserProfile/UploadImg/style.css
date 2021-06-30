@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -54,6 +58,7 @@
 
 .uploadImg .uploadImg__wrapper .closeBtn {
   position: absolute;
+  text-align: center;
   right: 5.5%;
   top: 10%;
   background-color: rgba(250, 250, 250, 0.6);

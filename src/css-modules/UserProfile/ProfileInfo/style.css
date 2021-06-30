@@ -1,3 +1,7 @@
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -85,8 +89,13 @@
   border-radius: 5px;
 }
 
-.profile__info .details ul li a {
+.profile__info .details a {
   text-decoration: none;
+  color: #666;
+}
+
+.profile__info .details a:hover {
+  color: #222;
 }
 
 .profile__info .active-subpage {
@@ -106,7 +115,6 @@
   top: 100%;
   left: 0;
   width: stretch;
-  height: 50vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -117,9 +125,6 @@
 }
 
 @media only screen and (max-width: 450px) {
-  .profile__info .wrapper {
-    height: 50vh;
-  }
   .profile__info .wrapper .shortProfile img {
     width: 25px;
     height: 25px;

@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { removeCurrentUser } from '../actions/currentUser';
 import SearchResultField from './SearchResultField';
 import { useLocation } from 'react-router-dom';
+import headerLogo from '../Images/header-logo2.png';
 
 const Header = ({ innerWidth }) => {
     const [searchActive, setSearchActive] = useState(false);
@@ -44,7 +45,16 @@ const Header = ({ innerWidth }) => {
             <div className='logo-wrapper'>
                 <Link
                     className="header-logo"
-                    to="/">
+                    to="/"
+                   >
+                <img src= {headerLogo}
+                 alt = "header-logo"
+                 onClick = {
+                    () => window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                  })
+                  }></img>
                 </Link>
                 {userData ?
                     <SearchField
@@ -59,10 +69,9 @@ const Header = ({ innerWidth }) => {
             </div>
             <div className="nav-list-wrapper">
                 {userData ?
-                    <Link to="/">
-                        <span
-                            className={`nav-li ${pathName === "/" ? "active-nav" : ""}`}
-                        >
+                    <Link to="/"
+                     className={`nav-li ${pathName === "/" ? "active-nav" : ""}`}>
+                        <span>
                             <FontAwesomeIcon
                                 icon={faHome}
                                 className="icon"
@@ -72,10 +81,9 @@ const Header = ({ innerWidth }) => {
                     : null
                 }
                 {innerWidth < 650 && userData ?
-                    <Link className="jobs" to="/jobs">
-                        <span
-                            className={`nav-li jobs ${pathName === "/jobs" ? "active-nav" : ""}`}
-                        >
+                    <Link to="/jobs"
+                     className={`nav-li jobs ${pathName === "/jobs" ? "active-nav" : ""}`}>
+                        <span>
                             <FontAwesomeIcon
                                 icon={faBriefcase}
                                 className="icon"
@@ -85,10 +93,8 @@ const Header = ({ innerWidth }) => {
                     :
                     null}
                 {userData ?
-                    <Link to="/profile">
-                        <span
-                            className={`nav-li ${pathName === "/profile" ? "active-nav" : ""}`}
-                        >
+                    <Link to="/profile/about" className={`nav-li ${pathName.startsWith("/profile") ? "active-nav" : ""}`}>
+                       <span>
                             <ShortProfile
                                 userData={userData}
                                 emptyUserArray={() => null}
@@ -98,10 +104,8 @@ const Header = ({ innerWidth }) => {
                     </Link>
                     : null}
                 {userData ?
-                    <Link to="/">
-                        <span
-                            className="nav-li signOut"
-                            onClick={handleSignOut}>
+                    <Link to="/sign-page/login" className="nav-li signOut">
+                        <span onClick={handleSignOut}>
                             <FontAwesomeIcon
                                 icon={faSignOutAlt}
                                 className="icon" />

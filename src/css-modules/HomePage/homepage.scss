@@ -17,6 +17,14 @@
     }
     .job__section {
         width:25%;
+        .jobs-wrapper {
+            flex-direction: column;
+            width:100%;
+        } 
+        .divContainer {
+            width:100%;
+            border-right: none;
+        }
     }
     .sectionProfile {
         width:25%;

@@ -1,6 +1,12 @@
 @import '../../../config';
 
-.audience__main{
+.audience{
+    background-color: $main-bg-color;
+    padding:2vw;
+    margin-top:8vh;
+    height:92vh;
+    &__main{
+        background-color: white;
     padding:0.5em;
     display: flex;
     box-shadow: 0 1px 2px $shadow-color;
@@ -54,4 +60,5 @@
    .audience__main .under__preview {
        width:50%
    }
+}
 }

@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -56,6 +60,16 @@
 
 .main .job__section {
   width: 25%;
+}
+
+.main .job__section .jobs-wrapper {
+  flex-direction: column;
+  width: 100%;
+}
+
+.main .job__section .divContainer {
+  width: 100%;
+  border-right: none;
 }
 
 .main .sectionProfile {

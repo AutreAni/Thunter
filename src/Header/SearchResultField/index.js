@@ -12,7 +12,7 @@ const SearchResultField = ({deactivateSearchMode, removeSearchInput}) => {
         return <li                
         onClick = {handleClick}
             key={user.id}>
-            <Link to='/profile'>
+            <Link to='/profile/about'>
                 <ShortProfile
                     userData={user}
                 />

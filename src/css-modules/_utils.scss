@@ -45,6 +45,7 @@
 
 
 .active{
+    pointer-events: none;
     &:before {
      content: '';
      position: absolute;

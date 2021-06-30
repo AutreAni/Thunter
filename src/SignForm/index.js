@@ -227,7 +227,7 @@ const SignForm = () => {
                         <div className={loggingin ? "active btn__wrapper" : "btn__wrapper"}>
                             <button className="button"
                                 onClick={createLoginForm}>
-                                Login
+                                Log In
              </button>
                         </div>
                         <div className={registering ? "active btn__wrapper" : "btn__wrapper"}>

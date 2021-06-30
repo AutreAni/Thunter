@@ -1,3 +1,7 @@
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -75,8 +79,8 @@
   width: 90%;
   z-index: 999;
   padding: 1vw;
-  background-color: rgba(156, 199, 204, 0.9);
-  border: transparent;
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
   z-index: 99;
 }
 
@@ -101,22 +105,6 @@
   margin-top: 20px;
   text-align: center;
   font-weight: 400;
-}
-
-.latest-news-wrapper .post .descr1 p {
-  color: #f66d1a;
-}
-
-.latest-news-wrapper .post .descr1::after {
-  border: 1px solid #f66d1a;
-}
-
-.latest-news-wrapper .post .descr2 p {
-  color: #c21d28;
-}
-
-.latest-news-wrapper .post .descr2::after {
-  border: 1px solid #c21d28;
 }
 
 @media only screen and (max-width: 450px) {

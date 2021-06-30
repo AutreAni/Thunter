@@ -3,27 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCog} from '@fortawesome/free-solid-svg-icons';
 import Form from './Form/index';
 import '../../css-modules/UserProfile/ProfileSettings/stye.scss'
-import { setActiveSubpage } from '../../actions/activeSubpage';
-import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
-const ProfileSettings = () => {
-    const activePage = useSelector(state => state.userToPreview.activeSubpage);
-     const dispatch = useDispatch();
+const ProfileSettings = ( {userData} ) => {
+    const pathName = useLocation().pathname;
 
-    const setActivePage = () => dispatch(setActiveSubpage("SETTINGS"));
     return (
         <div
-         className = {`details ${activePage ==="SETTINGS" ? "active-subpage" : ""}`}>
-          <span className = "details__title"
-          onClick = {setActivePage}>
+         className = {`details ${ pathName ==="/profile/settings" ? "active-subpage" : ""}`}>
+         <Link to = '/profile/settings'>
+         <span className = "details__title">
              <FontAwesomeIcon
              icon = {faCog}
              className = "icon"/>
              Settings
           </span>  
-          { activePage === "SETTINGS" ?
+         </Link>
+         
+          { pathName === "/profile/settings" ?
                 (<div className="wrapper settings__wrapper">
-                <Form />
+                <Form userData = { userData }/>
                 </div>
                 ) : null}
         </div>

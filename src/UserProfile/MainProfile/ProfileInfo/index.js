@@ -13,11 +13,11 @@ const ProfileInfo = ({ userData }) => {
         <Fragment>
             { userData ?
                 (<div className="profile__info">
-                   <About />                  
-                   <Skills /> 
-                   <AudienceMain />
+                   <About userData = {userData}/>                  
+                   <Skills userData = {userData} /> 
+                   <AudienceMain userData = {userData} />
                   {userData.id === currentUserId?
-                    <ProfileSettings/> : null }
+                    <ProfileSettings userData = {userData}/> : null }
                 </div>) : null }
         </Fragment>
     )

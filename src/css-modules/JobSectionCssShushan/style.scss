@@ -1,0 +1,68 @@
+@import '../config';
+
+.searchJob {
+  border-radius: 5px 5px 0 0;
+  .jobs-wrapper {
+    width:100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .p {
+    padding-top:10px;
+    a{
+      text-decoration: none;
+      color:#319197 ;
+      text-align: center;
+      padding:10px;
+      &:hover{
+        color:#176a70;
+        text-decoration: underline; 
+      }
+   }
+  }
+  .divContainer {
+    border-bottom:2px solid $main-bg-color;
+    border-right:2px solid $main-bg-color;
+    border-radius: 0;
+    padding: 0 10px;  
+    width: 45%;
+    margin:0;
+  }
+
+  span{
+    margin-top: 10px;
+  }
+  a{ 
+    text-decoration: none;
+    color:#319197 ;
+    text-align: center;
+  }
+  p{
+    width: 22vw;
+   }
+
+}
+
+
+.myimgStyle {
+  max-width:20vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 15px;
+
+}
+img.mylogo{
+  max-width: 7vw;
+  
+}
+
+.a{
+  text-align: center;
+
+}
+
+
+
+
+

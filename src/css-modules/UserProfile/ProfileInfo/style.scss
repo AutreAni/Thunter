@@ -44,11 +44,15 @@
             li {
                 border: 0.5px solid rgba(0, 0, 0, 0.05);
                 border-radius: 5px;
-                a {
-                    text-decoration: none;
-                }
             }
         }
+            a {
+                text-decoration: none;
+                color: $gray ;
+                &:hover {
+                   color:$darkgray;
+                }
+            }
     }
     .active-subpage {
         background-color: $main-bg-color;
@@ -65,7 +69,6 @@
         top:100%;
         left:0;
         width: stretch;
-        height:50vh;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
@@ -74,7 +77,7 @@
         padding:1em;
         background-color: $main-bg-color;
         @media only screen and (max-width: 450px){
-            height:50vh;
+            // height:50vh;
             .shortProfile img{
                 width:25px;
                 height:25px;

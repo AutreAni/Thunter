@@ -1,12 +1,12 @@
 @import '../../config';
 
 .background {
+    margin-top: 8vh;
     width:100%;
     height:38vh;
     background:$wallpaper-background-gradient;
     position: relative;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-radius: 5px 5px 0 0;
     font-size: 100%;
     @media only screen and (max-width: 450px){    
         height:32vh;
@@ -20,13 +20,13 @@
       .profile__wrapper {
         display:flex;
         position: relative;
-        z-index:999;
+        z-index:2;
         flex-direction: column;
         width: fit-content;
         padding:0 1%;
         .avatar__editable {
             position: relative;
-            z-index:999;
+            z-index:2;
             width: fit-content;
             border-radius: 50%;
             margin-top:-50%;

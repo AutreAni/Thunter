@@ -4,25 +4,24 @@ import Family from './Family/index';
 import Employment from './Employment/index';
 import Education from './Education/index';
 import Age from './Age/index';
-import { setActiveSubpage } from '../../actions/activeSubpage';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom'
 
 
 const About = () => {
-    const activePage = useSelector(state => state.userToPreview.activeSubpage);
     const about = useSelector(state => state.userToPreview.about)
-    const dispatch = useDispatch();
-
-    const setPageToAbout = () => dispatch(setActiveSubpage("ABOUT"));
-
+    const pathName = useLocation().pathname;
+  
     return (
         <div 
-         className = {`details ${activePage ==="ABOUT" ? "active-subpage" : ""}`}             
+         className = {`details ${ pathName ==="/profile/about" ? "active-subpage" : ""}`}             
         >
+        <Link to = "/profile/about">
             <span
-               className = "details__title"            
-                onClick={setPageToAbout}>About</span>
-            { activePage === "ABOUT" && about ?
+               className = "details__title">About</span>
+        </Link>
+            { pathName ==="/profile/about" && about ?
                 (<div className="wrapper about__wrapper">
                     {about.birthDate ?
                         (<Age

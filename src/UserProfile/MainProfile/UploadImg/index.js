@@ -14,7 +14,6 @@ const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {
     const dispatch = useDispatch();
 
     const handleClick = (publicId) => {
-        console.log(userData)
         const url = `https://res.cloudinary.com/dslaqvh3p/image/upload/${publicId}.${fileExtention}`;
         const requestUserUrl = !userData.password ? `http://localhost:3000/fbUsers/` :
             `http://localhost:3000/users/`;
@@ -28,8 +27,6 @@ const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log("update",{[fieldName]: url})
-                console.log(updateCurrentUser);
                 addCamera();
                 removeUploadField();
                 dispatch(updateCurrentUser({[fieldName]: url}))
@@ -41,7 +38,6 @@ const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {
 
 
     const uploadImg = () => {
-        console.log("step2")
         if (wrongExtention) return;
         const formData = new FormData();
         formData.append("file", imageSelected);
