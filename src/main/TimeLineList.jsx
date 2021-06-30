@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 
 
+
 const MainList = ({blogs}) =>{
 
   const [inputText, setInputText] = useState("Add a comment ...")
@@ -17,7 +18,7 @@ const MainList = ({blogs}) =>{
     <div>
         {blogs.map(d =>(
           <div key={d.id} className='divContainer'>
-             <p>{d.date}</p>
+            <p>{d.date}</p>
             <div> 
                <img src={d.logo} className="logoT" alt = "logo" />
                <a href={d.link}>{d.title}</a> 
