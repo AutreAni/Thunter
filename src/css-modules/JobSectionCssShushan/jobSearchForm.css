@@ -1,142 +1,136 @@
-*{
-  box-sizing: border-box;
+.job form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.job {
+  width: 100%;
+  padding: 1em 3em;
+  height: 85vh;
 }
 
 .job form {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
- }
- 
- 
- .job {
-   width: 100%;
-   padding: 1em 3em;
-   height: 85vh;
- }
- 
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 450px) {
   .job form {
-   flex-wrap: wrap;
-   align-items: baseline;
-   width: 60%;
-   margin: 0 auto;
- }
- 
- @media only screen and (max-width: 450px) {
-   .job form {
-     width: 85%;
-   }
- }
- 
-  form input {
-    display: flex;
-    flex-direction: row;
-    
-   border: 1px solid #319197;
-   outline: none;
-   border-radius: 1.5em;
-   padding: 0.5em 0.9em;
-   margin: 1em auto;
-   background-color: white;
-   width: 50%;
-   min-width: 6em;
- }
- 
- .job__card {
-   font-size: 1.1em;
-   padding: 2em;
-   border-radius: 1em;
- }
- 
- .job__description, .job__apply__link {
-   font-size: 1em;
- }
- 
- .job .company__logo img {
-   max-width: 10em;
-   padding: 1em;
- }
- 
- .full__time__label {
-   display: block;
-   position: relative;
-   padding-left: 1.5em;
-   margin-bottom: .8em;
-   cursor: pointer;
-   font-size: 1em;
-   user-select: none;
- }
- 
- .full__time__label input {
-   position: absolute;
-   opacity: 0;
-   cursor: pointer;
-   height: 0;
-   width: 0;
- }
- 
- .checkmark {
-   position: absolute;
-   top: 0.2em;
-   left: 5.4em;
-   height: 1.2em;
-   width: 1.2em;
-   background-color: white;
-   border: 1px solid #319197;
- }
+    width: 85%;
+  }
+}
 
- .button_search {
-   background: white;
-   background-color: none;
-   color: rgb(68, 67, 67);
-   border: none;
-   outline: none;
-   border-radius: 2.5em;
-   font-size: inherit;
-   padding: 0.5em 2.3em;
-   margin-right: 1em;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-   border: 1px solid #319197;
-   outline: none;
-   border-radius: 1.5em;
-   padding: 0.5em 1.5em;
-   margin: 1em;
-   background-color: white;
-   width: 50%;
-   min-width: 6em;
- }
- 
- .full__time__label:hover input ~ .checkmark {
-   background-color: rgba(250, 250, 250, 0.6);
- }
- 
- .full__time__label input:checked ~ .checkmark {
-   background-color: #319197;
- }
- 
- .checkmark:after {
-   content: "";
-   
-   display: none;
- }
- 
- .full__time__label input:checked ~ .checkmark:after {
-   display: block;
- }
- 
- .full__time__label .checkmark:after {
-   left: .4em;
-   top: .1em;
-   width: .3em;
-   height: .6em;
-   border: solid white;
-   border-width: 0 3px 3px 0;
-   transform: rotate(45deg);
- }
+.searchJob form input {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #319197;
+  outline: none;
+  border-radius: 1.5em;
+  padding: 0.5em 0.9em;
+  margin: 1em auto;
+  background-color: white;
+  width: 50%;
+  min-width: 200px;
+}
 
- .serchJob{
- display: flex;
+.job__card {
+  font-size: 1.1em;
+  padding: 2em;
+  border-radius: 1em;
+}
+
+.job__description, .job__apply__link {
+  font-size: 1em;
+}
+
+.job .company__logo img {
+  max-width: 10em;
+  padding: 1em;
+}
+
+.full__time__label {
+  display: block;
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: .8em;
+  cursor: pointer;
+  font-size: 1em;
+  user-select: none;
+}
+
+.full__time__label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0.2em;
+  left: 5.4em;
+  height: 1.2em;
+  width: 1.2em;
+  background-color: white;
+  border: 1px solid #319197;
+}
+
+.button_search {
+  background: white;
+  background-color: none;
+  color: #444343;
+  border: none;
+  outline: none;
+  border-radius: 2.5em;
+  font-size: inherit;
+  padding: 0.5em 2.3em;
+  margin-right: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid #319197;
+  outline: none;
+  border-radius: 1.5em;
+  padding: 0.5em 1.5em;
+  margin: 1em;
+  background-color: white;
+  width: 50%;
+  min-width: 6em;
+}
+
+.full__time__label:hover input ~ .checkmark {
+  background-color: rgba(250, 250, 250, 0.6);
+}
+
+.full__time__label input:checked ~ .checkmark {
+  background-color: #319197;
+}
+
+.checkmark:after {
+  content: "";
+  display: none;
+}
+
+.full__time__label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.full__time__label .checkmark:after {
+  left: .4em;
+  top: .1em;
+  width: .3em;
+  height: .6em;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.searchJob {
+  display: flex;
   flex-direction: row;
   background-color: white;
 }
+/*# sourceMappingURL=jobSearchForm.css.map */

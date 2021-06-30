@@ -12,7 +12,7 @@
         @extend %flex-box;
         &::after {
             content: "";
-            z-index:99;
+            z-index:2;
             background-image: $background-gradient;
             opacity: 0.6;
             position: absolute;
@@ -24,7 +24,7 @@
         h1 {
             color:white;
             position: relative;
-            z-index:999;
+            z-index:3;
         }
     }
 }

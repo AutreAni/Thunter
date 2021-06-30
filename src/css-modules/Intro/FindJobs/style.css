@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -49,7 +53,7 @@
 
 .find-jobs-cover::after {
   content: "";
-  z-index: 99;
+  z-index: 2;
   background-image: linear-gradient(45deg, #319197, #862f4f, #c21d28);
   opacity: 0.6;
   position: absolute;
@@ -62,6 +66,6 @@
 .find-jobs-cover h1 {
   color: white;
   position: relative;
-  z-index: 999;
+  z-index: 3;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -40,7 +44,7 @@
   top: 0;
   height: 8vh;
   background-color: white;
-  z-index: 999;
+  z-index: 12;
   width: 100%;
   padding: 0 2.5vw;
   box-shadow: 1px 0px 4px 0 rgba(0, 0, 0, 0.15);
@@ -48,7 +52,6 @@
 }
 
 .header .logo-wrapper {
-  height: 50px;
   display: flex;
   align-items: center;
 }
@@ -63,7 +66,7 @@
 
 .header .header-logo img {
   width: 13vw;
-  min-width: 130px;
+  min-width: 150px;
   margin-right: 1vw;
 }
 
@@ -95,7 +98,6 @@
   display: block;
   color: #666;
   font-weight: 500;
-  cursor: pointer;
   height: 100%;
   padding: 0.3vw 1vw;
   line-height: 40px;
@@ -121,6 +123,12 @@
 .header .active-nav {
   background-color: rgba(156, 199, 204, 0.3);
   border-radius: 5px;
+  pointer-events: none;
+  cursor: alias;
+}
+
+.header .active-nav a {
+  pointer-events: none;
 }
 
 .header .active-nav .shortProfile {
@@ -160,7 +168,6 @@
   outline: none;
   border: 1px solid #319197;
   border-radius: 4px;
-  width: 200px;
   padding: 0 35px;
   height: 5vh;
   margin: 0;
@@ -186,7 +193,7 @@
   background-color: white;
   width: 30vw;
   list-style: none;
-  left: 21.5vw;
+  left: 13vw;
   max-height: 50vh;
   overflow: auto;
 }

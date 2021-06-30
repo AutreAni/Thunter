@@ -1,11 +1,11 @@
 import JobFetch from './JobFetch';
-import '../css-modules/JobSectionCssShushan/jobSearchForm.css';
+import '../css-modules/JobSectionCssShushan/jobSearchForm.scss';
 
 
 
 const Jobs = () => {
   return ( 
-    <div className='serchJob'>
+    <div className='searchJob'>
       <JobFetch />
     </div>
    );

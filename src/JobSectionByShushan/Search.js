@@ -1,8 +1,8 @@
-import '../css-modules/JobSectionCssShushan/jobSearchForm.css';
+import '../css-modules/JobSectionCssShushan/jobSearchForm.scss';
 
 function Search(){
     return (
-        <div className='serchJob'>
+        <div className='searchJob'>
             <p className='p'><a href="/some/valid/uri">Search For Jobs</a></p>
         </div>
     )

@@ -11,7 +11,7 @@ const AudiencePage = () => {
 
 
     return (
-        <div className="wrapper">
+        <div className="audience">
             <div className="audience__main">
                 <div className="existing__audience">
                     <div className="audience__info">

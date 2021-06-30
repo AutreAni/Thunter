@@ -1,3 +1,7 @@
+.active {
+  pointer-events: none;
+}
+
 .active:before {
   content: '';
   position: absolute;
@@ -85,8 +89,13 @@
   border-radius: 5px;
 }
 
-.profile__info .details ul li a {
+.profile__info .details a {
   text-decoration: none;
+  color: #666;
+}
+
+.profile__info .details a:hover {
+  color: #222;
 }
 
 .profile__info .active-subpage {

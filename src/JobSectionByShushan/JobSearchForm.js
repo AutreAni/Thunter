@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
-import '../css-modules/JobSectionCssShushan/jobSearchForm.css';
-import { useState } from 'react';
- import JobList from './jobList';
-import LessText from './LessText';
-import {NewDate} from './date';
+import React, { useEffect,useState  } from 'react';
+import '../css-modules/JobSectionCssShushan/jobSearchForm.scss';
+import JobList from './jobList';
 
 
 
@@ -11,7 +8,6 @@ const JobSearchForm = () => {
 
     const [name, setTitle] = useState("");
     const [mains, setMain] = useState();
-    const [state, setState] = useState("");
 
     useEffect(() => {
         if(name.length=== 4){
@@ -29,10 +25,9 @@ const JobSearchForm = () => {
         }
     },[name]);
 
-    console.log(mains, 'shush')
     return (
      
-        <div className='serchJob'>
+        <div className='searchJob'>
           <form className='job'>
             <input type = "text" value={name} onChange={(evt) => setTitle(evt.target.value)}  placeholder = "search by title"
             autoComplete = "off" name = "desciption"/>

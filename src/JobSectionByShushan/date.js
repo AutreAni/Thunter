@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export  class NewDate extends React.Component {
   state = {
@@ -17,6 +17,6 @@ export  class NewDate extends React.Component {
   render() {
     const { date } = this.state;
 
-    return <div>{date}</div>;
+    return <Fragment>{date}</Fragment>;
   }
 }

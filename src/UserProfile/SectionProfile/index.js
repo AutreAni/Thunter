@@ -18,12 +18,14 @@ const SectionProfile = () => {
     const dispatch = useDispatch();
 
     const showUserProfile = () => {
-        dispatch(setUserToPreview(currentUser))
+        dispatch(setUserToPreview(currentUser));
+        console.log("console.",currentUser);
+
     }
     return (
         <Fragment>
             {currentUser ? <div className="sectionProfile" onClick={showUserProfile}>
-                <Link to="/profile">
+                <Link to="/profile/about">
                     <div className="avatar__wrapper">
                         <Avatar className="section__avatar"
                             avatar={currentUser.picture} />
@@ -33,13 +35,15 @@ const SectionProfile = () => {
 
                 </Link>
                 <div className="section__details">
-                    <Link to="/audience">
-                        <AudienceInfo
-                            audience={currentUser.audience}
-                            pageToPreview={() => null}
-                        />
-                    </Link>
-                    <Link to='/profile'>
+                    {currentUser.audience?.length ?
+                        <Link to="/audience">
+                            <AudienceInfo
+                                audience={currentUser.audience}
+                                pageToPreview={() => null}
+                            />
+                        </Link>
+                        : null}
+                    <Link to='/profile/about'>
                         {currentUser.about?.birthDate ?
                             (<Age
                                 birthDate={currentUser.about.birthDate}

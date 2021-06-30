@@ -1,7 +1,3 @@
-import post1 from '../../Images/post1.jpg';
-import post2 from '../../Images/post2.jpg';
-import post3 from '../../Images/post3.jpg';
-import post4 from '../../Images/post4.jpg';
 import '../../css-modules/Intro/LatestNews/style.scss';
 
 

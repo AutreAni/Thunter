@@ -1,5 +1,4 @@
-import React from "react"
-import {useState} from "react"
+import React, { useState } from "react";
 
 
 function LessText (props){
@@ -17,6 +16,3 @@ function LessText (props){
 }
 
 export default LessText;
-//   {jobs.map(job => {
-//     return <JobCard key={job.id} job={job} />
-// })}

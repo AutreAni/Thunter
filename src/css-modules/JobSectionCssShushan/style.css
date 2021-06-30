@@ -1,59 +1,65 @@
-
-*{
-  box-sizing: border-box;
+.searchJob {
+  border-radius: 5px 5px 0 0;
 }
 
+.searchJob .jobs-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-.divContainer a{
+.searchJob .p {
+  padding-top: 10px;
+}
+
+.searchJob .p a {
   text-decoration: none;
-  color:#319197 ;
+  color: #319197;
+  text-align: center;
+  padding: 10px;
+}
+
+.searchJob .p a:hover {
+  color: #176a70;
+  text-decoration: underline;
+}
+
+.searchJob .divContainer {
+  border-bottom: 2px solid rgba(181, 202, 204, 0.3);
+  border-right: 2px solid rgba(181, 202, 204, 0.3);
+  border-radius: 0;
+  padding: 0 10px;
+  width: 45%;
+  margin: 0;
+}
+
+.searchJob span {
+  margin-top: 10px;
+}
+
+.searchJob a {
+  text-decoration: none;
+  color: #319197;
   text-align: center;
 }
 
-.divContainer span{
-  margin-top: 10px;
-}
- 
-
- .divContainer a{ 
-   text-decoration: none;
-   color:#319197 ;
-   text-align: center;
- }
- 
- .divContainer p{
+.searchJob p {
   width: 22vw;
- }
-
-a{
-  text-decoration: none;
-  color:#319197 ;
 }
-
-
-.p a:hover{
-  color:#176a70 ; 
-}
-
 
 .myimgStyle {
-  max-width:20vw;
+  max-width: 20vw;
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 15px;
-
 }
-.mylogo{
+
+img.mylogo {
   max-width: 7vw;
-  
 }
 
-.a{
+.a {
   text-align: center;
-
 }
-
-
-
-
-
+/*# sourceMappingURL=style.css.map */

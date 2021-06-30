@@ -38,6 +38,7 @@
 .sectionProfile .section__details {
   font-weight: 500;
   color: #666;
+  width: 100%;
 }
 
 .sectionProfile .username {

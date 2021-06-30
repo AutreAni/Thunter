@@ -2,7 +2,7 @@ import { SAVE_CURRENT_USER, REMOVE_CURRENT_USER, UPDATE_CURRENT_USER } from '../
 
 const ACTION_HANDLERS = {
   [SAVE_CURRENT_USER]: (state, action)=> {
-    return action.payload;
+    return {...action.payload};
   },
   [REMOVE_CURRENT_USER]: () => {
     return null

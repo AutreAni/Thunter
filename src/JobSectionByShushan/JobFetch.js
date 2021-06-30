@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect, Fragment} from 'react'
 import JobList from './jobList'
 
 const JobFetch =() =>{
@@ -32,12 +32,11 @@ const JobFetch =() =>{
   
   
   return(
-    <div  >
+    <Fragment >
       {error && <div> {error} </div>}
       {pending && <div>Loading...</div>}
-      {mains && <JobList jobs={mains} />}
-   
-    </div>
+      {mains && <JobList jobs={mains} />}   
+    </Fragment>
     
   )
 }
