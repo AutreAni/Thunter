@@ -22,15 +22,12 @@ class LikeButtons extends Component {
    }
   render() { 
     return (  
-      <div>
         <ul className="likeUl">
-          <li> <span>{this.formatHeart()}</span> <FontAwesomeIcon onClick={this.handelIncrementHeart} icon={faHeart} /></li>
-          <li> <span>{this.formatUp()}</span> <FontAwesomeIcon onClick={this.handelIncrementThumbUp} icon={faThumbsUp} /></li>
-          <li> <span>{this.formatDown()} </span> <FontAwesomeIcon onClick={this.handelIncrementThumbDown} icon={faThumbsDown} /></li>
+          <li><FontAwesomeIcon className = "timeline-icon" onClick={this.handelIncrementHeart} icon={faHeart} /> <span>{this.formatHeart()}</span> </li>
+          <li><FontAwesomeIcon className = "timeline-icon" onClick={this.handelIncrementThumbUp} icon={faThumbsUp} /> <span>{this.formatUp()}</span> </li>
+          <li><FontAwesomeIcon className = "timeline-icon" onClick={this.handelIncrementThumbDown} icon={faThumbsDown} /><span>{this.formatDown()} </span></li>
         </ul>
-      </div>
-      
-    );
+     );
   }
   formatHeart() {
     const {heart} = this.state;

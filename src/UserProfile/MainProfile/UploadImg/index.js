@@ -15,8 +15,7 @@ const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {
 
     const handleClick = (publicId) => {
         const url = `https://res.cloudinary.com/dslaqvh3p/image/upload/${publicId}.${fileExtention}`;
-        const requestUserUrl = !userData.password ? `http://localhost:3000/fbUsers/` :
-            `http://localhost:3000/users/`;
+        const requestUserUrl = `http://localhost:3000/users/`;
 
 
         fetch(`${requestUserUrl}${userData.id}`
@@ -50,7 +49,8 @@ const UploadImg = ({ userData, fieldName, removeUploadField, addCamera }) => {
     const handleInputChange = (e) => {
         setImageSelected(e.target.files[0]);
         setUploadButtonName('Uploaded');
-        const extention = e.target.files[0].name.split('.')[1];
+        const name = e.target.files[0].name;
+        const extention = name.split('.')[1];
         if (!extention.match(/(jpg|jpeg|png)$/)) {
             setWrongExtention(true);
             return;

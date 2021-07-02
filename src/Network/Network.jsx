@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import '../css-modules/Network/network.css';
 import '../css-modules/UserProfile/Audience/AudienceNetwork/style.scss';
-// import { Card, Button, ButtonGroup } from 'react-bootstrap';
 
 
 class Network extends Component {

@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import SectionProfile from '../UserProfile/SectionProfile/index';
 import Components from '../PostTimeline/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TimelineItem from '../main';
 import Header from '../Header/index';
 import MainProfile from '../UserProfile/MainProfile/index';
 import AudiencePage from '../UserProfile/Audience/AudiencePage';
@@ -56,9 +55,9 @@ const Home = () => {
                                         : null}
                                     <div className="timeline">
                                         <Components />
-                                        <div>
+                                        {/* <div>
                                             <TimelineItem />
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                     {innerWidth >= 650 ?

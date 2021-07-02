@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Network from './Network'
-// import './network.css'
 
 const NetworkIndex = () => {
 

@@ -28,6 +28,11 @@
   text-align: center;
   font-size: 0.8em;
   background-color: white;
+  cursor: pointer;
+}
+
+.settings__wrapper input:focus, .settings__wrapper input:hover {
+  background-color: rgba(181, 202, 204, 0.3);
 }
 
 .settings__wrapper .details__fields {

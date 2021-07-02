@@ -104,8 +104,8 @@ const Header = ({ innerWidth }) => {
                     </Link>
                     : null}
                 {userData ?
-                    <Link to="/sign-page/login" className="nav-li signOut">
-                        <span onClick={handleSignOut}>
+                    <Link  onClick={handleSignOut} to="/sign-page/login" className="nav-li signOut">
+                        <span className = "sign-out">
                             <FontAwesomeIcon
                                 icon={faSignOutAlt}
                                 className="icon" />
@@ -119,14 +119,14 @@ const Header = ({ innerWidth }) => {
                     <div className="sign-options-wrapper">
                         <Link to="/sign-page/login">
                             <span
-                                className="nav-li signOut"
+                                className="nav-li"
                                 onClick={handleSignOut}>
                                 Log In
                             </span>
                         </Link>
                         <Link to="/sign-page/sign-up">
                             <span
-                                className="nav-li signOut"
+                                className="nav-li"
                                 onClick={handleSignOut}>
                                 Sign Up
                             </span>

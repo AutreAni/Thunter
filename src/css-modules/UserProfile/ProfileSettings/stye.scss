@@ -25,6 +25,11 @@
         text-align: center;
         font-size: 0.8em;
         background-color: white;
+        cursor: pointer;
+        &:focus,
+        &:hover {
+            background-color: $main-bg-color;
+        }
     }
     .details__fields {
         position: relative;

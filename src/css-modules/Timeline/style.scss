@@ -8,7 +8,7 @@
         width:100%;
         color:$gray;
         li {
-            margin-right:1em;
+            // margin-right:1em;
             @extend %flex-box;
             &:last-child {
                 margin-right:0;

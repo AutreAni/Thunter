@@ -3,7 +3,7 @@
   display:flex;
   flex-direction:column;
   color: gray;
-  padding: 2%;
+  padding: 3%;
   border-radius: 5px;
   margin-bottom: 5px;
   text-align: left;
@@ -11,28 +11,84 @@
 .divContainer a{
   text-decoration: none;
   color:#666;
+  cursor: pointer;
 }
 .divContainer a:hover{
-  color:#8b6335;
-}
-.divContainer .likeUl {
-  padding: 1em;
-  justify-content: flex-start;
-  color:#319197;
+  color:#222;
 }
 
+.divContainer .likeUl {
+  justify-content: flex-start;
+  color:rgba(194,29,40, 0.7);
+  padding: 5px 0;
+}
+.divContainer .likeUl li{
+  cursor: pointer;
+  margin:7px 0;
+  width:28px;
+  position: relative;
+}
+.timeline-icon {
+  position: absolute;
+  top:0;
+  left:0
+}
+.divContainer .likeUl li span {
+  position: absolute;
+  font-size: 0.7em;
+  top:0;
+  right:5px;
+  color:#666;
+}
+.divContainer .likeUl li:nth-child(2),
+.divContainer .likeUl li:nth-child(3) {
+  color: rgba(49,145,151,0.7);
+}
+
+
+
+.title-wrapperT {
+  display: flex;
+}
+.title-inner-wrapper {
+  margin-left:10px;
+}
 .imgStyle {
   max-width:100%;
   display: block;
   margin-bottom: 5px;
 
 }
-.logoT{
-  max-width: 12%;
+
+.dateT {
+  font-size: 12px;
+}
+.logoT,
+.comment-avatar{
+  width:40px;
+  height:40px;
+  border-radius: 50%;
 }
 
+.titleT {
+  font-weight: 600;
+}
+
+.contentT {
+  margin:0;
+}
+.inputDiv-c {
+  display: flex;
+  align-items: center;
+}
+
+.comment-avatar {
+  width:30px;
+  height:30px;
+}
 input{
   width:stretch;
+  margin-left:10px;
 }
 
 

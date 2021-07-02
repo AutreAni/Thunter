@@ -104,6 +104,12 @@
   margin-left: 1vw;
 }
 
+.header .nav-li .sign-out {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .header .nav-li:hover {
   color: #222;
   background-color: rgba(156, 199, 204, 0.3);
@@ -183,7 +189,7 @@
 @media only screen and (max-width: 450px) {
   .search__wrapper input {
     min-width: 120px;
-    height: 3vh;
+    height: 3.8vh;
   }
 }
 
