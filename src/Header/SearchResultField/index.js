@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SearchResultField = ({deactivateSearchMode, removeSearchInput}) => {
     const userList = useSelector(state => state.searchResult);
     const handleClick = () => {
-         deactivateSearchMode();
+        deactivateSearchMode();
         removeSearchInput();
     }
     const result = userList.length ? (userList.map(user => {

@@ -1,3 +1,7 @@
+.jobsByShush {
+  margin-top: 8vh;
+}
+
 .searchJob {
   border-radius: 5px 5px 0 0;
 }
@@ -9,29 +13,41 @@
   flex-wrap: wrap;
 }
 
-.searchJob .p {
+.searchJob .p,
+.searchJob .a {
+  width: 100%;
+  text-align: center;
   padding-top: 10px;
 }
 
-.searchJob .p a {
+.searchJob .p a,
+.searchJob .a a {
   text-decoration: none;
   color: #319197;
   text-align: center;
   padding: 10px;
 }
 
-.searchJob .p a:hover {
+.searchJob .p a:hover,
+.searchJob .a a:hover {
   color: #176a70;
   text-decoration: underline;
 }
 
 .searchJob .divContainer {
   border-bottom: 2px solid rgba(181, 202, 204, 0.3);
-  border-right: 2px solid rgba(181, 202, 204, 0.3);
   border-radius: 0;
   padding: 0 10px;
-  width: 45%;
+  width: 49%;
   margin: 0;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+@media only screen and (max-width: 650px) {
+  .searchJob .divContainer {
+    width: 95%;
+    padding: 0;
+  }
 }
 
 .searchJob span {
@@ -42,10 +58,6 @@
   text-decoration: none;
   color: #319197;
   text-align: center;
-}
-
-.searchJob p {
-  width: 22vw;
 }
 
 .myimgStyle {
@@ -60,17 +72,14 @@ img.mylogo {
 }
 
 .a {
+  display: block;
+  color: #319197;
+  cursor: pointer;
+  width: 100%;
   text-align: center;
 }
-<<<<<<< HEAD
-/*# sourceMappingURL=style.css.map */
-=======
 
-
-.jobsByShush{
-  margin-top: 20px;
-  margin-left: 3vw;
+.a:hover {
+  text-decoration: underline;
 }
-
-
->>>>>>> c1ec072022e7535e9469d7f9fe16f1a1b6392c75
+/*# sourceMappingURL=style.css.map */

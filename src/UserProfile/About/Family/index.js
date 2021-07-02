@@ -30,7 +30,7 @@ const Family = () => {
            {family.map(member => {
             return (<li
             key={member.id}>
-            <Link to='/profile'>
+            <Link to='/profile/about'>
                 <ShortProfile
                     userData={member}
                 />

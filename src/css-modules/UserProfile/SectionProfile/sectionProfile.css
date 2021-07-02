@@ -25,14 +25,30 @@
   background-color: white;
   padding: 3.5vh 1vw;
   border-radius: 5px 5px 0 0;
+  position: relative;
+}
+
+.sectionProfile .avatar__wrapper:after {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  border: 3px solid white;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(45deg, #319197, #862f4f, #c21d28);
+  opacity: 0.2;
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .sectionProfile .avatar {
+  position: relative;
+  z-index: 9;
   width: 13vw;
   height: 13vw;
   max-width: 208px;
   max-height: 208px;
-  margin-bottom: 2px;
 }
 
 .sectionProfile .section__details {
@@ -44,16 +60,16 @@
 .sectionProfile .username {
   font-size: 1.4em;
   font-weight: 500;
-  padding-top: 3vh;
+  padding-top: 2vh;
 }
 
 .sectionProfile .details__fields,
 .sectionProfile .audience__info {
+  font-weight: 400;
   background-color: white;
-  padding: 2vh 1vw;
+  padding: 1.2vh 1vw;
   color: #666;
   width: 100%;
-  padding-top: 1.5em;
   color: #666;
   cursor: pointer;
 }
@@ -63,13 +79,14 @@
   margin-right: 0.5em;
 }
 
-.sectionProfile .audience__info {
-  border-bottom: 1px solid rgba(181, 202, 204, 0.3);
-  padding-bottom: 3vh;
-  width: 100%;
+.sectionProfile .details__fields:hover,
+.sectionProfile .audience__info:hover {
+  color: #319197;
 }
 
-.sectionProfile .details__fields:hover {
-  color: #222;
+.sectionProfile .audience__info {
+  border-bottom: 1px solid rgba(181, 202, 204, 0.3);
+  padding: 2vh 1vw;
+  width: 100%;
 }
 /*# sourceMappingURL=sectionProfile.css.map */

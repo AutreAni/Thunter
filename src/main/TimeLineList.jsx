@@ -14,7 +14,7 @@ const MainList = ({blogs}) =>{
              <p>{d.date}</p>
             <div> 
                <img src={d.logo} className="logoT" alt = "logo" />
-               <a href={d.link}>{d.title}</a> 
+               <a href={d.link} target = "_blank" rel="noopener noreferrer">{d.title}</a> 
             </div>
             <p>{d.text}</p>
            <img src={d.img} className=' imgStyle' alt = "img"/>

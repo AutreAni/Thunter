@@ -14,7 +14,8 @@ export const fetchSearchResult = (text) => (dispatch) => {
                     dispatch({type: SET_SEARCH_RESULT_TO_NOT_FOUND});
                     return;
                 }
-                dispatch({type: SET_SEARCH_RESULT_TO_LIST, payload: data})
+                let filtered = data.filter(el => el.username.toLowerCase().includes(text.toLowerCase()))
+                dispatch({type: SET_SEARCH_RESULT_TO_LIST, payload: filtered})
             })
             .catch(error => console.log(error))  
 

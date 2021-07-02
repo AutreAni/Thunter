@@ -40,6 +40,7 @@
 .main__profile .profile__wrapper .avatar__editable .mainProfile {
   width: 20vw;
   height: 20vw;
+  border: 5px solid white;
   max-width: 200px;
   max-height: 200px;
   min-width: 6em;

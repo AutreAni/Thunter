@@ -1,0 +1,35 @@
+@import '../config';
+
+.styleBox {
+    width:100%;
+    margin-top:5px;
+    border-radius: 0 0 5px 5px;
+    h5 {
+        background-color: white;
+        margin:1vh 0 0 0;
+        padding:2vh 1vw;
+        color:$gray;
+        font-size: 16px;
+        border-bottom: 2px solid $main-bg-color;
+    }
+    .blogBox{
+        background-color: white;
+        padding: 2vh 1vw;
+        margin-bottom: 2px;
+        a{
+            font-weight: 400;
+            border-bottom: none;
+            color: $blue;
+            &:hover {
+                text-decoration: underline !important;
+                color: $blue;
+    
+            }
+          }      
+    }
+}
+
+
+  
+
+

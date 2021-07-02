@@ -35,7 +35,7 @@ useEffect(()=>{
     <div  >
       {error && <div> {error} </div>}
       {pending && <div>Loading...</div>}
-     {mains &&<MainList blogs={mains} />}
+      {mains &&<MainList blogs={mains} />}
    
     </div>
     

@@ -1,7 +1,5 @@
 import React from 'react';
-import '../css-modules/Timeline/style.scss'
-
-
+import '../css-modules/Timeline/style.scss';
 import NavBar from './NavBar';
 
 const Components = () => {

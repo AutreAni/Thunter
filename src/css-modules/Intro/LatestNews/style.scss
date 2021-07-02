@@ -36,11 +36,10 @@
             bottom: -25%;
             left:5%;
             width:90%;
-            z-index:999;
             padding:1vw;
             background-color: white;
             box-shadow: 1px 1px 4px $shadow-color;
-            z-index:99;
+            z-index:9;
             &:hover {
                 transform: scale(1.1);
                 transition: 0.5s;

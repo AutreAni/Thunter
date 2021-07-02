@@ -7,6 +7,7 @@ import Age from '../About/Age/index';
 import Education from '../About/Education/index';
 import Employment from '../About/Employment/index';
 import LivesIn from '../About/LivesIn/index';
+import Courses from '../../newCourses/index';
 import { setUserToPreview } from '../../actions/userToPreview';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,8 +20,6 @@ const SectionProfile = () => {
 
     const showUserProfile = () => {
         dispatch(setUserToPreview(currentUser));
-        console.log("console.",currentUser);
-
     }
     return (
         <Fragment>
@@ -49,7 +48,7 @@ const SectionProfile = () => {
                                 birthDate={currentUser.about.birthDate}
                             />
                             ) : null}
-                        {currentUser.about?.LivesIn ?
+                        {currentUser.about?.livesIn ?
                             (<LivesIn
                                 livesIn={currentUser.about.livesIn}
                             />) : null}
@@ -64,6 +63,7 @@ const SectionProfile = () => {
                             />) : null}
                     </Link>
                 </div>
+                <Courses />
             </div> : null}
         </Fragment>
     )

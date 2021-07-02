@@ -86,7 +86,7 @@
     bottom: 0;
     background-color: white;
     width: 100vw;
-    justify-content: space-around;
+    justify-content: space-between;
     box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.15);
   }
   .header .nav-list-wrapper .nav-li {
@@ -101,12 +101,13 @@
   height: 100%;
   padding: 0.3vw 1vw;
   line-height: 40px;
-  margin-left: 3vw;
+  margin-left: 1vw;
 }
 
 .header .nav-li:hover {
   color: #222;
   background-color: rgba(156, 199, 204, 0.3);
+  border-radius: 5px;
 }
 
 .header .nav-li:hover .shortProfile {
@@ -164,6 +165,8 @@
 }
 
 .search__wrapper input {
+  width: 20vw;
+  min-width: 150px;
   background-color: white !important;
   outline: none;
   border: 1px solid #319197;
@@ -175,6 +178,13 @@
 
 .search__wrapper input:focus {
   background-color: rgba(181, 202, 204, 0.3);
+}
+
+@media only screen and (max-width: 450px) {
+  .search__wrapper input {
+    min-width: 120px;
+    height: 3vh;
+  }
 }
 
 .search-result-field {
@@ -221,12 +231,6 @@
   height: 100%;
   content: "";
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-@media only screen and (max-width: 800px) {
-  .search__wrapper input {
-    width: 140px;
-  }
 }
 
 .sign-options-wrapper {

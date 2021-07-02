@@ -1,5 +1,9 @@
 @import '../config';
 
+.jobsByShush {
+  margin-top: 8vh;
+}
+
 .searchJob {
   border-radius: 5px 5px 0 0;
   .jobs-wrapper {
@@ -7,8 +11,11 @@
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  .p {
+   }
+  .p,
+  .a {
+    width:100%;
+    text-align: center;
     padding-top:10px;
     a{
       text-decoration: none;
@@ -23,11 +30,15 @@
   }
   .divContainer {
     border-bottom:2px solid $main-bg-color;
-    border-right:2px solid $main-bg-color;
     border-radius: 0;
     padding: 0 10px;  
-    width: 45%;
+    width: 49%;
     margin:0;
+    box-shadow: 1px 1px 4px $shadow-color;
+    @media only screen and(max-width:650px){
+      width:95%;
+      padding: 0;
+    }
   }
 
   span{
@@ -38,10 +49,7 @@
     color:#319197 ;
     text-align: center;
   }
-  p{
-    width: 22vw;
-   }
-
+ 
 }
 
 
@@ -58,8 +66,14 @@ img.mylogo{
 }
 
 .a{
+  display: block;
+  color:$blue;
+  cursor: pointer;
+  width:100%;
   text-align: center;
-
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 

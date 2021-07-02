@@ -17,7 +17,7 @@ class NavBar extends Component {
         <input className="navInput" type="text" placeholder = "Add a post..." />
 
           <ul className ="ulClass">
-            <li><Example name="Photo" title="Edit your photo" message="Select images to share" input ={<input type="file"></input>}/> 
+            <li><Example name="Photo" title="Post a photo" message="Select images to share" input ={<input type="file"></input>}/> 
             <FontAwesomeIcon className="marginIcon" icon={faPhotoVideo} />
           
             </li>

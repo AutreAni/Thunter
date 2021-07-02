@@ -33,8 +33,8 @@ const JobFetch =() =>{
   
   return(
     <Fragment >
-      {error && <div> {error} </div>}
-      {pending && <div>Loading...</div>}
+      {error && <div className = "result"> {error} </div>}
+      {pending && <div className = "result">Loading...</div>}
       {mains && <JobList jobs={mains} />}   
     </Fragment>
     

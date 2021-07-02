@@ -41,7 +41,7 @@
             bottom:0;
             background-color: white;
             width:100vw;
-            justify-content: space-around;
+            justify-content: space-between;
             box-shadow:1px -1px 4px $shadow-color;
             .nav-li {
                 margin-left:0;
@@ -56,10 +56,11 @@
         height:100%;
         padding:0.3vw 1vw;
         line-height: 40px;
-        margin-left:3vw;
+        margin-left:1vw;
         &:hover {
             color:$darkgray;
             background-color: $light-blue;
+            border-radius: 5px;
             .shortProfile {
                 background-color: transparent;
             }
@@ -108,6 +109,8 @@
         }
         
         input {
+            width:20vw;
+            min-width:150px;
             background-color:white !important;
             outline: none;
             border:1px solid $blue;
@@ -117,6 +120,10 @@
             margin:0;
             &:focus {
                 background-color: $main-bg-color;
+            }
+            @media only screen and (max-width: 450px){
+                min-width:120px;
+                height:3vh;
             }
         }
   
@@ -160,18 +167,12 @@
     content: "";
     background-color: rgba(0, 0, 0, 0.3);
 }
-@media only screen and (max-width: 800px){
-    .search__wrapper {
-     
-     input {
-         width:140px;
-     }
-    }
-  }
 
-  .sign-options-wrapper {
-      display: flex;
-      .nav-li {
-          margin-left:0.5vw;
-      }
-  }
+ 
+
+.sign-options-wrapper {
+    display: flex;
+    .nav-li {
+        margin-left:0.5vw;
+    }
+}

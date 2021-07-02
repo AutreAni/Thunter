@@ -3,6 +3,7 @@ import InputField from '../InputFields/index';
 import { updateCurrentUser } from '../../../actions/currentUser';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { setUserToPreview } from '../../../actions/userToPreview';
 
 
 const Form = ({ userData }) => {
@@ -85,6 +86,7 @@ const Form = ({ userData }) => {
                             .then(response => response.json())
                             .then(data => {
                                 dispatch(updateCurrentUser(data));
+                                dispatch(setUserToPreview(data));
                                 history.push('/profile/about')
                             })
                             .catch(error => console.log(error));

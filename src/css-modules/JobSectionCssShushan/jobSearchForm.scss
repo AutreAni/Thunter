@@ -36,6 +36,7 @@
     background-color: white;
     width: 50%;
     min-width: 200px;
+    max-width: 300px;
     
  }
  
@@ -135,4 +136,8 @@
   display: flex;
   flex-direction: row;
   background-color: white;
+}
+.result {
+  width:100%;
+  text-align: center;
 }

@@ -18,7 +18,7 @@ const AudienceList = ({ audience }) => {
       const usersList = users.length ? (users.map(user => {
         return <li
             key={user.id}>
-            <Link to='/profile'>
+            <Link to='/profile/about'>
                 <ShortProfile
                     userData={user}
                 />

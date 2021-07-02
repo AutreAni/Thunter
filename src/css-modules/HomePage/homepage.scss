@@ -16,7 +16,7 @@
         padding:1em 1em;
     }
     .job__section {
-        width:25%;
+        width:30%;
         .jobs-wrapper {
             flex-direction: column;
             width:100%;
@@ -24,10 +24,11 @@
         .divContainer {
             width:100%;
             border-right: none;
+            box-shadow: none;
         }
     }
     .sectionProfile {
-        width:25%;
+        width:20%;
     }
     .timeline {
         width: 45%;

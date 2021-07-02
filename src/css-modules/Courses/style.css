@@ -1,0 +1,32 @@
+.styleBox {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.styleBox h5 {
+  background-color: white;
+  margin: 1vh 0 0 0;
+  padding: 2vh 1vw;
+  color: #666;
+  font-size: 16px;
+  border-bottom: 2px solid rgba(181, 202, 204, 0.3);
+}
+
+.styleBox .blogBox {
+  background-color: white;
+  padding: 2vh 1vw;
+  margin-bottom: 2px;
+}
+
+.styleBox .blogBox a {
+  font-weight: 400;
+  border-bottom: none;
+  color: #319197;
+}
+
+.styleBox .blogBox a:hover {
+  text-decoration: underline !important;
+  color: #319197;
+}
+/*# sourceMappingURL=style.css.map */
