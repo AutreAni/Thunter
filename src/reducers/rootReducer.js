@@ -4,6 +4,7 @@ import userToPreviewReducer from './userToPreviewReducer';
 import audienceListReducer from './audienceListReducer';
 import searchResultReducer from './searchResult';
 
+
 const rootReducer = combineReducers({
         currentUser: currentUserReducer,
         userToPreview: userToPreviewReducer,

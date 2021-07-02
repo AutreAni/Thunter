@@ -12,6 +12,13 @@ export const LOADING = "LOADING";
 
 
 
+//for my check H
+export const ADDLIST = "ADDLIST"
+export const DELETELIST = "DELETELIST"
+
+
+
+
 
 
 
